@@ -3,7 +3,7 @@
 define('HTTP_SERVER', 'http://localhost/thegioidieu/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://localhost/thegioidieu/');
+define('HTTPS_SERVER', 'http://192.168.1.96/thegioidieu/');
 
 // DIR
 define('DIR_APPLICATION', 'D:\xampp\htdocs\thegioidieu/catalog/');

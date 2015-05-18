@@ -41,7 +41,7 @@
               <tbody>
                 <?php if ($extensions) { ?>
                 <?php foreach ($extensions as $extension) { ?>
-                <!--<tr>
+                <tr>
                   <td><?php echo $extension['name']; ?></td>
                   <td class="text-right"><?php if (!$extension['installed']) { ?>
                     <a href="<?php echo $extension['install']; ?>" data-toggle="tooltip" title="<?php echo $button_install; ?>" class="btn btn-success"><i class="fa fa-plus-circle"></i></a>
@@ -53,7 +53,7 @@
                     <?php } else { ?>
                     <button type="button" class="btn btn-primary" disabled="disabled"><i class="fa fa-pencil"></i></button>
                     <?php } ?></td>
-                </tr>-->
+                </tr>
                 <?php foreach ($extension['module'] as $module) { ?>
                 <tr>
                   <td class="text-left"><?php echo $module['name']; ?></td>

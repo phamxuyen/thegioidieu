@@ -7,7 +7,7 @@
 	<?php if ($category['category_id'] == $category_id) { ?>   
 	<li class="<?php if ($category['children']) { echo "child"; }?> active">
 		<a href="<?php echo $category['href']; ?>" class="list-group-item active"><?php echo $category['name']; ?></a>
-		<span class="plus"><i class="fa fa-caret-right"></i></span><span class="minus"><i class="fa fa-caret-down"></i></span>
+		<span class="plus"><i class="fa fa-caret-left"></i></span><span class="minus"><i class="fa fa-caret-left"></i></span>
 			<ul class="item_child">
 			  <?php foreach ($category['children'] as $child) { ?>
 			  <?php if ($child['category_id'] == $child_id) { ?>
@@ -21,7 +21,7 @@
 	<?php } else { ?>
 	<li <?php if ($category['children']) { echo "class='child'"; }?>>
 		<a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
-		<span class="plus"><i class="fa fa-caret-right"></i></span><span class="minus"><i class="fa fa-caret-down"></i></span>
+		<span class="plus"><i class="fa fa-caret-left"></i></span><span class="minus"><i class="fa fa-caret-left"></i></span>
 		<?php if ($category['children']) { ?>
 		<ul class="item_child">
 		  <?php foreach ($category['children'] as $child) { ?>

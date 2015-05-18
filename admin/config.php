@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/thegioidieu/admin/');
-define('HTTP_CATALOG', 'http://localhost/thegioidieu/');
+define('HTTP_SERVER', 'http://192.168.1.96/thegioidieu/admin/');
+define('HTTP_CATALOG', 'http://192.168.1.96/thegioidieu/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://localhost/thegioidieu/admin/');
-define('HTTPS_CATALOG', 'https://localhost/thegioidieu/');
+define('HTTPS_SERVER', 'http://192.168.1.96/thegioidieu/admin/');
+define('HTTPS_CATALOG', 'http://192.168.1.96/thegioidieu/');
 
 // DIR
 define('DIR_APPLICATION', 'D:\xampp\htdocs\thegioidieu/admin/');

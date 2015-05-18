@@ -1,17 +1,18 @@
-﻿.mega-menu{float:left; padding:0; text-align:left;}
+﻿.mega-menu{float:none; padding:0; text-align:center;}
 .mega-menu > ul.nav > li{
     width: auto;
-	float: left;
+	float: none;
+	display:inline-block;
 	position: relative;
 	margin: 0;
 	padding: 0;
 }
 .mega-menu > ul.nav > li:hover{z-index:1600}
 .mega-menu > ul.nav > li > a{
-    color: #4c4c4c;
+    color: #555;
 	display: block;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
 	font-weight: 400;
 	text-transform:uppercase;
 	padding: 14px 40px 17px;
@@ -20,7 +21,7 @@
 	white-space: nowrap;
 	border-radius:0
 }
-.mega-menu > ul.nav > li + li > a{border-left:1px solid #d3d4d5}
+.mega-menu > ul.nav > li + li > a{border-left:1px solid #dadada}
 .mega-menu > ul.nav > li:hover > a{color:#fe4b4b}
 .mega-menu > ul.nav > li.parent:hover > a:before{
 	background-image: url(../../image/menu_arrow.png);

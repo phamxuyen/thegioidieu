@@ -28,7 +28,6 @@
 		$boss_class = 'col-lg-2 col-md-3 col-sm-6 col-xs-12';
 	}
 ?>
-<?php echo $content_top; ?>
 <div class="container">
   <div class="row">
 	<div class="bt-breadcrumb">
@@ -46,8 +45,21 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>">    
-      <?php if ($products) { ?><div class="product-filter">
+    <div id="content" class="<?php echo $class; ?>">  
+	<?php echo $content_top; ?>  
+      <?php if ($products) { ?>	  
+	  <h1 class="category_title"><?php echo $heading_title; ?></h1>
+	  <div class="product-filter">	
+		<div class="filter-view">
+			<div class="btn-group" <?php if($view == 'grid' || $view =='list')echo 'style="display:none"'; ?>>
+				<button type="button" id="grid-view" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
+				<button type="button" id="list-view" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
+			</div>
+			<div class="bt_pagination">
+				<?php if(!empty($pagination)){?><div class="links"><?php echo $pagination; ?></div> <?php } ?>
+				<div class="results"><?php echo $results; ?></div>
+			</div>
+		</div>
 	  <div class="limit_sort">
 		<div class="limit">	
           <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
@@ -79,7 +91,6 @@
 		</div>
       </div>
       </div>
-	  <h1 class="category_title"><?php echo $heading_title; ?></h1>
       <div class="row layout-thumb">
         <?php foreach ($products as $product) { ?>
         <div class="product-layout product-grid col-sm-3 col-xs-12">
@@ -93,7 +104,7 @@
 			  <?php if (!$product['special']) { ?>
 			  <?php echo $product['price']; ?>
 			  <?php } else { ?>
-			  <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+			  <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
 			  <?php } ?>
 			  <?php if ($product['tax']) { ?>
 			  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
@@ -111,15 +122,12 @@
 			  <?php } ?>
 			</div>
 			<?php } ?>
-            <button type="button" class="btn-cart" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i><?php echo $button_cart; ?></button>
+            <button type="button" class="btn-cart-1" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
+            <button type="button" class="btn-cart-2" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
           </div>
         </div>
         <?php } ?>
       </div>
-      <div class="bt_pagination">
-        <?php if(!empty($pagination)){?><div class="links"><?php echo $pagination; ?></div> <?php } ?>
-        <div class="results"><?php echo $results; ?></div>
-	  </div>
       <?php } ?>
       <?php if (!$categories && !$products) { ?>
 		<div class="content_bg">

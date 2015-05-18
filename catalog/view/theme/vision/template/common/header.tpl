@@ -56,6 +56,7 @@
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/jquery.smoothscroll.js"></script>
 <script src="catalog/view/javascript/bossthemes/jquery.jgrowl.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bossthemes/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/<?php echo $config->get('config_template'); ?>/stylesheet/stylesheet.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/<?php echo $config->get('config_template'); ?>/stylesheet/bossthemes/bt_stylesheet.css" />
@@ -188,68 +189,45 @@ if($status){
 <div id="bt_container" class="<?php  echo $mode_css;?>" <?php echo $b_style;?>>
 <div id="bt_header" class="<?php echo $h_mode_css;?>" <?php echo $h_style;?>>
 <header>
-	<div class="container">
-		<div class="row">
-			<div class="header_left">
-				<?php if(isset($header_link['logo']) && $header_link['logo']){ ?>
-				<div id="logo">
-				  <?php if ($logo) { ?>
-				  <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
-				  <?php } else { ?>
-				  <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-				  <?php } ?>
-				</div>
-				<?php } ?>
-			</div>
-			<div class="header_right">	
-				<?php if(isset($header_link['cart_mini']) && $header_link['cart_mini']){ echo $cart;} ?>	
-			<div class="left">	
-			<div id="top-links">
-			  <ul class="list-inline">			
-				<?php if(isset($header_link['my_account']) && $header_link['my_account']){ ?><li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_account; ?><i class="fa fa-angle-down"></i></a>
-				  <ul class="dropdown-menu dropdown-menu-right">
-					<?php if ($logged) { ?>
-					<li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-					<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-					<li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-					<li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-					<li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-					<?php } else { ?>
-					<li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-					<li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-					<?php } ?>
-				  </ul>
-				</li>
-				<?php } ?> 
-			  </ul>
-			</div>			
-			<?php if(isset($header_link['phone']) && $header_link['phone']){ ?>	
-			<div class="contact"><a href="<?php echo $contact; ?>"><i class="fa fa-question-circle"></i><?php echo $telephone; ?></a> </div> <?php } ?>	
-			<div class="language_currency">
-				<?php if(isset($header_link['currency']) && $header_link['currency']){ echo $currency;} ?>	
-				<?php if(isset($header_link['language']) && $header_link['language']){ echo $language;} ?>		
-			</div>
-			<div class="hide-on-mobile">
-				<?php 
-					if(isset($header_link['search']) && $header_link['search']){
-						echo $search; 
-					} 
-				?>	
-			</div>
-			</div>
-			<div class="hide-on-desktop">
-				<?php 
-					if(isset($header_link['search']) && $header_link['search']){
-						echo $search; 
-					} 
-				?>	
-			</div>
-			</div>
-		</div>
+	<?php if(isset($header_link['logo']) && $header_link['logo']){ ?>
+	<div id="logo">
+	  <?php if ($logo) { ?>
+	  <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
+	  <?php } else { ?>
+	  <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+	  <?php } ?>
+	</div>
+	<?php } ?>	
+	<?php 
+		if(isset($header_link['search']) && $header_link['search']){
+			echo $search; 
+		} 
+	?>	
+	<div id="top-links">
+	  <ul class="list-inline">			
+		<?php if(isset($header_link['my_account']) && $header_link['my_account']){ ?><li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_account; ?><i class="fa fa-angle-down"></i></a>
+		  <ul class="dropdown-menu dropdown-menu-right">
+			<?php if ($logged) { ?>
+			<li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+			<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+			<li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
+			<li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
+			<li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+			<?php } else { ?>
+			<li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
+			<li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+			<?php } ?>
+		  </ul>
+		</li>
+		<?php } ?> 
+	  </ul>
+	</div>	
+	<?php if(isset($header_link['cart_mini']) && $header_link['cart_mini']){ echo $cart;} ?>	
+	<div class="language_currency">
+		<?php if(isset($header_link['currency']) && $header_link['currency']){ echo $currency;} ?>	
+		<?php if(isset($header_link['language']) && $header_link['language']){ echo $language;} ?>		
 	</div>
 </header>
-	<div class="container">
-	<div class="row">
 <div class="boss_menu">
 	<?php 
 		if(isset($option['use_menu']) && $option['use_menu'] == 'megamenu'){
@@ -288,8 +266,6 @@ if($status){
 		  </nav>
 	
 	<?php } } ?>
-	</div>	
-	</div>	
 </div>	
 <div class="boss-new-position">
 	<?php echo isset($btslideshow)?$btslideshow:''; ?>
