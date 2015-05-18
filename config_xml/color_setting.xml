@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items_setting>
+  <groups>
+    <title>General</title>
+    <item>
+      <text>Background body</text>
+      <name>g_body_background</name>
+      <class></class>
+      <value></value>
+      <style>background-color</style>
+    </item>
+    <item>
+      <text>Text Color 1</text>
+      <name>g_color_text_normal</name>
+      <class></class>
+      <value></value>
+      <style>color</style>
+    </item>
+    <item>
+      <text>Text Color 2</text>
+      <name>g_color_text_hover</name>
+      <class></class>
+      <value></value>
+      <style>color</style>
+    </item>
+  </groups>
+  <customs/>
+</items_setting>
