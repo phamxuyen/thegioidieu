@@ -941,7 +941,7 @@ CREATE TABLE `oc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1246 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1255 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_layout_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -952,7 +952,7 @@ CREATE TABLE `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=240 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=249 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_length_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1105,7 +1105,7 @@ CREATE TABLE `oc_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1801,7 +1801,7 @@ CREATE TABLE `oc_setting` (
   `serialized` tinyint(1) NOT NULL,
   `group` varchar(32) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7071 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7408 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_stock_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
