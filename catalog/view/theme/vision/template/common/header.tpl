@@ -49,7 +49,6 @@
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,400,600' rel='stylesheet' type='text/css'>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bossthemes/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
 <script src="catalog/view/javascript/bossthemes/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -57,7 +56,6 @@
 <script src="catalog/view/javascript/bossthemes/jquery.jgrowl.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bossthemes/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/<?php echo $config->get('config_template'); ?>/stylesheet/stylesheet.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/<?php echo $config->get('config_template'); ?>/stylesheet/bossthemes/bt_stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/<?php echo $config->get('config_template'); ?>/stylesheet/bossthemes/responsive.css" />
@@ -75,7 +73,7 @@
 <?php } ?>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/jquery.appear.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/getwidthbrowser.js"></script>
-<?php echo $google_analytics; ?>
+<?php// echo $google_analytics; ?>
 <?php if(isset($this->request->get['route'])){$route1 = $this->request->get['route'];}else{$route1 ="";}
 	if(isset($route1) && ($route1== "common/home" || $route1=="")){ ?>
 		<script type="text/javascript"><!--

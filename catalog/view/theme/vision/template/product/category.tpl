@@ -97,20 +97,8 @@
           <div class="product-thumb">
             <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>
 			</div>
+			<div class="detail">
 			<div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
-			<p class="description"><?php echo $product['description']; ?></p>
-			<?php if ($product['price']) { ?>
-			<p class="price">
-			  <?php if (!$product['special']) { ?>
-			  <?php echo $product['price']; ?>
-			  <?php } else { ?>
-			  <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
-			  <?php } ?>
-			  <?php if ($product['tax']) { ?>
-			  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-			  <?php } ?>
-			</p>
-			<?php } ?>
 			<?php if ($product['rating']) { ?>
 			<div class="rating">
 			  <?php for ($i = 1; $i <= 5; $i++) { ?>
@@ -122,8 +110,26 @@
 			  <?php } ?>
 			</div>
 			<?php } ?>
-            <button type="button" class="btn-cart-1" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
-            <button type="button" class="btn-cart-2" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
+			<p class="description"><?php echo $product['description']; ?></p>
+			</div>
+			<div class="thumb-right">
+			<?php if ($product['price']) { ?>
+			<div class="price">
+			  <?php if (!$product['special']) { ?>
+			  <?php echo $product['price']; ?>
+			  <?php } else { ?>
+			  <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
+			  <?php } ?>
+			  <?php if ($product['tax']) { ?>
+			  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+			  <?php } ?>
+			</div>
+			<?php } ?>
+			<div class="btn-action">
+				<button type="button" class="btn-cart-1" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
+				<button type="button" class="btn-cart-2" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></button>
+          </div>
+          </div>
           </div>
         </div>
         <?php } ?>

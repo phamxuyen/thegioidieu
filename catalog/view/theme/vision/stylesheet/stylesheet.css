@@ -466,6 +466,38 @@ input.btn{line-height: normal;}
 	background-color: #222222;
 	background-image: linear-gradient(to bottom, #333333, #111111);
 }
+.btn-cart-1{
+	background:url(../image/icon_config.png) no-repeat 100% 0;
+	width:23px;
+	height:17px;
+	display:inline-block;
+	text-indent:-9999px;
+	font-size:0;
+	border:none;
+	box-shadow:none;
+	margin-bottom: 8px;
+	float:right;
+}
+.btn-cart-2{
+	background:#7db847;
+	border:1px solid transparent;
+	font-size:11px;
+	font-family:Arial;
+	text-transform:capitalize;
+	color:#fff;
+	display:inline-block;
+	border-radius:20px;
+	padding:3px 20px;
+	float:right;
+	clear:both;
+	transition:all 0.3s ease 0s;
+	-webkit-transition:all 0.3s ease 0s;
+}
+.btn-cart-2:hover{
+	border-color:#7db847;
+	background:#fff;
+	color:#7db847;
+}
 div.image{display:block; margin-bottom:10px; text-align:center; position:relative}
 .image img{max-width:100%; margin:0 auto;}
 div.name{margin-bottom: 3px;}

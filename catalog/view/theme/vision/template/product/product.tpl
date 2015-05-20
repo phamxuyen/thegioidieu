@@ -36,7 +36,7 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-8'; ?>
+        <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
 		  <div class="bt-product-zoom">
@@ -63,18 +63,28 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-4'; ?>
+        <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <div class="qty">			
 			  <h1><?php echo $heading_title; ?></h1>
+			  <ul class="list-unstyled description">
+				<?php if ($manufacturer) { ?>
+				<li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
+				<?php } ?>
+				<li><?php echo $text_model; ?> <?php echo $model; ?></li>
+				<?php if ($reward) { ?>
+				<li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
+				<?php } ?>
+				<li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
+			  </ul>
 			  <?php if ($price) { ?>
 			  <div class="price_info">
 				<?php if (!$special) { ?>
 				<span><?php echo $price; ?></span>
 				<?php } else { ?>
-				<span class="price-new"><?php echo $special; ?></span>
 				<span class="price-old"><?php echo $price; ?></span>
+				<span class="price-new"><?php echo $special; ?></span>
 				<?php } ?>
 				<?php if ($tax) { ?>
 				<span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span>
@@ -96,23 +106,13 @@
                     <button onclick="changeQty(0); return false;" class="decrease">-</button>  
 				</div>
 				<div class="cart_button">	
-					<button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn-cart"><?php echo $button_cart; ?></button>
+					<button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn-cart-2"><?php echo $button_cart; ?></button>
 				</div> 
 				<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
 				<?php if ($minimum > 1) { ?>
 				<div class="minimum"><?php echo $text_minimum; ?></div>
 				<?php } ?>
 		  </div>
-          <ul class="list-unstyled description">
-            <?php if ($manufacturer) { ?>
-            <li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
-            <?php } ?>
-            <li><?php echo $text_model; ?> <?php echo $model; ?></li>
-            <?php if ($reward) { ?>
-            <li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
-            <?php } ?>
-            <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
-          </ul>
 		  <?php if($pro_des=='use_tab'){ ?>
 		  <div class="htabs">
 		  <ul class="nav nav-tabs">
@@ -461,7 +461,7 @@ $(window).load(function(){
             height: 'auto',
             visible: {
             min: 1,
-            max: 3
+            max: 5
             }
         },
         scroll: {
