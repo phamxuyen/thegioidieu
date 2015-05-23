@@ -120,7 +120,18 @@
 								</tr></tfoot></table>
 						</div>
 							<div id="modulesetting" class="tab-pane">
-							<table class="table table-striped table-bordered table-hover">									
+							<table class="table table-striped table-bordered table-hover">		
+								<tr>
+								<td>Heading Title</td>
+								<td class="text-left">
+									<table class="table table-striped table-bordered table-hover">
+									<?php foreach ($languages as $language) { ?><tr><td>
+									  <input name="boss_filterproduct_module[title][<?php echo $language['language_id']; ?>]" value="<?php echo isset($module['title'][$language['language_id']]) ? $module['title'][$language['language_id']] : ''; ?>" class="form-control" /></td>
+									  <td><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+									  </td></tr>
+									<?php } ?>
+									</table></td>
+								</tr>
 								<tr><td><?php echo $entry_image; ?></td>
 								<td class="left"><input type="text" name="boss_filterproduct_module[image_width]" value="<?php echo (isset($module['image_width']) ? $module['image_width'] : '') ?>" size="3" class="form-control" />
 								

@@ -1,0 +1,16 @@
+<modification>
+   	<name>Product Recently Viewed</name>
+	<code>product_recently_viewed</code>
+    <version>2.0.x</version>
+    <author>bossthemes.com</author>
+    <link>http://www.bossthemes.com</link>
+<file path="catalog/controller/common/footer.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->load->language('common/footer');]]></search>
+			<add><![CDATA[$this->load->language('common/footer');
+		if (isset($this->request->get['product_id'])) {
+			$this->session->data['recently_viewed'][]= (int)$this->request->get['product_id'];
+		}]]></add>
+		</operation>	
+</file>
+</modification>

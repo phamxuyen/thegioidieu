@@ -123,7 +123,7 @@ class ControllerCommonMenu extends Controller {
 		$data['promotion_blog'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'].'&path=6', 'SSL');
 		$data['recruitment_blog'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'].'&path=5', 'SSL');
 		$data['setting_blog'] = $this->url->link('bossblog/setting', 'token=' . $this->session->data['token'], 'SSL');
-		$data['ace_community_poll'] = $this->url->link(' module/ace_community_poll', 'token=' . $this->session->data['token'], 'SSL');
+		$data['ace_community_poll'] = $this->url->link('ace/poll', 'token=' . $this->session->data['token'], 'SSL');
 		
 		$data['contact'] = $this->url->link('marketing/contact', 'token=' . $this->session->data['token'], 'SSL');
 		$data['coupon'] = $this->url->link('marketing/coupon', 'token=' . $this->session->data['token'], 'SSL');

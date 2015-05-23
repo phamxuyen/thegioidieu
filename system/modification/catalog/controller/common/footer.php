@@ -2,6 +2,9 @@
 class ControllerCommonFooter extends Controller {
 	public function index() {
 		$this->load->language('common/footer');
+		if (isset($this->request->get['product_id'])) {
+			$this->session->data['recently_viewed'][]= (int)$this->request->get['product_id'];
+		}
 
 		$data['text_information'] = $this->language->get('text_information');
 		$data['text_service'] = $this->language->get('text_service');

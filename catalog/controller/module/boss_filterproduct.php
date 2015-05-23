@@ -4,7 +4,9 @@ class ControllerModuleBossFilterProduct extends Controller {
 		if(empty($setting))	return;
 		static $module = 0;
 		
-		$this->document->addScript('catalog/view/javascript/bossthemes/carouFredSel-6.2.0.js');
+		$this->load->language('module/boss_filterproduct');
+		$data['heading_title'] = isset($setting['boss_filterproduct_module']['title'][$this->config->get('config_language_id')])?$setting['boss_filterproduct_module']['title'][$this->config->get('config_language_id')]:'';
+		$this->document->addScript('catalog/view/javascript/bossthemes/carouFredSel-6.2.1.js');
 		$this->document->addScript('catalog/view/javascript/bossthemes/boss_filterproduct/boss_filterproduct.js');
 		
 		if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/bossthemes/boss_filterproduct.css')) {
@@ -25,87 +27,102 @@ class ControllerModuleBossFilterProduct extends Controller {
 		$data['image_height'] = $setting['boss_filterproduct_module']['image_height'];
 		
 		$this->load->model('catalog/product');
+		$this->load->model('catalog/category');
+		
 		$this->load->model('tool/image');
 		
-		//load tab for module
-		if(isset($setting['boss_filterproduct_module']['tabs']))
-		{
-			foreach ($setting['boss_filterproduct_module']['tabs'] as $tab) {
-				$results = array();
-				if ($tab['type_product'] == "popular") {
-					$results = $this->model_catalog_product->getPopularProducts($setting['boss_filterproduct_module']['limit']);
-				}
-				if ($tab['type_product'] == "special") {
+		$results = array();
+		
+		if(isset($setting['boss_filterproduct_module']['tabs'])){
+		foreach ($setting['boss_filterproduct_module']['tabs'] as $tab) {
+
+		if ($tab['type_product'] == "category") {
+			
+			if (isset($tab['filter_type_category'])) {
+				
+				$data['tabs'] = array();
+				
+				$categories = array();
+				
+				$catagory_name = $this->model_catalog_category->getCategory($tab['filter_type_category']);
+				
+				$results_category = $this->model_catalog_category->getCategories($tab['filter_type_category']);
+				
+				foreach ($results_category as $category) {
 					$data_sort = array(
 						'sort'  => 'pd.name',
 						'order' => 'ASC',
 						'start' => 0,
 						'limit' => $setting['boss_filterproduct_module']['limit']
 					);
-					$results = $this->model_catalog_product->getProductSpecials($data_sort);
-				}
-				if ($tab['type_product'] == "best_seller") {
-					$results = $this->model_catalog_product->getBestSellerProducts($setting['boss_filterproduct_module']['limit']);
-				}
-				if ($tab['type_product'] == "latest") {
-					$results = $this->model_catalog_product->getLatestProducts($setting['boss_filterproduct_module']['limit']);
-				}
-				if ($tab['type_product'] == "category") {
-					$data_sort = array(
-						'filter_category_id' => $tab['filter_type_category'],
-						'sort'  => 'pd.name',
-						'order' => 'ASC',
-						'start' => 0,
-						'limit' => $setting['boss_filterproduct_module']['limit']
-					);
+					
 					$results = $this->model_catalog_product->getProducts($data_sort);
-				}
-				$products = array();
-				foreach ($results as $result) {
-					if ($result['image']) {
-						$image = $this->model_tool_image->resize($result['image'], $setting['boss_filterproduct_module']['image_width'], $setting['boss_filterproduct_module']['image_height']);
+					
+					$products = array();
+					
+					foreach($results as $result){
+					
+						if ($result['image']) {
+							$image = $this->model_tool_image->resize($result['image'], $setting['boss_filterproduct_module']['image_width'], $setting['boss_filterproduct_module']['image_height']);
+						} else {
+							$image = false;
+						}
+
+						if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+							$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+						} else {
+							$price = false;
+						}
+								
+						if ((float)$result['special']) { 
+							$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+						} else {
+							$special = false;
+						}
+						
+						if ($this->config->get('config_review_status')) {
+							$rating = $result['rating'];
+						} else {
+							$rating = false;
+						}
+
+						$products[] = array(
+							'product_id' => $result['product_id'],
+							'thumb'   	 => $image,
+							'name'    	 => $result['name'],
+							'description'=> utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
+							'price'   	 => $price,
+							'special' 	 => $special,
+							'rating'     => $rating,
+							'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+							'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+						);
+					}
+					
+					if ($category['image']) {
+						$image_cate = $this->model_tool_image->resize($category['image'], 448, 608);
 					} else {
-						$image = false;
+						$image_cate = $this->model_tool_image->resize('catalog/thegioidieu/default.jpg', 448, 608);;
 					}
 
-					if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-						$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-					} else {
-						$price = false;
-					}
-							
-					if ((float)$result['special']) { 
-						$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
-					} else {
-						$special = false;
-					}
-					
-					if ($this->config->get('config_review_status')) {
-						$rating = $result['rating'];
-					} else {
-						$rating = false;
-					}
-					
-					$products[] = array(
-						'product_id' => $result['product_id'],
-						'thumb'   	 => $image,
-						'name'    	 => $result['name'],
-						'price'   	 => $price,
-						'special' 	 => $special,
-						'rating'     => $rating,
-						'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-						'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
-					);
+					$categories[] = array(
+						'name' => $category['name'],
+						'image' => $image_cate,
+						'products' => $products
+					);				
 				}
-				$data['tabs'][] = array(
-						'title'	 		 =>	isset($tab['title'][$this->config->get('config_language_id')])?$tab['title'][$this->config->get('config_language_id')]:'',
-						'products'       => $products
-					);
+				
+				
+				
+				
+				$data['tabs'] = array(
+						'name'	 		 	=> $catagory_name['name'],
+						'href'  			=> $this->url->link('product/category', 'path=' . $tab['filter_type_category']),
+						'categories'       	=> $categories
+				);
 				
 			}
-		} //end load tabs for module
-		
-		
+		}
 		
 		$data['module'] = $module++;
 		
@@ -116,5 +133,6 @@ class ControllerModuleBossFilterProduct extends Controller {
 			return $this->load->view('default/template/module/boss_filterproduct.tpl', $data);
 		}
 	}
+	}}
 }
 ?>
