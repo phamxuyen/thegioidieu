@@ -228,7 +228,7 @@ CREATE TABLE `oc_banner_image` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_banner_image_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -788,6 +788,45 @@ CREATE TABLE `oc_download_description` (
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `oc_ecbanner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oc_ecbanner` (
+  `ecbanner_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `main_width` int(11) DEFAULT '0',
+  `main_height` int(11) DEFAULT '0',
+  PRIMARY KEY (`ecbanner_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `oc_ecbanner_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oc_ecbanner_image` (
+  `ecbanner_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ecbanner_id` int(11) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `ordering` int(11) DEFAULT '0',
+  `params` text,
+  PRIMARY KEY (`ecbanner_image_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `oc_ecbanner_image_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oc_ecbanner_image_description` (
+  `ecbanner_image_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `ecbanner_id` int(11) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `description` text,
+  `custom_code` text,
+  PRIMARY KEY (`ecbanner_image_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -807,7 +846,7 @@ CREATE TABLE `oc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=486 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_filter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -817,7 +856,7 @@ CREATE TABLE `oc_filter` (
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_filter_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -837,7 +876,7 @@ CREATE TABLE `oc_filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_filter_group_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -941,7 +980,7 @@ CREATE TABLE `oc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1255 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1268 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_layout_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -952,7 +991,7 @@ CREATE TABLE `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=249 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=258 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_length_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1094,7 +1133,7 @@ CREATE TABLE `oc_modification` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`modification_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_module`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1105,7 +1144,7 @@ CREATE TABLE `oc_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1536,7 +1575,7 @@ CREATE TABLE `oc_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=487 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=490 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_filter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1557,7 +1596,7 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2675 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2743 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1619,7 +1658,7 @@ CREATE TABLE `oc_product_reward` (
   `customer_group_id` int(11) NOT NULL,
   `points` int(8) NOT NULL,
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=641 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=661 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_special`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1634,7 +1673,7 @@ CREATE TABLE `oc_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=485 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=491 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_to_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1801,7 +1840,7 @@ CREATE TABLE `oc_setting` (
   `serialized` tinyint(1) NOT NULL,
   `group` varchar(32) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7408 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7646 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_stock_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1910,7 +1949,7 @@ CREATE TABLE `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=1059 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1120 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
