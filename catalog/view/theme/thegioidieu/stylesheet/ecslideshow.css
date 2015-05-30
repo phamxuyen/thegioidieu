@@ -426,8 +426,8 @@
     color: #fff;
 }
 .camera_caption > div {
-    background: #000;
-    background: rgba(0, 0, 0, 0.8);
+    /*background: #000;
+    background: rgba(0, 0, 0, 0.8);*/
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
     background: #b7b7b7;
@@ -1094,4 +1094,16 @@
 }
 .clear,.clr{
     clear:both;
+}
+.caption{text-align:center}
+.caption h1{font-size:65px; text-transform:uppercase; color:#fff;}
+.caption h2{font-size:33px; text-transform:uppercase; color:#fff;}
+.caption h3{font-size:25px; text-transform:uppercase; color:#fff;}
+.caption a.btn-detail{
+	display:inline-block;
+	background:#fff;
+	color:#13436d;
+	border:2px solid #13436d;
+	opacity:0.8;
+	padding:20px 36px;
 }

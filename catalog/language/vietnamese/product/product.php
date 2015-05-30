@@ -20,7 +20,7 @@ $_['text_reviews']      = '%s đánh giá';
 $_['text_write']        = 'Viết đánh giá';
 $_['text_no_reviews']   = 'Không có đánh giá cho sản phẩm này.';
 $_['text_note']         = '<span style="color: #FF0000;">Lưu ý:</span> không hỗ trợ HTML!';
-$_['text_related']                            = 'Sản phẩn liên quan';
+$_['text_related']                            = 'Sản phẩn tham khảo';
 $_['text_share']        = 'Chia sẻ';
 $_['text_success']      = 'Cám ơn bạn đã đánh giá. Đánh giá đã được gửi đến quản trị trước khi được chấp nhận.';
 $_['text_upload']       = 'Tập tin của bạn đã tải lên thành công!';
@@ -50,7 +50,7 @@ $_['entry_captcha']     = 'Nhập mã kiểm tra vào ô bên dưới:';
 $_['tab_description']   = 'Mô tả';
 $_['tab_attribute']     = 'Đặc tính';
 $_['tab_review']        = 'Đánh giá (%s)';
-$_['tab_related']       = 'Sản phẩm liên quan'; 
+$_['tab_related']       = 'Sản phẩm tham khảo'; 
 
 // Error
 $_['error_name']        = 'Lỗi: Tên đánh giá phải từ 3 đến 25 kí tự!';

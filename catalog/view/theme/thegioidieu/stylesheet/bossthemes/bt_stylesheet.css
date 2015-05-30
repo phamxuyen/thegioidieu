@@ -1521,7 +1521,7 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
     float: none;
     margin-left: 0;
     vertical-align: top;
-    width: 33.33%;
+    width: 20%;
 }
 .product-related ul li .product-thumb{
 	background: none repeat scroll 0 0 #ffffff;
@@ -2187,7 +2187,6 @@ ul.sitemap ul{padding-left:20px}
 	background-color:#043f77!important;
 }
 .powered-payment{
-    border-top: 2px solid #d1d2ce;
     padding-bottom: 32px;
     padding-top: 28px;
 }
@@ -2205,6 +2204,10 @@ ul.sitemap ul{padding-left:20px}
 	margin-top:3px;
 }
 .powered-payment  .logo-footer{float:left; margin-right:20px;}
+.powered-payment  .footer-powered{overflow:hidden}
+.powered-payment  .footer-powered p{font-size:10px;color:#707379; margin:0}
+.powered-payment  .footer-powered p.title{text-transform:uppercase; font-weight:700; font-size:11px;  letter-spacing: 2px;}
+.powered-payment  .footer-powered p.title span{color:#07396a; font-size:12px}
 .footer-trans h3{
 	color:#767676;
 	text-transform:capitalize;
@@ -2276,6 +2279,11 @@ ul.sitemap ul{padding-left:20px}
     position: absolute;
     right: 0;
     top: 0;
+	transition-duration:0.3s;
+	-webkit-transition-duration:0.3s;
+}
+.footer-newletter .btn_newletter:hover{
+	background:#426ab2;
 }
 .footer-newletter .btn_newletter i{font-size:33px;}
 .footer-newletter{
@@ -2794,7 +2802,8 @@ span.hover4.style2{
 	-moz-transition-delay:0s;
 }
 #bt_slideshow{clear:both; margin-bottom: 0; overflow:hidden}
-#bt_slideshow .camera_wrap{margin-bottom:0!important}
+#bt_slideshow .camera_wrap, #bt_slideshow .owl-carousel{margin-bottom:0!important; border:none; box-shadow:none; border-radius:0;}
+#bt_slideshow .owl-pagination{position:absolute; width:100%; bottom:10px; left:0; top:auto;}
 .banner_slide{
 	clear:both;
 	overflow:hidden;

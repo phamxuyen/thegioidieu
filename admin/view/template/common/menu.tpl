@@ -10,8 +10,8 @@
           <li><a href="<?php echo $attribute; ?>"><?php echo $text_attribute; ?></a></li>
           <li><a href="<?php echo $attribute_group; ?>"><?php echo $text_attribute_group; ?></a></li>
         </ul>
-      </li>
-      <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>-->
+      </li>-->
+      <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
       <!--<li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>-->
       <!--<li><a href="<?php echo $review; ?>"><?php echo $text_review; ?></a></li>-->

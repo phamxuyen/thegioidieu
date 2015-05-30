@@ -16,5 +16,4 @@ $_['button_login']   = 'Đăng nhập';
 
 // Error
 $_['error_login']    = 'Sai tên đăng nhập hoặc mật khẩu.';
-$_['error_token']    = 'Đăng nhập hết hạn. Hãy đăng nhập lại.';
-?>
+$_['error_token']    = 'Đăng nhập hết hạn. Hãy đăng nhập lại.';

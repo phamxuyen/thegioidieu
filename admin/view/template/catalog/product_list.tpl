@@ -105,6 +105,11 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                     <?php } ?></td>
+				  <td class="text-left"><?php if ($sort == 'p.sort_order') { ?>
+                    <a href="<?php echo $sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_order; ?></a>
+                    <?php } else { ?>
+                    <a href="<?php echo $sort_order; ?>"><?php echo $column_order; ?></a>
+                    <?php } ?></td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -138,6 +143,7 @@
                     <span class="label label-success"><?php echo $product['quantity']; ?></span>
                     <?php } ?></td>
                   <td class="text-left"><?php echo $product['status']; ?></td>
+				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="submit" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
                   <td class="text-right"><a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <?php } ?>

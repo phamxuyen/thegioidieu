@@ -73,7 +73,8 @@
 <?php } ?>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/jquery.appear.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/getwidthbrowser.js"></script>
-<?php// echo $google_analytics; ?>
+<!--<script type="text/javascript" src="catalog/view/javascript/bossthemes/weather.js"></script>-->
+<?php // echo $google_analytics; ?>
 <?php if(isset($this->request->get['route'])){$route1 = $this->request->get['route'];}else{$route1 ="";}
 	if(isset($route1) && ($route1== "common/home" || $route1=="")){ ?>
 		<script type="text/javascript"><!--
@@ -118,18 +119,6 @@
 			}
 		});
 	//--></script>
-	<!--[if IE 8]> 
-	<script type="text/javascript">
-	$(window).scroll(function() {
-			var height_header = $('#bt_header').height();  			
-			if($('html').scrollTop() > height_header) {				
-				$('.boss_menu').addClass('boss_scroll');
-			} else {
-				$('.boss_menu').removeClass('boss_scroll');
-			}
-		});
-	</script>
-	<![endif]-->
 <?php } ?>
 <?php 
 	$b_style = '';$h_style = ''; $status=0; $h_mode_css = ''; $h_mode_css = '';

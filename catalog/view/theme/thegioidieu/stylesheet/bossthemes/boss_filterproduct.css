@@ -180,7 +180,9 @@ h3.color_active a{
   padding: 9px 20px;
   background: #e8ebf0;
   display:block;
+  position:relative;
 }
+.boss_homefilter_tabs .tabs_container li.active{background-color:#7695b3}
 .boss_homefilter_tabs .tabs_container li a{
   font-family: Arial, sans-serif;
   font-size: 13px;
@@ -190,7 +192,26 @@ h3.color_active a{
   background: none;
   letter-spacing:normal;
   text-transform:none;
+  position:static;
 }
+.boss_homefilter_tabs .tabs_container li a span{display:none}
+.boss_homefilter_tabs .tabs_container li.active a span{
+  background: none;
+  border-radius: 0;
+  color: #fff;
+  float: right;
+  font-size: 15px;
+  font-weight: 400;
+  margin-right: 0;
+  text-align: center;
+  width: 16px;
+  position: absolute;
+  right: -1px;
+  letter-spacing: -9px;
+  top: 5px;
+  display:block;
+}
+.boss_homefilter_tabs .tabs_container li.active a span i{font-size:22px}
 .boss_homefilter_tabs .tabs_container li:hover{background:#7695b3;}
 .boss_homefilter_tabs .tabs_container li.cate-parent{
 	font-size:13px;
@@ -285,35 +306,40 @@ h3.color_active a{
 	font-weight:700;
 	text-align:center;
 }
-.boss_homefilter_tabs .box-heading .tab-btn{
+.boss_homefilter_tabs .tab-btn{
 	float:right;
 }
-.boss_homefilter_tabs .box-heading .tab-btn .prev{
+.boss_homefilter_tabs .tab-btn .prev{
   position: absolute;
   right: 33px;
-  top: 0;
+  top: -44px;
   width: 16px;
   height: 38px;
   line-height: 47px;
   text-align: center;
   color: #000;
+  z-index:10;
 }
-.boss_homefilter_tabs .box-heading .tab-btn .next{
+.boss_homefilter_tabs .tab-btn .next{
   position: absolute;
   right: 14px;
-  top: 0;
+  top: -44px;
   width: 16px;
   height: 38px;
   line-height: 47px;
   text-align: center;
+  z-index:10;
   color: #000;
 }
-.boss_homefilter_tabs .box-heading .tab-btn .prev i, .boss_homefilter_tabs .box-heading .tab-btn .next i{font-size:32px}
-.boss_homefilter_tabs .box-heading .tab-viewall{
-	float:right;
-	padding-right:70px;
+.boss_homefilter_tabs .tab-btn .prev i, .boss_homefilter_tabs .tab-btn .next i{font-size:32px}
+.boss_homefilter_tabs .tab-viewall{
+  float: right;
+  padding-right: 70px;
+  position: absolute;
+  top: -34px;
+  right: 0;
 }
-.boss_homefilter_tabs .box-heading .tab-viewall a{text-transform:none; font-weight:400; background:url(../../image/viewall.png) no-repeat right center; padding-right:45px}
+.boss_homefilter_tabs .tab-viewall a{text-transform:none; font-weight:400; background:url(../../image/viewall.png) no-repeat right center; padding-right:45px}
 .boss_homefilter_tabs .tabs_link{
 	position:absolute;
 	top:6px;

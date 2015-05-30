@@ -1,3 +1,35 @@
+$.fn.bttabs = function() {
+	var selector = this;
+	
+	this.each(function() {
+		var obj = $(this); 
+		
+		$(obj.attr('href')).hide();
+		
+		obj.click(function() {
+			$(selector).removeClass('selected');
+			
+			$(this).addClass('selected');
+			
+			$($(this).attr('href')).fadeIn();
+			
+			var tabmodule = $(this).attr('data-crs');
+			
+			loadslider(tabmodule);
+			
+			$(selector).not(this).each(function(i, element) {
+				$($(element).attr('href')).hide();
+			});
+			
+			return false;
+		});
+	});
+
+	$(this).show();
+	
+	$(this).first().click();
+};
+
 function checkDevices($module){
 	if(getWidthBrowser() > 767){
 		$('.content_tabs'+$module).show();
@@ -21,7 +53,7 @@ function checkDevices($module){
 	}
 }
 
-function execCarousel($module,$carousel,$limit,$width,$height) {
+function execCarousel($module,$carousel,$limit,$width) {
 	
 	$($carousel).carouFredSel({
 		responsive: true,
@@ -55,32 +87,14 @@ function execCarousel($module,$carousel,$limit,$width,$height) {
 }
 
 function initCarousel($use_tab,$module,$use_scrolling_panel,$limit,$width){
-	if(!$use_tab) {
-		
-		//	Only init the carousel for the content in actived tab, because after click the tab, we will init it again
-		var $tabs = $('.head_tabs'+$module);
-		if($use_scrolling_panel) {
-			$tabs.each(function() {
-			
-				//  Here we get the data-crs(carousel) value of the selected tab
-				var $carousel = $(this).attr("data-crs");
+	
+	var $tabs = $("#tabs"+$module+" li.active").first();
 
-				//	Here we call function "execCarousel"
-				execCarousel($module,$carousel,$limit,$width);
-				
-			});
-		}
-	} else { 
-		//	Only init the carousel for the content in actived tab, because after click the tab, we will init it again
-		var $tabs = $("#tabs"+$module+" li.active").first();
-		
-		if ($use_scrolling_panel) {
-		//  Here we get the data-crs(carousel) value of the selected tab
-		var $carousel = $($tabs).find("a").attr("data-crs");
+	var $carousel = $($tabs).find("a").attr("data-crs");
 		//	Here we call function "execCarousel"
-		execCarousel($module,$carousel,$limit,$width);
-		}
-	} 
+	execCarousel($module,$carousel,$limit,$width);
+	
+	
 }
 
 function getMaxHeight($elms) {

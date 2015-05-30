@@ -22,7 +22,8 @@ $(window).load(function(){
 			<?php if ($use_scrolling_panel) { ?>
 				var $selected_carousel = $(this).attr("data-crs");
 				if($selected_carousel != ""){
-					execCarousel($selected_carousel);
+					//execCarousel($selected_carousel);
+					execCarousel(<?php echo $module;?>,$selected_carousel,<?php echo $prod_item; ?>,<?php echo $image_width; ?>);
 				}
 			<?php } ?>
 		}
@@ -36,18 +37,13 @@ $(window).load(function(){
 <div class="boss_homefilter_tabs_inner">
 	<div class="box-heading" id="boss-category-heading-<?php echo $module; ?>">
 		<span class="cate-num"><?php echo $module+1; ?></span> <?php echo $data['heading_title']; ?>
-		<div class="tab-btn">
-			<a id="prev_tab<?php echo $numTab.$module; ?>" class="prev" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>
-			<a id="next_tab<?php echo $numTab.$module; ?>" class="next" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a>
-		</div>
-		<div class="tab-viewall"><a title="Xem tất cả" href="<?php echo $tabs['href']; ?>">Xem tất cả</a></div>
 	</div>
   
 	<div id="tabs_container<?php echo $module; ?>" class="tabs_container col-sm-2">
 		<ul id="tabs<?php echo $module;?>" class="tabs-headings tabs hide-on-mobile">
 			<li class="cate-parent"><?php echo $tabs['name']; ?></li>	
 		<?php foreach ($tabs['categories'] as $numTab => $tab) { ?>
-			 <li <?php if($numTab == 0) echo 'class="active"'; ?>><a class="head_tab<?php echo $numTab.$module; ?> head_tabs<?php echo $module;?>" href="#content_tab<?php echo $numTab.$module; ?>" data-src=".head_tab<?php echo $numTab.$module; ?>" data-crs="#carousel_tab<?php echo $numTab.$module; ?>"><?php echo $tab['name']; ?></a></li>
+			 <li <?php if($numTab == 0) echo 'class="active"'; ?>><a class="head_tab<?php echo $numTab.$module; ?> head_tabs<?php echo $module;?>" href="#content_tab<?php echo $numTab.$module; ?>" data-src=".head_tab<?php echo $numTab.$module; ?>" data-crs="#carousel_tab<?php echo $numTab.$module; ?>"><?php echo $tab['name']; ?><span><i class="fa fa-caret-left"></i></span></a></li>
 		<?php } ?>
 		</ul>
 	</div>
@@ -68,7 +64,7 @@ $(window).load(function(){
 			<ul id="carousel_tab<?php echo $numTab.$module; ?>" data-prev="#prev_tab<?php echo $numTab.$module; ?>" data-next="#next_tab<?php echo $numTab.$module; ?>" class="box-product">
 				<?php $i = 0; ?>
 				<?php foreach ($category['products'] as $key => $product) { ?>			
-				<?php if(($i%3)==0){ ?> <li class="not-animated" data-animate="bounceIn" data-delay="<?php echo $key*200; ?>"> <?php } ?>
+				<?php if(($i%3)==0){ ?> <li> <?php } ?>
 				<?php $i++; ?>
 				<div class="one-product">
 					<?php if ($product['thumb']) { ?>
@@ -95,6 +91,13 @@ $(window).load(function(){
 			</div>	
 			<div class="clearfix"></div>
 			<?php } ?>
+			<div class="btn-quick-link">
+				<div class="tab-btn">
+					<a id="prev_tab<?php echo $numTab.$module; ?>" class="prev" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>
+					<a id="next_tab<?php echo $numTab.$module; ?>" class="next" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a>
+				</div>
+				<div class="tab-viewall"><a title="Xem tất cả" href="<?php echo $tabs['href']; ?>">Xem tất cả</a></div>
+			</div>
 		</div>
 		<?php } ?>
 	  </div>
