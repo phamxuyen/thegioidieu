@@ -38,7 +38,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div class="<?php echo $class; ?> left">
 		  <div class="bt-product-zoom">
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
@@ -65,7 +65,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div class="right <?php echo $class; ?>">
           <div class="qty">			
 			  <h1><?php echo $heading_title; ?></h1>
 			  <?php if ($review_status) { ?>
@@ -184,11 +184,11 @@
             </div>
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
-            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-color">
+              <label class="text-color control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                <div class="radio">
+                <div class="radio select-color">
                   <label>
                     <input type="radio" style="display:none;" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> <?php //echo $option_value['name']; ?>

@@ -1262,6 +1262,8 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
 .banner-column img{max-width:100%; width:100%}
 /*product-info*/
 .product-info{padding:0 0 30px; margin-bottom:20px; overflow:hidden; }
+.product-info .left{padding-right:35px}
+.product-info .right{padding-left:35px}
 .product-info h1 {}
 .product-info h2{
 	color: #0b99cb;
@@ -1291,14 +1293,12 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
 }
 .product-info .input-group{width:100%}
 .product-info .qty{
-	border-bottom: 1px solid #d7d7d6;
     margin-bottom: 17px;
-    padding-bottom: 15px;
 }
 .product-info .qty h1{
 	color: #ed1c24;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 11px;
 }
@@ -1360,6 +1360,13 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
 	vertical-align: -3px;
 }
 .product-info .minimum{margin-top:10px}
+
+.product-info #product .text-color{display:inline-block}
+.product-info #product .text-color + div{display:inline-block}
+.product-info #product .radio .img-thumbnail{border:none; padding:0; border-radius:0; width:16px; height:16px}
+.product-info #product .radio.select-color{display:inline-block;margin-right:2px}
+.product-info #product .form-color{float:left}
+.product-info #product .cart_button{float:right}
 .input-group.date button.btn-default, .input-group.time button.btn-default, .input-group.datetime button.btn-default{
 	background: none repeat scroll 0 0 #ffffff;
     border: medium none;
@@ -1393,6 +1400,7 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
     transition: all 0.3s ease-in-out 0s;
     width: 100%;
 }*/
+.product-info .form-color{float:left}
 .product-info .cart_button {
     display: inline-block;
 	vertical-align:top;
@@ -1416,7 +1424,8 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
 }
 .product-info .btn-group button i{margin-right:5px; font-size:11px}
 .product-info .btn-group button:hover{color:#e92e2e}
-
+.product-info .icon{clear:both}
+.product-info .alert-info{margin-top:10px}
 .cart_button .button_cart{
 	display:block; 
 }
@@ -2307,10 +2316,11 @@ ul.sitemap ul{padding-left:20px}
 
 .modal-header{min-height:30px; padding:10px}
 .modal-header .close{margin-top:4px}
-.bt-product-zoom{margin-top:7px}
+.bt-product-zoom{margin-top:0}
 .bt-product-zoom .boss-additional .list_carousel{position:relative; padding:0 30px}
 .bt-product-zoom .boss-additional .list_carousel li.image-additional{float:left; margin:0 5px}
 .bt-product-zoom .bosszoomtoolbox .image{border:1px solid #e7e7e7; margin-bottom: 20px;}
+.bt-product-zoom .bosszoomtoolbox .image img{width:100%}
 .bt-product-zoom .cloud-zoom-big{left:0!important}
 .bt-product-zoom .cloud-zoom-title{display:none}
 .bt-product-zoom .bosszoomtoolbox > .thumbnails > li{
