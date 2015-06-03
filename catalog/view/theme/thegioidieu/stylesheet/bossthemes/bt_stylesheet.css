@@ -2032,7 +2032,7 @@ form.return_form fieldset{margin-bottom:20px}
   background: none;
 }
 .box-content li.active > a.list-group-item{cursor:default}
-.box-content a.list-group-item:hover{}
+.box-content a.list-group-item:hover{color:#2f3540}
 ul.box-category > li span{display:none; float:right; cursor:pointer; font-size:20px}
 ul.box-category > li span i{font-size:22px}
 ul.box-category > li.child  span.plus, ul.box-category > li.child  span.minus{
@@ -2138,10 +2138,6 @@ ul.box-category > li.child.opencate ul.item_child{display:block}
 .bt-featured .button-group{display:none}
 .bt-featured .price-tax{display:none}
 .bt-featured .box-content{padding:0 25px 20px}
-.boss_filter{padding:0 0 20px 0}
-.boss_filter .list{padding:20px 0 0;}
-.boss_filter .list a.title{color:#505050;}
-.boss_filter .text-left{padding:0}
 
 ul.sitemap ul{padding-left:20px}
 
@@ -2849,3 +2845,20 @@ span.hover4.style2{
 .bt-box.bt-view .box-content .price-tax{display:none;}
 .bt-box.bt-view .box-content .rating{display:none;}
 .bt-box.bt-view .box-content .button-group{display:none;}
+/*boss_filter */
+.boss_filter{background:#e8ebf0}
+.boss_filter .title{
+  color: #fff;
+  font-weight: 400;
+  position: relative;
+  font-family: "Arial",sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #4380ad;
+  padding: 8px 20px;
+  display:block;
+}
+.boss_filter .inner-filter{padding:20px 20px; background:#e8ebf0}
+.boss_filter .inner-filter label{color:#3c4550; margin:0}
+.boss_filter .inner-filter label + label{margin:20px 0 0;}
+.boss_filter .text-left{padding:0 0 20px 20px}

@@ -1,9 +1,9 @@
 <div class="boss_filter bt-box">
-  <div class="box-heading"><span><?php echo $heading_title; ?></span></div>
+  <!--<div class="box-heading"><span><?php echo $heading_title; ?></span></div>-->
   <div class="list">
     <?php foreach ($filter_groups as $filter_group) { ?>
     <a class="title"><?php echo $filter_group['name']; ?></a>
-    <div class="">
+    <div class="inner-filter">
       <div id="filter-group<?php echo $filter_group['filter_group_id']; ?>">
         <?php foreach ($filter_group['filter'] as $filter) { ?>
         <?php if (in_array($filter['filter_id'], $filter_category)) { ?>
