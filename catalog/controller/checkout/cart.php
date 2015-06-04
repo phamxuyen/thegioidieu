@@ -101,7 +101,6 @@ class ControllerCheckoutCart extends Controller {
 						$value = $option['value'];
 					} else {
 						$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
-
 						if ($upload_info) {
 							$value = $upload_info['name'];
 						} else {
@@ -111,6 +110,8 @@ class ControllerCheckoutCart extends Controller {
 
 					$option_data[] = array(
 						'name'  => $option['name'],
+						'type'  => $option['type'],
+						'image' => $this->model_tool_image->resize($option['image'], 20, 20),
 						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
 					);
 				}

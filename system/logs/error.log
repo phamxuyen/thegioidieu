@@ -663,3 +663,9 @@ Fusce consectetur, velit eu pretium euismod, eros urna sollicitudin enim, eu orn
 2015-05-26 5:30:18 - PHP Notice:  Undefined index: sort_order in D:\xampp\htdocs\thegioidieu\admin\view\template\catalog\product_list.tpl on line 146
 2015-05-26 5:30:18 - PHP Notice:  Undefined index: sort_order in D:\xampp\htdocs\thegioidieu\admin\view\template\catalog\product_list.tpl on line 146
 2015-05-26 5:30:18 - PHP Notice:  Undefined index: sort_order in D:\xampp\htdocs\thegioidieu\admin\view\template\catalog\product_list.tpl on line 146
+2015-06-04 4:52:16 - PHP Notice:  Undefined index: image in D:\xampp\htdocs\thegioidieu\system\library\cart.php on line 88
+2015-06-04 4:52:16 - PHP Notice:  Undefined index: image in D:\xampp\htdocs\thegioidieu\system\library\cart.php on line 88
+2015-06-04 4:54:55 - PHP Notice:  Undefined index: image in D:\xampp\htdocs\thegioidieu\system\library\cart.php on line 88
+2015-06-04 4:54:55 - PHP Notice:  Undefined index: image in D:\xampp\htdocs\thegioidieu\system\library\cart.php on line 88
+2015-06-04 5:03:52 - PHP Notice:  Undefined index: type in D:\xampp\htdocs\thegioidieu\catalog\view\theme\thegioidieu\template\checkout\cart.tpl on line 64
+2015-06-04 5:03:52 - PHP Notice:  Undefined index: type in D:\xampp\htdocs\thegioidieu\catalog\view\theme\thegioidieu\template\checkout\cart.tpl on line 64

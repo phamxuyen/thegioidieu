@@ -42,13 +42,13 @@ $_['text_shipping_method']   = 'Xin vui lòng lựa chọn phương thức vận
 $_['text_empty']             = 'Giỏ hàng của bạn đang trống!';
 
 // Column
-$_['column_remove']          = 'Loại bỏ';
+$_['column_remove']          = 'Hủy';
 $_['column_image']           = 'Hình ảnh';
-$_['column_name']            = 'Tên sản phẩm';
+$_['column_name']            = 'Mặt hàng';
 $_['column_model']           = 'Mã hàng';
 $_['column_quantity']        = 'Số lượng';
 $_['column_price']           = 'Đơn Giá';
-$_['column_total']           = 'Tổng cộng';
+$_['column_total']           = 'Thành tiền';
 
 // Entry
 $_['entry_coupon']           = 'Nhập mã giảm giá:';

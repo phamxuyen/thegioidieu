@@ -43,7 +43,6 @@
             <thead>
               <tr>
                 <td class="image" colspan="2"><?php echo $column_name; ?></td>
-                <td class="model"><?php echo $column_model; ?></td>
                 <td class="product_price"><?php echo $column_price; ?></td>
                 <td class="quantity"><?php echo $column_quantity; ?></td>
                 <td class="total"><?php echo $column_total; ?></td>
@@ -62,19 +61,18 @@
                   <?php } ?>
                   <?php if ($product['option']) { ?>
                   <?php foreach ($product['option'] as $option) { ?>
-                  <br />
-                  <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+					<br />
+					<?php if($option['type'] == 'image'){ ?>
+					<small><?php echo $option['name']; ?>: <img src="<?php echo $option['image']; ?>" alt="<?php echo $option['value']; ?>"/></small>
+					<?php }else{ ?>
+					<small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+					<?php } ?>
                   <?php } ?>
                   <?php } ?>
                   <?php if ($product['reward']) { ?>
                   <br />
                   <small><?php echo $product['reward']; ?></small>
-                  <?php } ?>
-                  <?php if ($product['recurring']) { ?>
-                  <br />
-                  <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?></td>
-                <td class="model"><?php echo $product['model']; ?></td>
                 <td class="quantity"><span class="price"><?php echo $product['price']; ?></span></td>
                 <td class="product_price">
                     <input type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />

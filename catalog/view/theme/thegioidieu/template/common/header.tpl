@@ -191,28 +191,24 @@ if($status){
 		} 
 	?>	
 	<div id="top-links">
-	  <ul class="list-inline">			
-		<?php if(isset($header_link['my_account']) && $header_link['my_account']){ ?><li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_account; ?><i class="fa fa-angle-down"></i></a>
-		  <ul class="dropdown-menu dropdown-menu-right">
-			<?php if ($logged) { ?>
+	  <ul class="list-inline">		
+		<?php if ($logged) { ?>
+			<li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
 			<li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
 			<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-			<li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-			<li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-			<li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-			<?php } else { ?>
-			<li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
+		<?php } else { ?>
 			<li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-			<?php } ?>
-		  </ul>
-		</li>
-		<?php } ?> 
+			<li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
+			<li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+			<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+		<?php } ?>
 	  </ul>
 	</div>	
-	<?php if(isset($header_link['cart_mini']) && $header_link['cart_mini']){ echo $cart;} ?>	
+	<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
+	<?php echo $cart; ?>	
 	<div class="language_currency">
-		<?php if(isset($header_link['currency']) && $header_link['currency']){ echo $currency;} ?>	
-		<?php if(isset($header_link['language']) && $header_link['language']){ echo $language;} ?>		
+		<?php echo $currency; ?>	
+		<?php echo $language; ?>		
 	</div>
 </header>
 <div class="boss_menu">
