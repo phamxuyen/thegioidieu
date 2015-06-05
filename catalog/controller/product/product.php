@@ -269,6 +269,10 @@ class ControllerProductProduct extends Controller {
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
+			$data['length'] = number_format($product_info['length'], 1);
+			$data['width'] = number_format($product_info['width'], 1);
+			$data['height'] = number_format($product_info['height'], 1);
+			$data['telephone'] = $this->config->get('config_telephone');
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
@@ -311,9 +315,16 @@ class ControllerProductProduct extends Controller {
 
 			if ((float)$product_info['special']) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				
+				$btdiscount = (($product_info['price']-$product_info['special'])/$product_info['price'])*100;
 			} else {
 				$data['special'] = false;
+				$btdiscount = 0;
 			}
+			
+			$data['btdiscount'] = number_format($btdiscount, 0);
+			
+			
 
 			if ($this->config->get('config_tax')) {
 				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price']);

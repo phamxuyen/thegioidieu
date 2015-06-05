@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default panel-voucher">
   <div class="panel-heading">
     <h4 class="panel-title"><a href="#collapse-voucher" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $heading_title; ?> <i class="fa fa-caret-down"></i></a></h4>
   </div>

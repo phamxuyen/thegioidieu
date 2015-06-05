@@ -92,12 +92,14 @@
 				<?php } ?>
 				<li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
 			  </ul>
+			  
+				<span class="oc-length">Kích thước(Dài x Rộng x Cao): <?php echo $length.' x '.$width.' x '.$height; ?> M</span>
 			  <?php if ($price) { ?>
 			  <div class="price_info">
 				<?php if (!$special) { ?>
 				<span><?php echo $price; ?></span>
 				<?php } else { ?>
-				<span class="price-old"><?php echo $price; ?></span>
+				<div><span class="price-old"><?php echo $price; ?></span><span class="oc-discount"><?php echo $btdiscount; ?>%</span></div>
 				<span class="price-new"><?php echo $special; ?></span>
 				<?php } ?>
 				<?php if ($tax) { ?>
@@ -127,30 +129,13 @@
 		  </div>
 		  
 		  
-		  <div id="product">
+		  <div id="product" <?php if($options){ echo 'class="have_option"'; } ?>>
             <?php if ($options) { ?>
-            <hr>
-            <h3><?php echo $text_option; ?></h3>
             <?php foreach ($options as $option) { ?>
-            <?php if ($option['type'] == 'select') { ?>
-            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-              <select name="option[<?php echo $option['product_option_id']; ?>]" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control">
-                <option value=""><?php echo $text_select; ?></option>
-                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-                <?php if ($option_value['price']) { ?>
-                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-                <?php } ?>
-                </option>
-                <?php } ?>
-              </select>
-            </div>
-            <?php } ?>
             <?php if ($option['type'] == 'radio') { ?>
-            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
-              <div id="input-option<?php echo $option['product_option_id']; ?>">
+            <div class="oc-radio form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-select-option">
+              <label class="oc-bg control-label"><?php echo $option['name']; ?></label>
+              <div class="oc-select-input" id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
                   <label>
@@ -165,26 +150,9 @@
               </div>
             </div>
             <?php } ?>
-            <?php if ($option['type'] == 'checkbox') { ?>
-            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
-              <div id="input-option<?php echo $option['product_option_id']; ?>">
-                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" />
-                    <?php echo $option_value['name']; ?>
-                    <?php if ($option_value['price']) { ?>
-                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-                    <?php } ?>
-                  </label>
-                </div>
-                <?php } ?>
-              </div>
-            </div>
-            <?php } ?>
+			
             <?php if ($option['type'] == 'image') { ?>
-            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-color">
+            <div class="oc-image form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-color">
               <label class="text-color control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
@@ -212,32 +180,92 @@
           </div>
 		  
 		  
-		  <div class="form-group icon"> 				
-				<!-- AddThis Button BEGIN -->
-				<div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script> 
-				<!-- AddThis Button END --> 
-          </div>
+		  <div class="oc-phone-icon">
+			  <div class="form-group icon"> 				
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script> 
+					<!-- AddThis Button END --> 
+			  </div>
+			  <div class="oc-phone">
+				<i class="fa fa-phone"></i>
+				<span>Đặt hàng qua điện thoại</span>
+				<span class="oc-phone"><?php echo $telephone; ?></div>
+			  </div>
+		  </div>
 		  
 		 </div>
 		 
-		
-		<div class="col-sm-12">
-		  <?php if($pro_des=='use_tab'){ ?>
-		  <div class="htabs">
 		  <ul class="nav nav-tabs">
-			<li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+            <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+			<li><a href="#tab-video" data-toggle="tab"><?php echo 'Xem clip sản phẩm'; ?></a></li>
+			<li><a href="#tab-userguide" data-toggle="tab"><?php echo 'Hướng dẫn lắp ráp'; ?></a></li>
+            <?php if ($review_status) { ?>
+            <li><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
+            <?php } ?>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
 			
-		  </ul>
-		  </div>
-		  <?php } ?>
-		  
-		  <div class="tab-content">
-			<?php if($pro_des!='use_tab'){?><h2><?php echo $tab_description; ?></h2><?php } ?>
-			<div class="<?php if($pro_des=='use_tab') echo 'tab-pane active'; ?>" id="tab-description"><?php echo $description; ?></div>
-		  </div>
-		  
-		 </div>
+            <div class="tab-pane" id="tab-video"><?php echo 'Xem clip sản phẩm'; ?></div>
+			
+            <div class="tab-pane" id="tab-userguide"><?php echo 'Hướng dẫn lắp ráp'; ?></div>
+            
+            <?php if ($review_status) { ?>
+            <div class="tab-pane" id="tab-review">
+              <form class="form-horizontal">
+                <div id="review"></div>
+                <h2><?php echo $text_write; ?></h2>
+                <?php if ($review_guest) { ?>
+                <div class="form-group required">
+                  <div class="col-sm-12">
+                    <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
+                    <input type="text" name="name" value="" id="input-name" class="form-control" />
+                  </div>
+                </div>
+                <div class="form-group required">
+                  <div class="col-sm-12">
+                    <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
+                    <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+                    <div class="help-block"><?php echo $text_note; ?></div>
+                  </div>
+                </div>
+                <div class="form-group required">
+                  <div class="col-sm-12">
+                    <label class="control-label"><?php echo $entry_rating; ?></label>
+                    &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
+                    <input type="radio" name="rating" value="1" />
+                    &nbsp;
+                    <input type="radio" name="rating" value="2" />
+                    &nbsp;
+                    <input type="radio" name="rating" value="3" />
+                    &nbsp;
+                    <input type="radio" name="rating" value="4" />
+                    &nbsp;
+                    <input type="radio" name="rating" value="5" />
+                    &nbsp;<?php echo $entry_good; ?></div>
+                </div>
+                <div class="form-group required">
+                  <div class="col-sm-12">
+                    <label class="control-label" for="input-captcha"><?php echo $entry_captcha; ?></label>
+                    <input type="text" name="captcha" value="" id="input-captcha" class="form-control" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12"> <img src="index.php?route=tool/captcha" alt="" id="captcha" /> </div>
+                </div>
+                <div class="buttons">
+                  <div class="pull-right">
+                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
+                  </div>
+                </div>
+                <?php } else { ?>
+                <?php echo $text_login; ?>
+                <?php } ?>
+              </form>
+            </div>
+            <?php } ?>
+          </div>
 		 
       </div>	  
       </div>
@@ -260,7 +288,7 @@
                 <?php if (!$product['special']) { ?>
                 <?php echo $product['price']; ?>
                 <?php } else { ?>
-                <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+                <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
                 <?php } ?>
                 <?php if ($product['tax']) { ?>
                 <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
@@ -286,7 +314,7 @@
       </div>
       <?php } ?>
 	  
-	  <div class="tab-content">
+	  <div class="tab-content" style="display:none">
 	  <h1 class="category_title"><?php echo $tab_review; ?></h1>
 		<?php if($pro_des!='use_tab'){?><h2><?php echo $text_write; ?></h2><?php } ?>
 		<div id="tab-review">

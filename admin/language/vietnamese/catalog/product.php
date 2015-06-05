@@ -54,9 +54,9 @@ $_['entry_tax_class']        = 'Loại Thuế:';
 $_['entry_points']           = 'Điểm';
 $_['entry_option_points']    = 'Điểm:';
 $_['entry_subtract']         = 'Phần Trừ đi:';
-$_['entry_weight_class']     = 'Trọng lượng:';
+$_['entry_weight_class']     = 'Đơn vị trọng lượng:';
 $_['entry_weight']           = 'Nặng:';
-$_['entry_store']            = 'Các gian hàng';
+$_['entry_store']            = 'Các gian hàng';$_['entry_length_class']     = 'Đơn vị kích thước:';
 $_['entry_length']           = 'Chiều dài:';
 $_['entry_width']            = 'Chiều Rộng';
 $_['entry_height']           = 'Chiều Cao';

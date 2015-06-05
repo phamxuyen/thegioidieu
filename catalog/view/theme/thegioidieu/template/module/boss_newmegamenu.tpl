@@ -21,7 +21,7 @@ function showSubmenu($category) {
 	<a class="close-panel"><i class="fa fa-times-circle"></i></a>
 	<ul class="nav nav-pills">
 		<?php foreach($menus as $menu){ if($menu['status']){ ?>
-		<li <?php if ((!empty($menu['menurow']))&&(count($menu['menurow']) > 0)) { echo 'class="parent"'; } ?>>
+		<li class="<?php echo $menu['label_color']; ?> <?php if ((!empty($menu['menurow']))&&(count($menu['menurow']) > 0)) { echo 'parent'; } ?>">
 			<?php if ((!empty($menu['menurow']))&&(count($menu['menurow']) > 0)) { echo '<p class="plus visible-xs">+</p>'; } ?>
 			<a href="<?php echo $menu['url']; ?>"><?php if($menu['icon_class_status']){ echo '<span class="'.$menu['icon_class'].'"></span>'; }else{ if($menu['thumb']){ ?><span><img alt="<?php echo $menu['title']; ?>" src="<?php echo $menu['thumb']; ?>"/></span><?php } }?><span class="menu-title"><?php echo $menu['title']; ?><i class="fa fa-sort-down"></i></span><span class="label label-success"<?php if(!empty($menu['label_color'])){ ?>style="background-color:#<?php echo $menu['label_color']; ?>" <?php } ?> ><?php echo $menu['label']; ?></span></a>
 			<?php if(!empty($menu['menurow'])){ ?>

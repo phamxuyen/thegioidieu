@@ -16,11 +16,15 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
-        <?php } ?>
-      </h1>
+      <div class="title_stay">
+		<ul>
+			<li class="active"><?php echo $heading_title; ?></li>
+			<li>Thông tin đơn hàng</li>
+			<li>Chi tiết đơn hàng</li>
+			<li>Phương thức thanh toán</li>
+			<li class="last">Xác nhận đơn hàng</li>
+		</ul>
+	  </div>
 	  <?php if ($attention) { ?>
 	  <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -110,6 +114,9 @@
       <p style="margin-bottom: 16px;"><?php echo $text_next_choice; ?></p>
       <div class="panel-group cart-module" id="accordion"><?php echo $coupon; ?><?php echo $voucher; ?><?php echo $reward; ?><?php echo $shipping; ?></div>
       <?php } ?>
+      <div class="buttons cart-buttons pull-left">
+        <a href="<?php echo $continue; ?>" class="btn btn-shopping"><i class="fa fa-arrow-circle-left"></i><?php echo $button_shopping; ?></a>
+      </div>
       <div class="cart-total">
           <table>
             <?php foreach ($totals as $total) { ?>
@@ -121,8 +128,7 @@
           </table>
       </div>
       <div class="buttons cart-buttons">
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn"><?php echo $button_checkout; ?></a></div>
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-shopping"><?php echo $button_shopping; ?></a></div>
+        <a href="<?php echo $checkout; ?>" class="btn btn-checkout"><?php echo $button_checkout; ?><i class="fa fa-arrow-circle-right"></i></a>
       </div>
       </div>
       <?php echo $content_bottom; ?></div>

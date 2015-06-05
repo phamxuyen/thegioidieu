@@ -28,9 +28,8 @@
 				<tr><td><?php echo $btform -> textField('menudes['.$language['language_id'].'][label]',isset($menu_description[$language['language_id']]['label'])?$menu_description[$language['language_id']]['label']:'',50); ?></td>
 				<td><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /></td></tr>
 			<?php } ?></table></td></tr>
-		<tr style="display:none;"><td><?php echo $entry_label_color; ?></td>
-			<td><?php echo $btform -> textField('label_color',isset($menus['label_color'])?$menus['label_color']:'',11); ?><br />
-			<span class="help">Get color code at<a target="_blank" href="http://www.colorpicker.com/"> here</a></span></td></tr>
+		<tr><td><?php echo 'Menu Class'; ?></td>
+			<td><?php echo $btform -> textField('label_color',isset($menus['label_color'])?$menus['label_color']:'',11); ?><br /></td></tr>
 		<tr style="display:none;"><td><?php echo $entry_icon; ?></td>
 			<td class="left"><div class="image">			
 			<a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo isset($menus['thumb'])?$menus['thumb']:$no_image; ?>" alt="" title="" data-placeholder="<?php echo $no_image; ?>" /></a>

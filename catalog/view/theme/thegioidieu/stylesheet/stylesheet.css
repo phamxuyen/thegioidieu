@@ -141,7 +141,7 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
     border: 1px solid #b5b6b0;
     border-radius: 2px;
     font-size: 12px;
-    height: 40px;
+    height: 28px;
     line-height: 28px;
     margin: 6px 0 20px;
     padding: 3px 5px;
@@ -183,7 +183,7 @@ div.required .control-label:after {
 }
 #bt_container{position:relative}
 header{
-  padding: 9px 20px 15px;
+  padding: 9px 20px 9px;
   background: #dfe8f1;
   float: left;
   width: 100%;
@@ -282,7 +282,7 @@ footer ul li a{
   text-transform: none;
 }
 .breadcrumb > li:last-child a{cursor:default}
-.breadcrumb > li:hover a{color:#00a7e6}
+.breadcrumb > li:hover a{color:#fff; opacity:0.7}
 .bt_pagination {
 	border-radius: 0;
   display: inline-block;
@@ -338,39 +338,28 @@ footer ul li a{
     overflow: hidden;
 }
 .btn {
-	background: none repeat scroll 0 0 #0ca4da;
-    color: #ffffff;
-    cursor: pointer;
-    filter: none;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: normal;
-    outline: medium none;
-    padding: 8px 15px;
-    text-transform: uppercase;
-    transition: all 0.2s ease-out 0s;
-    white-space: nowrap;
-	display: inline-block;
-	text-align: center;
-	border-radius:30px;
+  background: #7db847;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-family: Arial;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 6px 30px 4px 30px;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  font-weight: 700;
 }
 input.btn{line-height: normal;}
-.btn-shopping{background:#222}
+
 .btn:hover{
-	background-image: url("../image/heading_cover.png");
-    background-repeat: repeat;
-    color: #ffffff;
+	border-color:#7db847;
+	color:#7db847;
+	background:#fff;
 }
 .btn:focus{color:#fff}
 
-.btn-checkout{
-	height: 50px;
-	font-size: 18px;
-	padding: 11px 52px 10px;
-	background-color: #8da662;
-	line-height:25px
-}
 .btn-return{
 	background-color: #00c834;
     padding: 0;
@@ -601,7 +590,7 @@ div.name{margin-bottom: 3px;}
 }
 
 .rating .fa-stack {height: 10px; line-height: 0; width: 10px;}
-.rating .fa-stack i{color: #02a7de; font-size: 13px;}
+.rating .fa-stack i{color: #043f77; font-size: 13px;}
 .rating .fa-stack.fa-hidden i{color:#b0b0b0; font-size:13px}
 
 .product-thumb .price-tax {

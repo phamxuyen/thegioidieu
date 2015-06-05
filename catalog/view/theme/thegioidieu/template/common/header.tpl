@@ -204,7 +204,7 @@ if($status){
 		<?php } ?>
 	  </ul>
 	</div>	
-	<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
+	<div class="top-wishlist"><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></div>
 	<?php echo $cart; ?>	
 	<div class="language_currency">
 		<?php echo $currency; ?>	
@@ -212,6 +212,8 @@ if($status){
 	</div>
 </header>
 <div class="boss_menu">
+<div class="container">
+<div class="row">
 	<?php 
 		if(isset($option['use_menu']) && $option['use_menu'] == 'megamenu'){
 			echo isset($btmainmenu)?$btmainmenu:''; 
@@ -249,6 +251,8 @@ if($status){
 		  </nav>
 	
 	<?php } } ?>
+</div>	
+</div>	
 </div>	
 <div class="boss-new-position">
 	<?php echo isset($btslideshow)?$btslideshow:''; ?>
