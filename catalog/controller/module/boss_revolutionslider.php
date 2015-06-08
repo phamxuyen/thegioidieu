@@ -10,6 +10,8 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 		$this->document->addScript('catalog/view/javascript/bossthemes/jquery.tools.min.js');
 		$this->document->addScript('catalog/view/javascript/bossthemes/jquery.revolution.min.js');
 		
+		//echo '<pre>';print_r($setting);echo '</pre>';
+		
 		$slides = array();
 		
 		$slides = $this->model_bossthemes_boss_revolutionslider->getSlides($setting['slider_id']);
@@ -18,11 +20,9 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 		
 		$slider = $this->model_bossthemes_boss_revolutionslider->getSlider($setting['slider_id']);
 		
-		if(!empty($slider )){
-			$data['slidersetting'] = json_decode($slider['setting'], true);
-		}else{
-			$data['slidersetting'] = array();
-		}
+		//echo '<pre>';print_r($slider);echo '</pre>';
+		
+		$data['slidersetting'] = json_decode($slider['setting'], true);
 		
 		$data['slides'] = array();
 		
@@ -37,16 +37,16 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 					'captions' => json_decode($slide['caption'], true)
 				);
 			}
+		}
 		
+		//$data['slideset'] => json_decode($slide['slideset'], true),
+		//echo '<pre>';print_r($data['slidersetting']);echo '</pre>';
+		$data['module'] = $module++;
 		
-			$data['module'] = $module++;
-			
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/boss_revolutionslider.tpl')) {
-				return $this->load->view($this->config->get('config_template') . '/template/module/boss_revolutionslider.tpl', $data);
-			} else {
-				return $this->load->view('default/template/module/boss_revolutionslider.tpl', $data);
-			}
-		
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/boss_revolutionslider.tpl')) {
+			return $this->load->view($this->config->get('config_template') . '/template/module/boss_revolutionslider.tpl', $data);
+		} else {
+			return $this->load->view('default/template/module/boss_revolutionslider.tpl', $data);
 		}
 	}
 }

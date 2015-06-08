@@ -111,6 +111,7 @@
 			</div>
 			<?php } ?>
 			<p class="description"><?php echo $product['description']; ?></p>
+			<a class="view-detail" title="Xem chi tiết" href="<?php echo $product['href']; ?>">Xem chi tiết >></a>
 			</div>
 			<div class="thumb-right">
 			<?php if ($product['price']) { ?>
@@ -118,7 +119,8 @@
 			  <?php if (!$product['special']) { ?>
 			  <?php echo $product['price']; ?>
 			  <?php } else { ?>
-			  <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
+			  <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><?php echo $product['btdiscount']; ?>%</span></div>
+			  <span class="price-new"><?php echo $product['special']; ?></span> 
 			  <?php } ?>
 			  <?php if ($product['tax']) { ?>
 			  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>

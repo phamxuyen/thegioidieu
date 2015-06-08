@@ -65,7 +65,7 @@ h1 {
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
-	margin-top:0;
+	margin-top:20px;
     text-transform: uppercase;
 }
 h2 {
@@ -137,16 +137,16 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 	display: inline;
 }
 .form-control {
-    background-color: #fff;
-    border: 1px solid #b5b6b0;
-    border-radius: 2px;
-    font-size: 12px;
-    height: 28px;
-    line-height: 28px;
-    margin: 6px 0 20px;
-    padding: 3px 5px;
-	box-shadow:none;
-	width:40%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 35px;
+  line-height: 35px;
+  margin: 6px 0;
+  padding: 3px 5px;
+  box-shadow: none;
+  width: 40%;
 }
 .input-group .form-control{width:40%}
 table {
@@ -200,10 +200,10 @@ header{
 #column-left{padding:0; margin-bottom:30px}
 #column-right{padding:0; float:right; margin-bottom:30px}
 .bt-home-page #column-right{width:33.3333%;}
-#column-left + #content {padding-left: 20px;}
-#column-right + #content{padding-right:25px;}
+#column-left + #content {padding-left: 10px;}
+#column-right + #content{padding-right:10px;}
 #column-left + #column-right + #content{padding-right:10px; padding-left:10px}
-.bt-home-page #column-right + #content{padding-right:25px; padding-left:25px; width:66.6667%;}
+.bt-home-page #column-right + #content{padding-right:10px; padding-left:10px; width:66.6667%;}
 /* footer */
 footer {
 	border-top:2px solid #345e88;

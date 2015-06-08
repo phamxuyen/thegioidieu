@@ -1,25 +1,28 @@
 <div class="header_slider">
-<div class="header_slider_in">
 <?php global $config; ?>
 <article <?php echo ($slidersetting['slider_type']=='custom')?'class="boss_slider"':'';?>>
 	<div class="tp-banner-container">
 		<div class="tp-banner tp-banner<?php echo $module;?>" >
 			<ul>	<!-- SLIDE  -->
 			<?php foreach($slides as $slide){ ?>
+				<?php if($slide['status']){ ?>
 				<?php $slideset = $slide['slideset']?>
-				<li data-transition="<?php echo isset($slideset['transitions']) ? $slideset['transitions'] : 'fade';?>" data-slotamount="<?php echo isset($slideset['slotamount']) ? $slideset['slotamount'] : '7';?>" data-masterspeed="<?php echo isset($slideset['masterspeed']) ? $slideset['masterspeed'] : '500';?>"  data-saveperformance="on">
+				<li <?php if($slideset['enablelink'] == 1){ ?> data-link="<?php echo $slideset['url'];?>" data-target="<?php echo $slideset['target'];?>" <?php } ?> data-transition="<?php echo isset($slideset['transitions']) ? $slideset['transitions'] : 'fade';?>" data-slotamount="<?php echo isset($slideset['slotamount']) ? $slideset['slotamount'] : '7';?>" data-masterspeed="<?php echo isset($slideset['masterspeed']) ? $slideset['masterspeed'] : '500';?>"  data-saveperformance="on">
 					<!-- MAIN IMAGE -->
 					<img src="image/catalog/<?php echo $config->get('config_template'); ?>/dummy.png"  alt="slidebg1" data-lazyload="image/<?php echo $slide['slideset']['background']; ?>" data-bgposition="left center" data-kenburns="<?php echo isset($slideset['kenburns']) ? $slideset['kenburns'] : 'off';?>" data-duration="14000" data-ease="Linear.easeNone" data-bgpositionend="right center" />
 					<?php $i=1; ?>
 					<?php if(isset($slide['captions'])){ foreach($slide['captions'] as $caption){ ?>
 						<!-- LAYER NR. <?php echo $i; ?> -->
-						<div class="tp-caption <?php echo isset($caption['class_css']) ? $caption['class_css'] : '';?> lft customout rs-parallaxlevel-0"
+						<div class="tp-caption <?php echo isset($caption['class_css']) ? $caption['class_css'] : '';?> <?php echo isset($caption['incom_animation'])?$caption['incom_animation']:'';?> <?php echo isset($caption['outgo_animation'])?$caption['outgo_animation']:'';?> rs-parallaxlevel-0"
 							data-x="<?php echo isset($caption['datax']) ? $caption['datax'] : '100';?>"
 							data-y="<?php echo isset($caption['datay']) ? $caption['datay'] : '100';?>" 
 							data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 							data-speed="<?php echo isset($caption['dataspeed']) ? $caption['dataspeed'] : '700';?>"
 							data-start="<?php echo isset($caption['datastart']) ? $caption['datastart'] : '1500';?>"
-							data-easing="Power3.easeInOut"
+							data-end="<?php echo isset($caption['dataend'])?$caption['dataend']:'';?>" 
+							data-endspeed="<?php echo isset($caption['dataafterspeed'])?$caption['dataafterspeed']:''; ?>" 
+							data-easing="<?php echo isset($caption['easing'])?$caption['easing']:'';?>"
+							data-endeasing="<?php echo isset($caption['endeasing'])?$caption['endeasing']:'';?>"
 							data-elementdelay="0.1"
 							data-endelementdelay="0.1"
 							style="z-index: 2;"><?php if(isset($caption['type_caption'])&&($caption['type_caption']=='image')){?><img src="image/catalog/<?php echo $config->get('config_template'); ?>/dummy.png" alt="" data-lazyload="image/<?php echo $caption['image_caption']; ?>" /><?php }elseif(isset($caption['type_caption'])&&($caption['type_caption']=='video')){?>
@@ -37,11 +40,11 @@
 					<?php $i++; } } ?>
 				</li>
 			<?php } ?>
+			<?php } ?>
 			</ul>
 		</div>
 	</div>
 </article>
-</div>
 </div>
 <script type="text/javascript"><!--
 jQuery(document).ready(function() {		
@@ -104,7 +107,7 @@ jQuery(document).ready(function() {
 		shuffle:"off",
 		
 		autoHeight:"off",						
-		forceFullWidth:"off",						
+		forceFullWidth:"<?php echo ($slidersetting['slider_type']=='fullscreen')?'on':'off';?>",						
 								
 								
 								

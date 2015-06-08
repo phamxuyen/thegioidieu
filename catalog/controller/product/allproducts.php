@@ -126,6 +126,17 @@ class ControllerProductAllProducts extends Controller {
 			} else {
 				$special = false;
 			}
+			
+			if ((float)$result['special']) {
+				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+				
+				$btdiscount = (($result['price']-$result['special'])/$result['price'])*100;
+			} else {
+				$special = false;
+				$btdiscount = 0;
+			}
+			
+			$btdiscountend = number_format($btdiscount, 0);
 
 			if ($this->config->get('config_tax')) {
 				$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price']);
@@ -145,6 +156,7 @@ class ControllerProductAllProducts extends Controller {
 				'name'        => $result['name'],
 				'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
 				'price'       => $price,
+				'btdiscount'       => $btdiscountend,
 				'special'     => $special,
 				'tax'         => $tax,
 				'rating'      => $result['rating'],

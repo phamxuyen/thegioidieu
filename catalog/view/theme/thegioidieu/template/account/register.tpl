@@ -8,8 +8,16 @@
 		<?php } ?>
 	  </ul>
 	</div>
-    <div id="content"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
+	<h1><?php echo $heading_title; ?></h1>  
+	<?php echo $column_left; ?><?php echo $column_right; ?>
+    <?php if ($column_left && $column_right) { ?>
+    <?php $class = 'col-sm-6'; ?>
+    <?php } elseif ($column_left || $column_right) { ?>
+    <?php $class = 'col-sm-9'; ?>
+    <?php } else { ?>
+    <?php $class = 'col-sm-12'; ?>
+    <?php } ?>
+    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>    
       <p><?php echo $text_account_already; ?></p>
 		<?php if ($error_warning) { ?>
 		<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
@@ -74,7 +82,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none">
             <label class="control-label" for="input-fax"><?php echo $entry_fax; ?></label>
             <div>
               <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
@@ -235,7 +243,7 @@
           <?php } ?>
         </fieldset><fieldset id="address">
           <h2><?php echo $text_your_address; ?></h2>
-          <div class="form-group">
+          <div class="form-group" style="display:none">
             <label class="control-label" for="input-company"><?php echo $entry_company; ?></label>
             <div>
               <input type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company" class="form-control" />
@@ -250,7 +258,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none">
             <label class="control-label" for="input-address-2"><?php echo $entry_address_2; ?></label>
             <div>
               <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
@@ -265,10 +273,10 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group required">
+          <div class="form-group required" style="display:none">
             <label class="control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
             <div>
-              <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
+              <input type="text" name="postcode" value="7000" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
               <?php if ($error_postcode) { ?>
               <div class="text-danger"><?php echo $error_postcode; ?></div>
               <?php } ?>
@@ -523,7 +531,7 @@
       </form>
 	  </div>
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
 </div> 
 <script type="text/javascript"><!--
 // Sort the custom fields

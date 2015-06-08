@@ -707,17 +707,24 @@ ul.column li{float:left;}
 .bt-pag a{margin: 5px;}
 
 
+.bt-box {margin-bottom:10px;}
 .bt-box .box-heading{
-	color: #fff;
-    font-weight: 400;
-    position: relative;
-	font-family: "Arial",sans-serif;
-    font-size: 12px;
-	text-transform:uppercase;
-	background:#043f77;
-	padding:8px 20px;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  font-family: "Arial",sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #4380ad;
+  padding: 14px 20px 10px 20px;
 }
-.bt-box .box-content{}
+.bt-box.bt-category .box-heading{
+	background:#043f77;
+}
+.bt-box.bt-column-acc .box-content{padding:20px 15px; border:1px solid #ccc; border-radius:0 0 5px 5px;}
+.bt-box.bt-column-acc .box-content h2{color:#5d666b; font-weight:700; text-transform:uppercase; font-size:14px;line-height:30px;  margin-bottom: 12px;}
+.bt-box.bt-column-acc .box-content p{line-height:22px}
+.bt-box.bt-column-acc .box-content .store{margin-top:15px;}
 .bt-box.bt-account .box-content{
 	border: 2px solid #eaeaea;
     border-radius: 10px;
@@ -865,7 +872,6 @@ ul.box-category > li ul li{
 }
 
 .bt-banner{margin-top:20px;}
-.bt-box {margin-bottom:6px;}
 .bt-banner img{width:100%;}
 
 .boss-alphabet{
@@ -1129,12 +1135,12 @@ ul.box-category > li ul li{
 }
 .product-grid .product-thumb  .btn-cart{}
 .product-grid .product-thumb  .rating{display:none}
-.product-grid .price{margin-bottom: 3px;float:left; width:50%; font-size: 18px;}
-.product-grid .price .price-old{display:block}
+.product-grid .price{margin-bottom: 3px;float:left; width:60%; font-size: 18px;}
+.product-grid .price .price-old{display:inline-block}
 .product-grid .price-tax {
     display: none;
 }
-.product-grid .btn-action{float:right; width:50%; text-align:right}
+.product-grid .btn-action{float:right; width:40%; text-align:right}
 .product-grid .btn-cart{margin-top:16px; }
 .product-grid .product-thumb .button-group{}
 .product-thumb .button-group button, .product-thumb .button-group .btn-action{
@@ -1337,6 +1343,7 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
     font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 11px;
+	margin-top:0;
 }
 .product-info .select_number .form-control{
 	height: 32px;
@@ -1454,12 +1461,14 @@ h1.category_title{color:#000; position:relative; font-weight:400; margin: 20px 0
   margin: 13px 0;
 }
 .product-info .price_info .price-tax{color: #999999; font-size:13px; clear:both; display:block; margin:12px 0 0; width:100% }
-.product-info .price_info .oc-discount{
+.oc-discount{
   display: inline-block;
   padding: 3px 15px;
   background-color: #ed1c24;
   color: #fff;
+  font-size:13px;
 }
+.oc-discount i{margin-right:5px;}
 .product-info .price_info p{margin-bottom:0; clear:both;}
 .product-info .rating{margin-bottom:20px}
 .product-info .rating a{
@@ -2101,11 +2110,26 @@ label.control-label{
 .checkout #accordion .form-control{width:80%}
 .checkout #accordion #button-login{float:left; margin-top:4px;}
 a.forgotten {
-	margin-left: 11px;
-	margin-top: 17px;
-	font-size: 11px;
-	float:left;
+  margin-left: 11px;
+  margin-top: 17px;
+  font-size: 14px;
+  float: right;
+  clear: both;
+  color: #003466;
+  font-weight: 700;
+  border-bottom:1px solid #ccc;
+  position:relative;
 }
+a.forgotten:before{
+  content: "\f101";
+  position:absolute;
+  top:0;
+  left:-16px;
+  color:#8bcc54;
+  font-weight:400;
+  font-size: 16px;
+}
+/*a.forgotten i{color:#8bcc54; margin-right:5px}*/
 #collapse-checkout-confirm table{border:1px solid #dfdfdf;}
 #collapse-checkout-confirm thead{
 	background-color: #043f77;
@@ -2135,10 +2159,10 @@ a.forgotten {
     text-transform: capitalize;
 }
 .form-horizontal.register h2, .form-horizontal.register h2{margin-left:-10px; margin-right:-10px}
-.register .form-control{width:40%}
+.register .form-control{width:100%}
 .register .form-group{margin-bottom:0}
-fieldset#account{margin-bottom:20px}
-fieldset.password{margin:32px 0}
+fieldset#account{margin-bottom:10px}
+fieldset.password{margin:10px 0}
 .register .control-label{
 	color: #8c8c8c;
     font-size: 12px;
@@ -2146,39 +2170,40 @@ fieldset.password{margin:32px 0}
     padding: 0;
     text-transform: none;
 }
-form.register h2{font-weight:600}
-h2.title_border, form.register h2{
-	color: #043f77;
-    font-family: "Open Sans",sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 45px;
-    padding-bottom: 25px;
-    position: relative;
-    text-transform: uppercase;
+form.register h2{
+  font-size: 18px;
+  font-weight: 700;
+  color: #5d666b;
+  text-transform: uppercase;
+  background: #f5f5f5;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  border-radius:10px 10px 0 0;
 }
-h2.title_border:before, form.register h2:before{
-	background: none repeat scroll 0 0 #043f77;
-    bottom: 0;
-    content: "";
-    height: 3px;
-    left: 0;
-    position: absolute;
-    width: 73px;
+form.register fieldset{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding-bottom: 20px;
 }
+form.register fieldset .form-group{padding:0 20px}
 .list-unstyled.myaccount{margin-left:0; margin-bottom:22px}
 .list-unstyled.myaccount li{margin-bottom:11px}
 form.account_form.form-horizontal .form-group{margin:0}
 .form-horizontal label.radio-inline{padding-left:0}
+.login-content{border:1px solid #ccc;border-radius:10px;}
 .login-content h2{
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 18px;
+	font-weight: 700;
+	color:#5d666b;
+	text-transform:uppercase;
+	background:#f5f5f5;
+	padding:20px 20px;
+	border-radius:10px 10px 0 0;
+	margin-bottom:0
 }
-.login-content p > span {
-    text-transform: none;
-}
+.login-content .login-detail {padding:14px 20px;   overflow: hidden;}
 .login-content .form-control{width:100%}
-.login-content .button_login{float:left; margin-top:4px}
+.login-content .button_login{float:right; margin-top:4px}
 form.return_form .input-group.date{width:93%}
 form.return_form .input-group.date .input-group-btn{display:inline-block; margin-top: 6px;}
 form.return_form fieldset{margin-bottom:20px}
@@ -3027,3 +3052,20 @@ span.hover4.style2{
 .boss_filter .inner-filter label{color:#3c4550; margin:0}
 .boss_filter .inner-filter label + label{margin:20px 0 0;}
 .boss_filter .text-left{padding:0 0 20px 20px}
+
+.oc-share ul li{float:left; margin:0 6px;}
+.oc-share ul li a{display:block; color:#fff; width:36px; height:36px;line-height:40px; text-align:center;}
+.oc-share ul li a.facebook{background:#547cbd; }
+.oc-share ul li a.twitter{background:#77cdef; }
+.oc-share ul li a.google{background:#4b4b4b; }
+.oc-share ul li a.pinterest{background:#eb5757; }
+.oc-share ul li a.youtube{background:#e9664c; }
+.oc-share ul li a i{font-size:18px}
+.banner-success .oc-buton{clear:both; padding-top:30px}
+.banner-success .oc-buton .btn{position:relative; padding:6px 35px 4px 20px;}
+.banner-success .oc-buton .btn i{
+  position: absolute;
+  right: 2px;
+  font-size: 27px;
+  top: 0;
+}

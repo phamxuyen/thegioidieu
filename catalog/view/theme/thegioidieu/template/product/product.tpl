@@ -99,7 +99,7 @@
 				<?php if (!$special) { ?>
 				<span><?php echo $price; ?></span>
 				<?php } else { ?>
-				<div><span class="price-old"><?php echo $price; ?></span><span class="oc-discount"><?php echo $btdiscount; ?>%</span></div>
+				<div><span class="price-old"><?php echo $price; ?></span><span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $btdiscount; ?>%</span></div>
 				<span class="price-new"><?php echo $special; ?></span>
 				<?php } ?>
 				<?php if ($tax) { ?>
@@ -136,10 +136,10 @@
             <div class="oc-radio form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-select-option">
               <label class="oc-bg control-label"><?php echo $option['name']; ?></label>
               <div class="oc-select-input" id="input-option<?php echo $option['product_option_id']; ?>">
-                <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                <?php foreach ($option['product_option_value'] as $item => $option_value) { ?>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
+                    <input <?php  echo ($item==0)?'checked':''; ?> type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
@@ -155,11 +155,11 @@
             <div class="oc-image form-group<?php echo ($option['required'] ? ' required' : ''); ?> form-color">
               <label class="text-color control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
-                <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                <?php foreach ($option['product_option_value'] as $key => $option_value) { ?>
                 <div class="radio select-color">
                   <label>
-                    <input type="radio" style="display:none;" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> <?php //echo $option_value['name']; ?>
+                    <input <?php  echo ($key==0)?'checked':''; ?> type="radio" style="display:none;" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
+                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail <?php  echo ($key==0)?'active':''; ?>" /> <?php //echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
                     <?php } ?>
@@ -288,7 +288,8 @@
                 <?php if (!$product['special']) { ?>
                 <?php echo $product['price']; ?>
                 <?php } else { ?>
-                <span class="price-old"><?php echo $product['price']; ?></span><span class="price-new"><?php echo $product['special']; ?></span> 
+                <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><?php echo $product['btdiscount']; ?>%</span></div>
+				<span class="price-new"><?php echo $product['special']; ?></span>
                 <?php } ?>
                 <?php if ($product['tax']) { ?>
                 <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>

@@ -23,9 +23,9 @@
           <label class="control-label" for="input-zone"><?php echo $entry_zone; ?></label>
             <select name="zone_id" id="input-zone" class="form-control"></select>
         </div>
-        <div class="required">
+        <div class="required" style="display:none;">
           <label class="control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
-            <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
+            <input type="text" name="postcode" value="7000" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
         </div>
         <input type="button" value="<?php echo $button_quote; ?>" id="button-quote" data-loading-text="<?php echo $text_loading; ?>" class="btn" />
       </form>

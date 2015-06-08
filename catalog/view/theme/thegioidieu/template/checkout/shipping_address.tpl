@@ -36,7 +36,7 @@
         <input type="text" name="lastname" value="" placeholder="<?php echo $entry_lastname; ?>" id="input-shipping-lastname" class="form-control" />
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display:none;">
       <label class="control-label" for="input-shipping-company"><?php echo $entry_company; ?></label>
       <div>
         <input type="text" name="company" value="" placeholder="<?php echo $entry_company; ?>" id="input-shipping-company" class="form-control" />
@@ -48,16 +48,16 @@
         <input type="text" name="address_1" value="" placeholder="<?php echo $entry_address_1; ?>" id="input-shipping-address-1" class="form-control" />
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display:none;">
       <label class="control-label" for="input-shipping-address-2"><?php echo $entry_address_2; ?></label>
       <div>
         <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
       </div>
     </div>
-    <div class="form-group required">
+    <div class="form-group required" style="display:none;">
       <label class="control-label" for="input-shipping-city"><?php echo $entry_city; ?></label>
       <div>
-        <input type="text" name="city" value="" placeholder="<?php echo $entry_city; ?>" id="input-shipping-city" class="form-control" />
+        <input type="text" name="city" value="7000" placeholder="<?php echo $entry_city; ?>" id="input-shipping-city" class="form-control" />
       </div>
     </div>
     <div class="form-group required">

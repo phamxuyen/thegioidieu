@@ -85,11 +85,6 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
-                  <td class="text-left"><?php if ($sort == 'p.model') { ?>
-                    <a href="<?php echo $sort_model; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_model; ?></a>
-                    <?php } else { ?>
-                    <a href="<?php echo $sort_model; ?>"><?php echo $column_model; ?></a>
-                    <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'p.price') { ?>
                     <a href="<?php echo $sort_price; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_price; ?></a>
                     <?php } else { ?>
@@ -128,7 +123,6 @@
                     <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
                     <?php } ?></td>
                   <td class="text-left"><?php echo $product['name']; ?></td>
-                  <td class="text-left"><?php echo $product['model']; ?></td>
                   <td class="text-left"><?php if ($product['special']) { ?>
                     <span style="text-decoration: line-through;"><?php echo $product['price']; ?></span><br/>
                     <div class="text-danger"><?php echo $product['special']; ?></div>
@@ -143,13 +137,15 @@
                     <span class="label label-success"><?php echo $product['quantity']; ?></span>
                     <?php } ?></td>
                   <td class="text-left"><?php echo $product['status']; ?></td>
-				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="submit" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
+				  
+				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order_<?php echo $product['product_id']; ?>" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="button" onclick="updateStt(<?php echo $product['product_id']; ?>,'edit_sort_order_<?php echo $product['product_id']; ?>')" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
+				  
                   <td class="text-right"><a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
                 <tr>
-                  <td class="text-center" colspan="8"><?php echo $text_no_results; ?></td>
+                  <td class="text-center" colspan="7"><?php echo $text_no_results; ?></td>
                 </tr>
                 <?php } ?>
               </tbody>
@@ -240,5 +236,24 @@ $('input[name=\'filter_model\']').autocomplete({
 		$('input[name=\'filter_model\']').val(item['label']);
 	}
 });
+
+function updateStt($product_id) {
+	'source': function($product_id, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/product/updateStt&token=<?php echo $token; ?>&product_id=' +  encodeURIComponent($product_id),
+			dataType: 'json',			
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						category: item.attribute_group,
+						label: item.name,
+						value: item.attribute_id
+					}
+				}));
+			}
+		});
+	},
+}
+
 //--></script></div>
 <?php echo $footer; ?>

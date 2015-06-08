@@ -7,7 +7,9 @@
 		<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
 		<?php } ?>
 	  </ul>
-	</div><?php echo $column_left; ?>
+	</div>
+      <h1><?php echo $heading_title; ?></h1>
+	<?php echo $column_left; ?><?php echo $column_right; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -16,7 +18,6 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
 	  <?php if ($error_warning) { ?>
 	  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -88,7 +89,7 @@
       </div>
       </div>
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
 </div>
 <script type="text/javascript"><!--
 $(document).on('change', 'input[name=\'account\']', function() {

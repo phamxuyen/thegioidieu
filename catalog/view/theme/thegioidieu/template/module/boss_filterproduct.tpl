@@ -77,7 +77,8 @@ $(window).load(function(){
 						<?php if (!$product['special']) { ?>
 						<?php echo $product['price']; ?>
 						<?php } else { ?>
-						<span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
+						<div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><?php echo $product['btdiscount']; ?>%</span></div>
+						<span class="price-new"><?php echo $product['special']; ?></span>
 						<?php } ?>
 					</div>
 					<?php } ?>

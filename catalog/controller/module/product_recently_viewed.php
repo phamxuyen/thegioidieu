@@ -53,9 +53,14 @@ class ControllerModuleProductRecentlyViewed extends Controller {
 					
 			if ((float)$result['special']) {
 				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+				
+				$btdiscount = (($result['price']-$result['special'])/$result['price'])*100;
 			} else {
 				$special = false;
-			}	
+				$btdiscount = 0;
+			}
+			
+			$btdiscountend = number_format($btdiscount, 0);
 			
 
 			if ($this->config->get('config_tax')) {
@@ -74,6 +79,7 @@ class ControllerModuleProductRecentlyViewed extends Controller {
 				'thumb'   	 => $image,	
 				'name'    	 => $result['name'],
 				'price'   	 => $price,
+				'btdiscount'       => $btdiscountend,
 				'special' 	 => $special,
 				'tax'         => $tax,
 				'rating'     => $rating,

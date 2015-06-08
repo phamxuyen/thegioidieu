@@ -7,7 +7,9 @@
 		<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
 		<?php } ?>
 	  </ul>
-	</div><?php echo $column_left; ?>
+	</div>
+	<h1><?php echo $heading_title; ?></h1>
+	<?php echo $column_left; ?><?php echo $column_right; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -27,13 +29,16 @@
         <div class="col-sm-6">
           <div class="login-content">
             <h2><?php echo $text_new_customer; ?></h2>
+			<div class="login-detail">
             <p><span><?php echo $text_register; ?></span></p>
             <p><?php echo $text_register_account; ?></p>
             <a href="<?php echo $register; ?>" class="btn btn-shopping"><?php echo $button_continue; ?></a></div>
+			</div>
         </div>
         <div class="col-sm-6">
           <div class="login-content">
             <h2><?php echo $text_returning_customer; ?></h2>
+			<div class="login-detail">
             <p><span><?php echo $text_i_am_returning_customer; ?></span></p>
             <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
               <div class="form-group">
@@ -48,13 +53,14 @@
               <?php if ($redirect) { ?>
               <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
               <?php } ?>
-			  <a class="forgotten" href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
+			  <a class="fa forgotten" href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
             </form>
+          </div>
           </div>
         </div>
       </div>
       </div>
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
 </div>
 <?php echo $footer; ?>

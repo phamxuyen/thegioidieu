@@ -1446,4 +1446,19 @@ class ControllerCatalogProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+	
+	public function autocomplete() {
+		$json = array();
+
+		if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])) {
+			$this->load->model('catalog/product');
+			
+
+			$json[] = array(
+			);
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }

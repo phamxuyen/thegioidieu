@@ -1,6 +1,7 @@
 <?php
 // Text
-$_['text_home']     = 'Trang chủ';$_['text_blogs']           = 'Blogs';
+$_['text_home']     = 'Trang chủ';
+$_['text_blogs']           = 'Blogs';
 $_['text_wishlist'] = '%s';
 $_['text_cart']     = 'Giỏ hàng';
 $_['text_shopping_cart']  = 'Giỏ hàng';$_['text_blog']           = 'Blogs tin tức';
