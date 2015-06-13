@@ -8,6 +8,7 @@
 		<?php } ?>
 	  </ul>
 	</div><?php echo $column_left; ?>
+    <?php echo $column_right; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -91,7 +92,6 @@
 	  </div>
       <?php echo $content_bottom; ?>
     </div>
-    <?php echo $column_right; ?>
   </div>
 </div>
 <?php echo $footer; ?>

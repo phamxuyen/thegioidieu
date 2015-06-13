@@ -43,54 +43,54 @@
 <div class="container"><div class="row">
 	<footer id="bt_footer">
 		<div class="footer-column"><div class="row">
-			<div class="column col-sm-9 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-			<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-				<h3><?php echo $text_information; ?></h3>
-				<ul>
-				  <?php if ($informations) { ?>
-				  <?php foreach ($informations as $information) { ?>
-				  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-				  <?php } ?>
-				  <?php } ?>
-				  
-				</ul>
-			</div>
+			<div class="col-sm-9 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+					<h3><?php echo $text_information; ?></h3>
+					<ul>
+					  <?php if ($informations) { ?>
+					  <?php foreach ($informations as $information) { ?>
+					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+					  <?php } ?>
+					  <?php } ?>
+					  
+					</ul>
+				</div>
 			
-			<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-				<h3><?php echo $text_information; ?></h3>
-				<ul>
-				  <?php if ($informations) { ?>
-				  <?php foreach ($informations as $information) { ?>
-				  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-				  <?php } ?>
-				  <?php } ?>
-				  
-				</ul>
-			</div>
+				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+					<h3><?php echo $text_information; ?></h3>
+					<ul>
+					  <?php if ($informations) { ?>
+					  <?php foreach ($informations as $information) { ?>
+					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+					  <?php } ?>
+					  <?php } ?>
+					  
+					</ul>
+				</div>
 			
-			<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-				<h3><?php echo $text_information; ?></h3>
-				<ul>
-				  <?php if ($informations) { ?>
-				  <?php foreach ($informations as $information) { ?>
-				  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-				  <?php } ?>
-				  <?php } ?>
-				  
-				</ul>
-			</div>
+				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+					<h3><?php echo $text_information; ?></h3>
+					<ul>
+					  <?php if ($informations) { ?>
+					  <?php foreach ($informations as $information) { ?>
+					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+					  <?php } ?>
+					  <?php } ?>
+					  
+					</ul>
+				</div>
 			
-			<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-				<h3><?php echo $text_information; ?></h3>
-				<ul>
-				  <?php if ($informations) { ?>
-				  <?php foreach ($informations as $information) { ?>
-				  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-				  <?php } ?>
-				  <?php } ?>
-				  
-				</ul>
-			</div>
+				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+					<h3><?php echo $text_information; ?></h3>
+					<ul>
+					  <?php if ($informations) { ?>
+					  <?php foreach ($informations as $information) { ?>
+					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+					  <?php } ?>
+					  <?php } ?>
+					  
+					</ul>
+				</div>
 			</div>
 		  
 			<div class="col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="200">

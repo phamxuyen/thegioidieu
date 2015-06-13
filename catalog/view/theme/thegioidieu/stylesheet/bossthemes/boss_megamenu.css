@@ -201,13 +201,16 @@
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-	.mega-menu > ul.nav > li > a{padding-left:20px; padding-right:20px;}
+	.mega-menu > ul.nav > li > a{padding-left:15px; padding-right:15px;}
 	.mega-menu > ul.nav > li + li > a{border:none}
+	.mega-menu > ul.nav > li{display:inline-block}
+	.mega-menu > ul.nav > li.oc-allproducts{width:auto}
+	.mega-menu > ul.nav > li > a{border-left:none;}
 }
 @media only screen and (max-width: 767px) {
 	#bt_mainmenu .open-panel {
 		clear: both;
-		color: #00a7e6;
+		color: #003466;
 		height: 30px;
 		overflow: hidden;
 		width: 30px;

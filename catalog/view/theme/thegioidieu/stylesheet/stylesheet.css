@@ -34,7 +34,7 @@ body {
     font-weight: 400;
 }
 a {
-    color: #8c8c8c;
+    color: #5d666b;
     cursor: pointer;
     font-weight: 400;
     text-decoration: none;
@@ -48,7 +48,7 @@ a b {
 a:hover b{text-decoration:underline}
 a:hover {
 	text-decoration: none;
-	color:#fd4f4e
+	color:#003466
 }
 a:hover, a:focus{text-decoration:none; outline:none}
 h1, h2, h3, h4, h5, h6 {
@@ -251,6 +251,7 @@ footer ul li a{
   margin-top: 0;
   background: #7ca0c5;
   padding: 8px 20px;
+  clear:both;
 }
 .breadcrumb{
 	background:none;
@@ -358,7 +359,10 @@ input.btn{line-height: normal;}
 	color:#7db847;
 	background:#fff;
 }
-.btn:focus{color:#fff}
+.btn:focus{
+	border-color:#7db847;
+	color:#7db847;
+	background:#fff;}
 
 .btn-return{
 	background-color: #00c834;

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 left">
     <h3><?php echo $text_new_customer; ?></h3>
     <p><b><?php echo $text_checkout; ?></b></p>
     <div class="radio">
@@ -25,7 +25,7 @@
     <p><?php echo $text_register_account; ?></p><br/>
     <input type="button" value="<?php echo $button_continue; ?>" id="button-account" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-shopping" />
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-6 right">
     <h3><?php echo $text_returning_customer; ?></h3>
     <p><b><?php echo $text_i_am_returning_customer; ?></b></p>
     <div class="form-group">

@@ -725,28 +725,24 @@ ul.column li{float:left;}
 .bt-box.bt-column-acc .box-content h2{color:#5d666b; font-weight:700; text-transform:uppercase; font-size:14px;line-height:30px;  margin-bottom: 12px;}
 .bt-box.bt-column-acc .box-content p{line-height:22px}
 .bt-box.bt-column-acc .box-content .store{margin-top:15px;}
-.bt-box.bt-account .box-content{
-	border: 2px solid #eaeaea;
-    border-radius: 10px;
-    padding: 20px;
-}
-.bt-box.bt-account .box-content li{
-	border-top: 1px solid #eeeeee;
-    margin-bottom: 9px;
-    padding-top: 9px;
-}
-.bt-box.bt-account .box-content li:first-child{border:none}
+.bt-box.bt-account .box-heading{border-top:1px solid #003466; padding:9px 20px 8px 20px;}
+.bt-box.bt-account .box-content li{}
 .bt-box.bt-account .box-content li a{
-	border: medium none;
-    color: #525252;
-    display: inline-block;
-    font-family: "Open Sans",sans-serif;
-    font-size: 15px;
-    font-weight: 600;
+    color: #5d666b;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
     margin: 0;
-    padding: 0;
-	text-transform:uppercase;
+    padding: 10px 20px;
+	border-radius:0;
 }
+.bt-box.bt-account .box-content li:hover a{color:#fff;  background:#4380ad}
+.content_account{border-left:1px solid #e7e7e7; border-right:1px solid #e7e7e7}
+.content_account h1{font-size:13px; color:#8a8a8a; font-weight:400; padding:10px 20px 9px 20px; background:#f0f6fd; border-bottom:1px solid #e7e7e7; border-top:1px solid #003466; margin:0; }
+.content_account .myaccount{border-bottom: 1px solid #e7e7e7;  padding: 20px;}
+.content_account .myaccount h2{color:#5d666b; font-size:13px; font-weight:700; text-transform:capitalize}
+.content_account .myaccount ul{padding-left:20px}
+.content_account .myaccount li{margin-bottom:10px}
 .box-content > .box-category{
 	border: none;
     border-radius: 0;
@@ -1814,10 +1810,10 @@ table.table thead td,
 	color: #5d666b;
 	font-size: 13px;
 	font-weight: 400;
-	padding:9px 12px 12px 0;
+	padding:9px 12px 12px 12px;
 	border-bottom: 1px solid #e7e7e7;
 }
-
+.checkout-product thead td{padding-left:8px}
 .wishlist-info table > tbody > tr > td,
 .cart-info table > tbody > tr > td,
 .checkout-product table > tbody > tr > td{	
@@ -2067,6 +2063,7 @@ h2.text_next_cart{
 }
 
 .checkout{overflow:hidden;}
+.checkout .panel > .panel-collapse{padding:0 20px}
 .checkout .panel-default{border:none; border-radius:0; box-shadow:none;}
 .checkout .panel-default > .panel-heading{
 	background:#fff;
@@ -2484,7 +2481,8 @@ ul.sitemap ul{padding-left:20px}
 	overflow:hidden;
 }
 .footer-newletter h3{  font-size: 12px;}
-.footer-newletter .newletter-content{ padding-top:12px}
+.footer-newletter p{margin:0}
+.footer-newletter .newletter-content{ padding-top:0}
 .footer-newletter .newletter-content .btn{height:46px; line-height:44px;}
 .newletter-content .boss-newletter{
 	width:86%;
