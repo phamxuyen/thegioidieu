@@ -1533,7 +1533,7 @@ border-style:none;
 /*.tp-leftarrow.default:hover{background-image: url("../assets/arrow-L-hv.png");}
 .tp-rightarrow.default:hover{background-image: url("../assets/arrow-R-hv.png");}*/
 #bt_slideshow:hover .tp-leftarrow.default,#bt_slideshow:hover .tp-rightarrow.default{
-	opacity:1
+	opacity:0.7; transform: scale(1,1); -webkit-transform: scale(1,1);
 }
 
 .boss-new-position{clear:both}
@@ -1651,7 +1651,7 @@ border-style:none;
 	-	NAVIGATION FANCY EXAMPLES	-
 *****************************************/
 
-.tparrows .tp-arr-imgholder								{ display: none}
+.tparrows .tp-arr-imgholder								{ display: none!important}
 .tparrows .tp-arr-titleholder							{ display: none}																			
 
 
@@ -1661,12 +1661,29 @@ border-style:none;
 *****************************************/
 
 /* NAVIGATION PREVIEW 1 */
-.tparrows.preview1 							{	width:100px;height:100px;-webkit-transform-style: preserve-3d; -webkit-perspective: 1000; -moz-perspective: 1000; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden;background: transparent;}
-.tparrows.preview1:after					{	position:absolute; left:0px;top:0px; font-family: "revicons"; color:#fff; font-size:30px; width:100px;height:100px;text-align: center; background:#fff;background:rgba(0,0,0,0.15);z-index:2;line-height:100px; -webkit-transition: background 0.3s, color 0.3s; -moz-transition: background 0.3s, color 0.3s; transition: background 0.3s, color 0.3s;}
+.tparrows.preview1 							{	
+  width: 60px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  margin-top: -40px;
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  transform: scale(0,1);
+  -webkit-transform: scale(0,1);
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  
+}
+.tparrows.preview1.tp-leftarrow{left:-60px; transform-origin: left; -webkit-transform-origin: left;}
+.tparrows.preview1.tp-rightarrow{right:-60px; transform-origin: right; -webkit-transform-origin: right;}
+.tparrows.preview1:after					{	position:absolute; left:0px;top:0px; font-family: "revicons"; color:#fff; font-size:30px; width:60px;height:80px;text-align: center; background:#fff;background:rgba(0,0,0,0.15);z-index:2;line-height:82px; -webkit-transition: background 0.3s, color 0.3s; -moz-transition: background 0.3s, color 0.3s; transition: background 0.3s, color 0.3s;}
 .tp-rightarrow.preview1:after				{	content: '\e825';  }
 .tp-leftarrow.preview1:after				{	content: '\e824';  }
 
-.tparrows.preview1:hover:after 				{	background:rgba(255,255,255,1); color:#aaa; }	
+.tparrows.preview1:hover:after 				{	background:rgba(0,0,0,0.4); }	
 
 .tparrows.preview1 .tp-arr-imgholder 		{	background-size:cover; background-position:center center; display:block;width:100%;height:100%;position:absolute;top:0px; 
 												-webkit-transition: -webkit-transform 0.3s;
@@ -1692,7 +1709,7 @@ border-style:none;
 												transform: rotateY(-90deg);
 												-webkit-transform-origin: 0% 50%;
 												transform-origin: 0% 50%;
-												
+												display:none!important
 												
 											}
 

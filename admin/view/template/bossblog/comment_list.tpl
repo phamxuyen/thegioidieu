@@ -30,6 +30,10 @@
 			</div>
 			<div class="panel-body">
 				<ul class="nav nav-tabs" id="module">
+					<li><a href="<?php echo $boss_category; ?>"> <?php echo $text_boss_category; ?></a></li>
+					<li><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>							
+					<li><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+				</ul>
 				<form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-blog-comment" class="form-horizontal">
 				<table class="table table-bordered table-hover">
 					  <thead>

@@ -24,7 +24,7 @@ $_['entry_meta_description'] = 'Mô tả Meta Tag';
 $_['entry_keyword']     = 'Từ khóa SEO:';
 $_['entry_bottom']           = 'Xuống đáy';
 $_['entry_status']      = 'Tình trạng:';
-$_['entry_sort_order']  = 'Thứ tự:<br/><span class="help">Đặt thành -1 khi không muốn hiển thị</span>';
+$_['entry_sort_order']  = 'Thứ tự:';
 
 $_['entry_layout']      = 'Bố cục:';
 

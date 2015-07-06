@@ -19,6 +19,11 @@
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
     <?php } ?>								
+	<ul class="nav nav-tabs" id="module">
+		<li class="active"><a href="<?php echo $boss_category; ?>"> <?php echo $text_boss_category; ?></a></li>
+		<li><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>						
+		<li><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+	</ul>	
 	<div class="panel panel-default">
 	<div class="panel-body">					
 		<div class="panel-heading">
@@ -164,7 +169,7 @@
                     </tr>
                   </thead>
                   <tbody>
-					<tr>
+                    <tr>
                       <td class="text-left"><?php echo $text_default; ?></td>
                       <td class="text-left"><select name="blog_category_layout[0]" class="form-control">
                           <option value=""></option>

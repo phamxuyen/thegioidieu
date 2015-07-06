@@ -118,7 +118,7 @@
 			  <?php if (!$product['special']) { ?>
 			  <?php echo $product['price']; ?>
 			  <?php } else { ?>
-			  <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><?php echo $product['btdiscount']; ?>%</span></div>
+			  <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $product['btdiscount']; ?>%</span></div>
 			  <span class="price-new"><?php echo $product['special']; ?></span> 
 			  <?php } ?>
 			  <?php if ($product['tax']) { ?>
@@ -147,4 +147,33 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>	
 </div>
+<script type="text/javascript"><!--
+// Product List
+	$('#list-view').click(function() {
+		$('#content .product-layout > .clearfix').remove();
+
+		$('#content .product-layout').attr('class', 'product-layout product-list col-xs-12');
+
+		localStorage.setItem('display', 'list');
+	});
+
+	// Product Grid
+	$('#grid-view').click(function() {
+		$('#content .product-layout').attr('class', 'product-layout product-grid <?php echo $boss_class; ?>');	
+		 localStorage.setItem('display', 'grid');
+	});
+	
+	if (localStorage.getItem('display') == 'list') {
+		$('#list-view').trigger('click');
+	} else if (localStorage.getItem('display') == 'grid'){
+		$('#grid-view').trigger('click');
+	}else {
+		<?php if($view == 'grid' || $view == 'both_grid') { ?>
+			$('#grid-view').trigger('click');
+		<?php } ?>
+		<?php if($view == 'list' || $view == 'both_list') { ?>
+			$('#list-view').trigger('click');
+		<?php } ?>
+	}
+//--></script>
 <?php echo $footer; ?>

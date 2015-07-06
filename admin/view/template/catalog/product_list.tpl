@@ -138,7 +138,7 @@
                     <?php } ?></td>
                   <td class="text-left"><?php echo $product['status']; ?></td>
 				  
-				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order_<?php echo $product['product_id']; ?>" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="button" onclick="updateStt(<?php echo $product['product_id']; ?>,'edit_sort_order_<?php echo $product['product_id']; ?>')" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
+				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order_<?php echo $product['product_id']; ?>" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="button" onclick="updateStt(<?php echo $product['product_id']; ?>)" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
 				  
                   <td class="text-right"><a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>
@@ -238,21 +238,17 @@ $('input[name=\'filter_model\']').autocomplete({
 });
 
 function updateStt($product_id) {
-	'source': function($product_id, response) {
-		$.ajax({
-			url: 'index.php?route=catalog/product/updateStt&token=<?php echo $token; ?>&product_id=' +  encodeURIComponent($product_id),
-			dataType: 'json',			
-			success: function(json) {
-				response($.map(json, function(item) {
-					return {
-						category: item.attribute_group,
-						label: item.name,
-						value: item.attribute_id
-					}
-				}));
-			}
-		});
-	},
+	$.ajax({
+		url: 'index.php?route=catalog/product/updateStt&token=<?php echo $token; ?>&product_id=' +  encodeURIComponent($product_id),
+		dataType: 'json',	
+		data: 'sort_order=' + encodeURIComponent($('input[name=\'edit_sort_order_'+ $product_id +'\']').val()),
+		beforeSend: function() {
+			$('#button-review').button('loading');
+		},
+		success: function(json) {
+			location.reload();
+		}
+	});
 }
 
 //--></script></div>

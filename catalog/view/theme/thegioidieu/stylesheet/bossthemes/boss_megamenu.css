@@ -195,7 +195,11 @@
 .open-panel, .close-panel {display:none}
 /*responsive*/
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
-	.mega-menu > ul.nav > li > a{padding-left:25px; padding-right:25px;}
+	.mega-menu > ul.nav > li > a{padding-left:15px; padding-right:15px;}
+	.mega-menu > ul.nav > li + li > a{border:none}
+	.mega-menu > ul.nav > li{display:inline-block}
+	.mega-menu > ul.nav > li.oc-allproducts{width:auto}
+	.mega-menu > ul.nav > li > a{border-left:none;}
 }
 @media only screen and (max-width: 1024px) {
 

@@ -24,6 +24,12 @@
 				<h3 class="panel-title"><i class="fa fa-pencil"></i> <?php echo $text_add_blog_comment; ?></h3>
 			</div>
 			<div class="panel-body">
+				
+				<ul class="nav nav-tabs" id="module">
+					<li><a href="<?php echo $boss_category; ?>" data-toggle="tab"> <?php echo $text_boss_category; ?></a></li>
+					<li><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>							
+					<li><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+				</ul>
 				<div class="tab-content"><div class="tab-pane active">	
 					<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-blog-comment-add" class="form-horizontal">
 					<div class="form-group required">

@@ -2,27 +2,7 @@
 class ControllerBossblogBlogrss extends Controller {
 	public function index() {
 		$this->load->language('bossblog/blogrss');
-		$this->load->model('bossblog/article');
-		if(!$this->model_bossblog_article->checkModule('bossblog')){
-			$this->response->redirect($this->url->link('error/not_found'));
-		}
-		$data['breadcrumbs'] = array();
-
-   		$data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),
-       		'separator' => false
-   		);
-        $data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('text_bossblog'),
-			'href'      => $this->url->link('bossblog/bossblog'),
-       		'separator' => $this->language->get('text_separator')
-   		);
-        $data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('text_rss'),
-			'href'      => $this->url->link('bossblog/blogrss'),
-       		'separator' => $this->language->get('text_separator')
-   		);
+		
     	$data['heading_title'] = $this->language->get('heading_title');    	
     	$data['text_rss_blog_categories'] = $this->language->get('text_rss_blog_categories');
         

@@ -51,7 +51,7 @@ class ControllerProductAllProducts extends Controller {
 			'href' => $this->url->link('product/allproducts')
 		);
 
-		$data['heading_title'] = 'Sản phẩm nổi bật';
+$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_refine'] = $this->language->get('text_refine');
 		$data['text_empty'] = $this->language->get('text_empty');

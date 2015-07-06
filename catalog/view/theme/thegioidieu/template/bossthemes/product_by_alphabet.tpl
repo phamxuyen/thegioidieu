@@ -27,6 +27,7 @@
 ?>
 <div class="container">
   <div class="row">
+  <div class="frame-container">
 	<div class="bt-breadcrumb">
 	  <ul class="breadcrumb">
 		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -109,7 +110,9 @@
 			  <?php } ?>
 			</div>
 			<?php } ?>
+			<div class="button-group">
             <button type="button" class="btn-cart" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i><?php echo $button_cart; ?></button>
+			</div>
           </div>
         </div>
         <?php } ?>
@@ -121,6 +124,7 @@
       <?php } ?>     
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>	
+</div>
 </div>
 <script type="text/javascript"><!--
 // Product List

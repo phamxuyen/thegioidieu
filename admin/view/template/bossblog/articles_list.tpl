@@ -29,6 +29,11 @@
 			<h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $heading_title; ?></h3>
 		  </div>
 		  <div class="panel-body">							
+			<ul class="nav nav-tabs" id="module">
+				<li><a href="<?php echo $boss_category; ?>"> <?php echo $text_boss_category; ?></a></li>
+				<li class="active"><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>							
+				<li><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+			</ul>
 			<div class="well">
 				<div class="row">				
 				<div class="col-sm-6">

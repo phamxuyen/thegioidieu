@@ -60,7 +60,7 @@
 		#top-links ul li{margin:0}
 		#top-links ul li + li{margin:0 0 0 10px}
 		#cart.dropdown_cart{position:static}
-		#cart .dropdown-menu{left:0; right:auto}
+		#cart .dropdown-menu{left:0; right:auto;  width: 290px;}
 		#container.boxed{ margin:10px}
 		.row{margin:0}
 		#bt_footer  .column{padding:0; margin:0 0 10px}

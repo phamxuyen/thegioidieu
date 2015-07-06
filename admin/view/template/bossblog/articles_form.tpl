@@ -18,7 +18,12 @@
     <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
-    <?php } ?>									
+    <?php } ?>								
+	<ul class="nav nav-tabs">
+		<li><a href="<?php echo $boss_category; ?>"> <?php echo $text_boss_category; ?></a></li>
+		<li class="active"><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>							
+		<li><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+	</ul>	
 	<div class="panel panel-default">
 	<div class="panel-body">					
 		<div class="panel-heading">
@@ -300,14 +305,13 @@
                       <td class="text-left"><?php echo $text_default; ?></td>
                       <td class="text-left"><select name="article_layout[0]" class="form-control">
                           <option value=""></option>
-						  <?php $layout_blog = array("10002","10003","10006");?>
-                          <?php foreach ($layouts as $layout) { if(in_array($layout['layout_id'],$layout_blog)){ ?>
+                          <?php foreach ($layouts as $layout) { ?>
                           <?php if (isset($article_layout[0]) && $article_layout[0] == $layout['layout_id']) { ?>
                           <option value="<?php echo $layout['layout_id']; ?>" selected="selected"><?php echo $layout['name']; ?></option>
                           <?php } else { ?>
                           <option value="<?php echo $layout['layout_id']; ?>"><?php echo $layout['name']; ?></option>
                           <?php } ?>
-                          <?php } } ?>
+                          <?php } ?>
                         </select></td>
                     </tr>					
                     <?php foreach ($stores as $store) { ?>

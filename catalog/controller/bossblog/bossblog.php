@@ -5,13 +5,9 @@ class ControllerBossblogBossblog extends Controller {
 	public function index() { 
 	   
        $this->load->language('bossblog/bossblog');
-	   
-	   $data['text_read_more'] = $this->language->get('text_read_more');
        
        $this->load->model('bossblog/article');
-	   if(!$this->model_bossblog_article->checkModule('bossblog')){
-			$this->response->redirect($this->url->link('error/not_found'));
-		}
+		
 	   $this->load->model('tool/image');
 	   
 	   //$this->document->addScript('catalog/view/javascript/jquery/jquery.total-storage.min.js');

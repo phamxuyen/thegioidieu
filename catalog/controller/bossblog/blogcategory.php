@@ -5,12 +5,8 @@ class ControllerBossblogBlogcategory extends Controller {
 		
 		$this->load->model('bossblog/blogcategory');
 		
-		$data['text_read_more'] = $this->language->get('text_read_more');
-		
 		$this->load->model('bossblog/article');
-		if(!$this->model_bossblog_article->checkModule('bossblog')){
-			$this->response->redirect($this->url->link('error/not_found'));
-		}
+		
 		$this->load->model('tool/image'); 
 		
 		$data['button_continue'] = $this->language->get('button_continue');
@@ -85,17 +81,6 @@ class ControllerBossblogBlogcategory extends Controller {
             
 		} else {
 			$blog_category_id = 0;
-		}
-		
-		if($blog_category_id==5){
-			$data['class_css'] = "oc-recruitment";
-			$image_width = 96;
-			$image_height = 96;
-			
-		}else{
-			$data['class_css'] = "";
-			$image_width = $this->config->get('config_bossblog_image_article_width');
-			$image_height = $this->config->get('config_bossblog_image_article_height');
 		}
                 
 		$blogcategory_info = $this->model_bossblog_blogcategory->getBlogCategory($blog_category_id);
@@ -175,7 +160,7 @@ class ControllerBossblogBlogcategory extends Controller {
 			
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], $image_width, $image_height);
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_bossblog_image_article_width'), $this->config->get('config_bossblog_image_article_height'));
 				} else {
 					$image = false;
 				}

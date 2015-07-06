@@ -1,11 +1,11 @@
 <?php
 // Heading
-$_['heading_title']        = '<span style="color:#003A88; font-weight:bold;">Blog - Category</span>';
-$_['heading_module']       = 'Category - Blog Module';
+$_['heading_title']        = 'Danh mục tin tức';
+$_['heading_module']       = 'Danh mục tin tức';
 
 // Text
 $_['text_module']          = 'Modules';
-$_['text_success']         = 'Success: You have modified Blog Category Module!';
+$_['text_success']         = 'Success: You have modified Danh mục tin tức Module!';
 $_['text_content_top']     = 'Content Top';
 $_['text_content_bottom']  = 'Content Bottom';
 $_['text_column_left']     = 'Column Left';
@@ -24,5 +24,5 @@ $_['entry_status']         = 'Status:';
 $_['entry_sort_order']     = 'Sort Order:';
 
 // Error
-$_['error_permission']     = 'Warning: You do not have permission to modify Blog Category Module!';
+$_['error_permission']     = 'Warning: You do not have permission to modify Danh mục tin tức Module!';
 ?>

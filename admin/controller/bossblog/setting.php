@@ -138,6 +138,12 @@ class ControllerBossblogSetting extends Controller {
 			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
       		'separator' => false
    		);
+
+   		$data['breadcrumbs'][] = array(
+			'href'      => $this->url->link('module/bossblog', 'token=' . $this->session->data['token'], 'SSL'),
+			'text'      => $this->language->get('heading_bossblog'),
+			'separator' => ' :: '
+		);
         
         $data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('heading_title'),

@@ -5,12 +5,8 @@ class ControllerBossblogBlogSearch extends Controller {
 		
 		$this->load->model('bossblog/blogcategory');
 		
-		$data['text_read_more'] = $this->language->get('text_read_more');
-		
 		$this->load->model('bossblog/article');
-		if(!$this->model_bossblog_article->checkModule('bossblog')){
-			$this->response->redirect($this->url->link('error/not_found'));
-		}
+		
 		$this->load->model('tool/image'); 
 		
 			

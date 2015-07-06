@@ -22,9 +22,9 @@
         <div class="panel-body">
           <div class="row">
             <?php if ($image) { ?>
-            <div class="col-sm-3"><img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" class="img-thumbnail" /></div>
+            <div class="col-sm-12"><img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" class="img-thumbnail" /></div>
             <?php } ?>
-            <div class="col-sm-3"><strong><?php echo $store; ?></strong><br />
+            <div class="col-sm-12"><strong><?php echo $store; ?></strong><br />
               <address>
               <?php echo $address; ?>
               </address>
@@ -32,7 +32,7 @@
               <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=en&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
               <?php } ?>
             </div>
-            <div class="col-sm-3"><strong><?php echo $text_telephone; ?></strong><br>
+            <div class="col-sm-12"><strong><?php echo $text_telephone; ?></strong><br>
               <?php echo $telephone; ?><br />
               <br />
               <?php if ($fax) { ?>
@@ -40,7 +40,7 @@
               <?php echo $fax; ?>
               <?php } ?>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
               <?php if ($open) { ?>
               <strong><?php echo $text_open; ?></strong><br />
               <?php echo $open; ?><br />

@@ -10,12 +10,10 @@ class ControllerModuleBossManager extends Controller {
 		$this->load->model('setting/setting');
 		$this->load->model('tool/image');
 		
-		$this->document->addStyle('view/stylesheet/bossthemes/boss_manager.css');
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			
 			$this->model_setting_setting->editSetting('boss_manager', $this->request->post);		
-			$this->saveXML($this->request->post['xml'],isset($this->request->post['custom_color'])?$this->request->post['custom_color']:'');
-			$this->saveXMLFont($this->request->post['xml_font'],isset($this->request->post['custom_font'])?$this->request->post['custom_font']:'');
+			
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$this->response->redirect($this->url->link('module/boss_manager', 'token=' . $this->session->data['token'], 'SSL'));
@@ -184,7 +182,6 @@ class ControllerModuleBossManager extends Controller {
 			$data['status'] = $boss_manager['status'];
 			$data['layout'] = $boss_manager['layout'];
 			$data['other'] = $boss_manager['other'];
-			$data['color'] = $boss_manager['color'];
 		}
 		
 		$this->load->model('localisation/language');

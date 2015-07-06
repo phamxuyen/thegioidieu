@@ -1447,15 +1447,22 @@ class ControllerCatalogProduct extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 	
-	public function autocomplete() {
+	public function updateStt() {
 		$json = array();
+		
+		if (empty($this->request->get['sort_order']) || (int)$this->request->get['sort_order'] < 0) {
+			$json['error'] = $this->language->get('error_sort_order');
+		}
 
-		if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])) {
-			$this->load->model('catalog/product');
-			
+		if (isset($this->request->get['product_id']) && isset($this->request->get['sort_order'])) {
+		
+			if (!isset($json['error'])) {
+				$this->load->model('catalog/product');
 
-			$json[] = array(
-			);
+				$this->model_catalog_product->updateStt($this->request->get['product_id'], $this->request->get['sort_order']);
+
+				$json['success'] = $this->language->get('text_success');
+			}
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

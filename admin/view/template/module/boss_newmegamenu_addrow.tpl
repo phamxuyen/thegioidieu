@@ -16,7 +16,7 @@
 				<br />				
 			<span class="help">Get color code at<a target="_blank" href="http://www.colorpicker.com/"> here</a></span>
 			</td>
-		<tr style="display:none;"><td><?php echo $entry_bg_image; ?></td>
+		<tr><td><?php echo $entry_bg_image; ?></td>
 			<td class="left"><div class="image">			
 			<a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo isset($rows['thumb'])?$rows['thumb']:$no_image; ?>" alt="" title="" data-placeholder="<?php echo $no_image; ?>" /></a>
 			<input type="hidden" name="bg_image" value="<?php echo isset($rows['bg_image'])?$rows['bg_image']:''; ?>" id="input-image" />

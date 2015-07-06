@@ -3,10 +3,7 @@ class ControllerBossblogArticle extends Controller {
 	private $error = array(); 
 	
 	public function index() { 
-		$this->load->model('bossblog/article');
-		if(!$this->model_bossblog_article->checkModule('bossblog')){
-			$this->response->redirect($this->url->link('error/not_found'));
-		}
+	   
        	if (!$this->customer->isLogged()) {
 	  		$data['login'] = 0;
     	} else{
@@ -37,12 +34,10 @@ class ControllerBossblogArticle extends Controller {
 			'separator' => $this->language->get('text_separator')
 		);
         
-        $data['class_css'] = "";
-					
-		$this->load->model('bossblog/blogcategory');
+        
+       $this->load->model('bossblog/blogcategory');
        
-		if (isset($this->request->get['path'])) {
-			
+       if (isset($this->request->get['path'])) {
 			$path = '';
 				
 			foreach (explode('_', $this->request->get['path']) as $path_id) {
@@ -51,13 +46,7 @@ class ControllerBossblogArticle extends Controller {
 				} else {
 					$path .= '_' . $path_id;
 				}
-				
-				if($path_id==5){
-					$data['class_css'] = "oc-recruitment";
-				}
-				
 				$category_info = $this->model_bossblog_blogcategory->getBlogCategory($path_id);
-				
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text'      => $category_info['name'],
@@ -107,33 +96,11 @@ class ControllerBossblogArticle extends Controller {
 		
         $data['capcha']=1;
         
-		$article_info = $this->model_bossblog_article->getArticle($blog_article_id);
-		$article_info = $this->model_bossblog_article->getArticle($blog_article_id);
-		$max_article = $this->model_bossblog_article->getMaxArticles();
-		$min_article = $this->model_bossblog_article->getMinArticles();
-		//echo "<pre>";print_r($min_article['min(blog_article_id)']);echo "</pre>"; die();
-		//echo ($max_article['max(blog_article_id)']); die();
-		//get next article id
-		$next_article_id = $blog_article_id +1;
-		$next_article_info = $this->model_bossblog_article->getArticle($next_article_id);
-		while(!$next_article_info && $next_article_id<$max_article['max(blog_article_id)']){
-			$next_article_id++;
-			$next_article_info = $this->model_bossblog_article->getArticle($next_article_id);
-		}
-		if($next_article_id > $max_article['max(blog_article_id)']){
-			$next_article_id = $max_article['max(blog_article_id)'];
-		}
+        
+		$this->load->model('bossblog/article');
 		
-		//get pre article id
-		$pre_article_id = $blog_article_id -1;
-		$pre_article_info = $this->model_bossblog_article->getArticle($pre_article_id);
-		while(!$pre_article_info && $pre_article_id > $min_article['min(blog_article_id)']){
-			$pre_article_id--;
-			$pre_article_info = $this->model_bossblog_article->getArticle($pre_article_id);
-		}
-		if($pre_article_id < $min_article['min(blog_article_id)']){
-			$pre_article_id = $min_article['min(blog_article_id)'];
-		}
+		$article_info = $this->model_bossblog_article->getArticle($blog_article_id);
+		
 		if ($article_info) {
 			$url = '';
 			
@@ -202,7 +169,6 @@ class ControllerBossblogArticle extends Controller {
 			
 			$data['blog_article_id'] = $this->request->get['blog_article_id'];
 			$data['date_modified'] = $article_info['date_modified'];
-			$data['image'] = $this->model_tool_image->resize($article_info['image'], 865, 541);
             $data['comment_status'] = $comment_status;
             $data['approval_status'] = $approval_status;
 			$data['comments'] = (int)$article_info['comments'];
@@ -214,8 +180,7 @@ class ControllerBossblogArticle extends Controller {
             $data['name'] = html_entity_decode($article_info['name'], ENT_QUOTES, 'UTF-8');
             $data['author'] = html_entity_decode($article_info['author'], ENT_QUOTES, 'UTF-8');
             $data['href']  = $this->url->link('bossblog/article', 'blog_article_id=' . $article_info['blog_article_id']);
-			$data['pre_href']  = $this->url->link('bossblog/article', 'blog_article_id=' . $pre_article_id);
-            $data['next_href']  = $this->url->link('bossblog/article', 'blog_article_id=' . $next_article_id);
+			
 			$data['articles'] = array();
 			
 			$results = $this->model_bossblog_article->getArticleRelated($this->request->get['blog_article_id']);

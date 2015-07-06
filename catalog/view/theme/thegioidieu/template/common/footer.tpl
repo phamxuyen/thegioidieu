@@ -39,12 +39,12 @@
 	}
 ?>
 <div id="bt_footer_container" class="<?php echo $f_mode_css;?>" <?php echo $f_style;?>>
-
+<script type="text/javascript" src="catalog/view/javascript/bossthemes/weather.js"></script>
 <div class="container"><div class="row">
 	<footer id="bt_footer">
 		<div class="footer-column"><div class="row">
 			<div class="col-sm-9 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
+				<div class="column col-sm-4 col-xs-12">
 					<h3><?php echo $text_information; ?></h3>
 					<ul>
 					  <?php if ($informations) { ?>
@@ -56,54 +56,16 @@
 					</ul>
 				</div>
 			
-				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-					<h3><?php echo $text_information; ?></h3>
-					<ul>
-					  <?php if ($informations) { ?>
-					  <?php foreach ($informations as $information) { ?>
-					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-					  <?php } ?>
-					  <?php } ?>
-					  
-					</ul>
-				</div>
-			
-				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-					<h3><?php echo $text_information; ?></h3>
-					<ul>
-					  <?php if ($informations) { ?>
-					  <?php foreach ($informations as $information) { ?>
-					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-					  <?php } ?>
-					  <?php } ?>
-					  
-					</ul>
-				</div>
-			
-				<div class="column col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="300">
-					<h3><?php echo $text_information; ?></h3>
-					<ul>
-					  <?php if ($informations) { ?>
-					  <?php foreach ($informations as $information) { ?>
-					  <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-					  <?php } ?>
-					  <?php } ?>
-					  
-					</ul>
-				</div>
+				<?php echo html_entity_decode(isset($footer_powered[$config->get('config_language_id')])?$footer_powered[$config->get('config_language_id')]:'',ENT_QUOTES, 'UTF-8'); ?>
 			</div>
 		  
 			<div class="col-sm-3 col-xs-12 not-animated" data-animate="fadeInUp" data-delay="200">
-			<?php if(isset($footer_about['status']) && $footer_about['status']){ ?> 
 			<div class="footer-about">
-				<?php if($footer_about['about_title'][$config->get('config_language_id')]){ ?>
-				<h3><?php echo html_entity_decode($footer_about['about_title'][$config->get('config_language_id')],ENT_QUOTES, 'UTF-8'); ?></h3>
-				<?php } ?>
+				<h3>Thời tiết hôm nay</h3>
 				
-				<script type="text/javascript"> //showWeather('hochiminh,vietnam');</script>
-				<?php echo html_entity_decode($footer_about['about_content'][$config->get('config_language_id')],ENT_QUOTES, 'UTF-8'); ?>
+				<script type="text/javascript"> showWeather('hochiminh,vietnam');</script>
+				
 			</div>
-			<?php } ?>
 			
 			</div>	
 			
@@ -163,7 +125,7 @@
 					<?php if($footer_about['image_status']){ ?><a href="#" title="logo"><img alt="logo" src="image/<?php echo $footer_about['image_link']; ?>"></a> <?php } ?>
 				</div>
 				<div class="footer-powered">
-				<?php echo html_entity_decode(isset($footer_powered[$config->get('config_language_id')])?$footer_powered[$config->get('config_language_id')]:'',ENT_QUOTES, 'UTF-8'); ?>
+				<?php echo html_entity_decode($footer_about['about_content'][$config->get('config_language_id')],ENT_QUOTES, 'UTF-8'); ?>
 				</div>
 			</div>
 			
@@ -208,7 +170,6 @@
 				$('body,html').animate({scrollTop:0},800,'swing');
 			});
         });
-		//showWeather('{_$city|tokyo}, {_$country|jappan}'); 
 </script> 
 <?php } ?>
 <!--

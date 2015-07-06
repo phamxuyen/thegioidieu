@@ -256,7 +256,7 @@ CREATE TABLE `oc_blog_article` (
   `date_added` datetime DEFAULT NULL,
   `date_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`blog_article_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_blog_article_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -287,8 +287,7 @@ CREATE TABLE `oc_blog_article_description` (
   FULLTEXT KEY `content` (`content`),
   FULLTEXT KEY `content_2` (`content`),
   FULLTEXT KEY `tag_5` (`tag`),
-  FULLTEXT KEY `tag_6` (`tag`,`content`),
-  FULLTEXT KEY `tag_7` (`tag`,`content`)
+  FULLTEXT KEY `tag_6` (`tag`,`content`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_blog_article_layout`;
@@ -331,7 +330,7 @@ CREATE TABLE `oc_blog_category` (
   `date_added` datetime DEFAULT NULL,
   `date_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`blog_category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_blog_category_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -379,7 +378,7 @@ CREATE TABLE `oc_blog_comment` (
   `date_added` datetime DEFAULT NULL,
   `date_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`blog_comment_id`,`blog_article_id`,`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_blog_product_related`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -563,7 +562,7 @@ CREATE TABLE `oc_currency` (
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_custom_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -658,7 +657,7 @@ CREATE TABLE `oc_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_customer_ban_ip`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -846,7 +845,7 @@ CREATE TABLE `oc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=491 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=494 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_filter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -980,7 +979,7 @@ CREATE TABLE `oc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1307 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1327 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_layout_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -991,7 +990,7 @@ CREATE TABLE `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=269 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_length_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1092,7 +1091,7 @@ CREATE TABLE `oc_megamenu_column` (
   `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `params` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`column_id`,`row_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_megamenu_description`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1117,7 +1116,7 @@ CREATE TABLE `oc_megamenu_row` (
   `bg_color` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `bg_image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`row_id`,`menu_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_modification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1144,7 +1143,7 @@ CREATE TABLE `oc_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1840,7 +1839,7 @@ CREATE TABLE `oc_setting` (
   `serialized` tinyint(1) NOT NULL,
   `group` varchar(32) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8226 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8605 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_stock_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1949,7 +1948,7 @@ CREATE TABLE `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=1179 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1220 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

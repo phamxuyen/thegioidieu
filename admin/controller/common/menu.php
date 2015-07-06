@@ -29,6 +29,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_error_log'] = $this->language->get('text_error_log');
 		$data['text_extension'] = $this->language->get('text_extension');
 		$data['text_feed'] = $this->language->get('text_feed');
+		$data['text_fraud'] = $this->language->get('text_fraud');
 		$data['text_filter'] = $this->language->get('text_filter');
 		$data['text_geo_zone'] = $this->language->get('text_geo_zone');
 		$data['text_dashboard'] = $this->language->get('text_dashboard');
@@ -114,13 +115,6 @@ class ControllerCommonMenu extends Controller {
 		$data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');
 		$data['category'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
 		$data['country'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'], 'SSL');
-		
-		$data['new_blog'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'].'&path=1', 'SSL');
-		$data['promotion_blog'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'].'&path=6', 'SSL');
-		$data['recruitment_blog'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'].'&path=5', 'SSL');
-		$data['setting_blog'] = $this->url->link('bossblog/setting', 'token=' . $this->session->data['token'], 'SSL');
-		$data['ace_community_poll'] = $this->url->link('ace/poll', 'token=' . $this->session->data['token'], 'SSL');
-		
 		$data['contact'] = $this->url->link('marketing/contact', 'token=' . $this->session->data['token'], 'SSL');
 		$data['coupon'] = $this->url->link('marketing/coupon', 'token=' . $this->session->data['token'], 'SSL');
 		$data['currency'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'], 'SSL');
@@ -133,6 +127,7 @@ class ControllerCommonMenu extends Controller {
 		$data['error_log'] = $this->url->link('tool/error_log', 'token=' . $this->session->data['token'], 'SSL');
 		$data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
 		$data['filter'] = $this->url->link('catalog/filter', 'token=' . $this->session->data['token'], 'SSL');
+		$data['fraud'] = $this->url->link('extension/fraud', 'token=' . $this->session->data['token'], 'SSL');
 		$data['geo_zone'] = $this->url->link('localisation/geo_zone', 'token=' . $this->session->data['token'], 'SSL');
 		$data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');
 		$data['installer'] = $this->url->link('extension/installer', 'token=' . $this->session->data['token'], 'SSL');
@@ -203,6 +198,11 @@ class ControllerCommonMenu extends Controller {
 		$data['openbay_link_amazonus'] = $this->url->link('openbay/amazonus', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_amazonus_settings'] = $this->url->link('openbay/amazonus/settings', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_amazonus_links'] = $this->url->link('openbay/amazonus/itemlinks', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['new_cate'] = $this->url->link('bossblog/category', 'token=' . $this->session->data['token'], 'SSL');
+		$data['new_article'] = $this->url->link('bossblog/articles', 'token=' . $this->session->data['token'], 'SSL');
+		$data['setting_blog'] = $this->url->link('bossblog/setting', 'token=' . $this->session->data['token'], 'SSL');
+		
 		$data['openbay_markets'] = array(
 			'ebay' => $this->config->get('ebay_status'),
 			'amazon' => $this->config->get('openbay_amazon_status'),

@@ -25,6 +25,11 @@
 		<div class="panel-heading">
 			<h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $heading_title; ?></h3>
 		</div>
+		<ul class="nav nav-tabs">
+			<li><a href="<?php echo $boss_category; ?>"> <?php echo $text_boss_category; ?></a></li>
+			<li><a href="<?php echo $boss_articles; ?>"> <?php echo $text_boss_articles; ?></a></li>							
+			<li class="active"><a href="<?php echo $boss_settings; ?>"> <?php echo $text_boss_settings; ?></a></li>							
+		</ul>
 		<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-blog-setting" class="form-horizontal">		
 		<ul class="nav nav-tabs" id="module">
 			<li><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
@@ -71,7 +76,7 @@
                   </div>
                 </div>                
               </fieldset>
-			   <fieldset style="display:none;">
+			   <fieldset>
                 <legend><?php echo $text_article; ?></legend>
                 <div class="form-group">
                   <label class="col-sm-3 control-label"><span data-toggle="tooltip" title="<?php echo $help_comment; ?>"><?php echo $entry_comment; ?></span></label>

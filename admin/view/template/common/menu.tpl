@@ -18,12 +18,10 @@
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
   </li>
-  <li id="new_blog"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span><?php echo 'Tin tức'; ?></span></a>
+  <li id="new_blog"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span><?php echo 'Quản lý Tin tức'; ?></span></a>
 	<ul>
-	  <li><a href="<?php echo $new_blog; ?>"><?php echo 'Tin tức sức khỏe'; ?></a></li>
-	  <li><a href="<?php echo $promotion_blog; ?>"><?php echo 'Khuyến mãi'; ?></a></li>
-	  <li><a href="<?php echo $recruitment_blog; ?>"><?php echo 'Tuyển dụng'; ?></a></li>
-	  <li><a href="<?php echo $ace_community_poll; ?>"><?php echo 'Trắc nghiệm sức khỏe'; ?></a></li>
+	  <li><a href="<?php echo $new_cate; ?>"><?php echo 'Danh mục tin tức'; ?></a></li>
+	  <li><a href="<?php echo $new_article; ?>"><?php echo 'Quản lý các bài viết'; ?></a></li>
 	  <li><a href="<?php echo $setting_blog; ?>"><?php echo 'Cài đặt'; ?></a></li>
 	</ul>
   </li>

@@ -124,6 +124,10 @@ class ModelCatalogProduct extends Model {
 
 		return $product_id;
 	}
+	
+	public function updateStt($product_id, $sort_order) {
+		$this->db->query("UPDATE " . DB_PREFIX . "product SET sort_order = '" . (int)$sort_order. "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'");
+	}
 
 	public function editProduct($product_id, $data) {
 		$this->event->trigger('pre.admin.product.edit', $data);

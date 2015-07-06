@@ -73,7 +73,6 @@
 <?php } ?>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/jquery.appear.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/bossthemes/getwidthbrowser.js"></script>
-<!--<script type="text/javascript" src="catalog/view/javascript/bossthemes/weather.js"></script>-->
 <?php // echo $google_analytics; ?>
 <?php if(isset($this->request->get['route'])){$route1 = $this->request->get['route'];}else{$route1 ="";}
 	if(isset($route1) && ($route1== "common/home" || $route1=="")){ ?>
@@ -110,12 +109,12 @@
 	
 	<script type="text/javascript"><!--
 	$(window).scroll(function() {
-			var height_header = $('#bt_header').height();  			
+			var height_header = $('header').height();  			
 			if($(window).scrollTop() > height_header) {
 				
-				$('.boss_menu').addClass('boss_scroll');
+				$('.boss_menu').addClass('menu-fixed');
 			} else {
-				$('.boss_menu').removeClass('boss_scroll');
+				$('.boss_menu').removeClass('menu-fixed');
 			}
 		});
 	//--></script>

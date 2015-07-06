@@ -502,6 +502,9 @@ div.name{margin-bottom: 3px;}
 }
 .price-new{
 	color: #da3536;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
 }
 .price-old{
 	color: #898989;

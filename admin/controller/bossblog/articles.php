@@ -155,12 +155,6 @@ class ControllerBossblogArticles extends Controller {
 		} else {
 			$filter_name = null;
 		}
-		
-		if (isset($this->request->get['path'])) {
-			$filter_category = $this->request->get['path'];
-		} else {
-			$filter_category = null;
-		}
 
 		if (isset($this->request->get['filter_status'])) {
 			$filter_status = $this->request->get['filter_status'];
@@ -230,6 +224,12 @@ class ControllerBossblogArticles extends Controller {
 			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
       		'separator' => false
    		);
+        
+        $data['breadcrumbs'][] = array(
+			'href'      => $this->url->link('module/bossblog', 'token=' . $this->session->data['token'], 'SSL'),
+			'text'      => $this->language->get('heading_bossblog'),
+			'separator' => ' :: '
+		);
 
    		$data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('heading_title'),
@@ -243,8 +243,7 @@ class ControllerBossblogArticles extends Controller {
 		$data['articles'] = array();
 
 		$data_sort = array(
-			'filter_name'	  => $filter_name,
-			'filter_blog_category_id'	  => $filter_category,
+			'filter_name'	  => $filter_name, 
 			'filter_status'   => $filter_status,
 			'sort'            => $sort,
 			'order'           => $order,
@@ -537,6 +536,11 @@ class ControllerBossblogArticles extends Controller {
 			'separator' => false
    		);
         
+        $data['breadcrumbs'][] = array(
+			'href'      => $this->url->link('module/bossblog', 'token=' . $this->session->data['token'], 'SSL'),
+			'text'      => $this->language->get('heading_bossblog'),
+			'separator' => ' :: '
+		);
 
    		$data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('heading_title'),
