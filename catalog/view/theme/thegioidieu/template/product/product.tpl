@@ -36,7 +36,7 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-6'; ?>
+        <?php $class = 'col-sm-5'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?> left">
 		  <div class="bt-product-zoom">
@@ -63,7 +63,7 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-6'; ?>
+        <?php $class = 'col-sm-7'; ?>
         <?php } ?>
         <div class="right <?php echo $class; ?>">
           <div class="qty">			
@@ -83,9 +83,6 @@
 				</div>
 				<?php } ?>
 			  <ul class="list-unstyled description">
-				<?php if ($manufacturer) { ?>
-				<li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
-				<?php } ?>
 				<li><?php echo $text_model; ?> <?php echo $model; ?></li>
 				<?php if ($reward) { ?>
 				<li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
@@ -97,13 +94,13 @@
 			  <?php if ($price) { ?>
 			  <div class="price_info">
 				<?php if (!$special) { ?>
-				<span><?php echo $price; ?></span>
+				<span class="default"><?php echo $price; ?></span>
 				<?php } else { ?>
 				<div><span class="price-old"><?php echo $price; ?></span><span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $btdiscount; ?>%</span></div>
 				<span class="price-new"><?php echo $special; ?></span>
 				<?php } ?>
 				<?php if ($tax) { ?>
-				<span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span>
+				<span class="price-tax"><?php echo $text_tax; ?></span>
 				<?php } ?>
 				<?php if ($points) { ?>
 				<p><?php echo $text_points; ?> <?php echo $points; ?></p>
@@ -156,7 +153,7 @@
               <label class="text-color control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $key => $option_value) { ?>
-                <div class="radio select-color">
+                <div class="radio select-color bt-image-option">
                   <label>
                     <input <?php  echo ($key==0)?'checked':''; ?> type="radio" style="display:none;" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail <?php  echo ($key==0)?'active':''; ?>" /> <?php //echo $option_value['name']; ?>
@@ -280,15 +277,19 @@
 			<ul id="product_related" class="content-products"><?php foreach ($products as $product) { ?><li>				
 			<div class="product-thumb transition">
             <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>	
+			 <?php if ($product['special']) { ?>
+			 <span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $product['btdiscount']; ?>%</span>
+			  <?php } ?>
 			</div>
 			<div class="caption">
             <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+			<div class="price-all">
               <?php if ($product['price']) { ?>
             <p class="price">
                 <?php if (!$product['special']) { ?>
                 <?php echo $product['price']; ?>
                 <?php } else { ?>
-                <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $product['btdiscount']; ?>%</span></div>
+                <div><span class="price-old"><?php echo $product['price']; ?></span></div>
 				<span class="price-new"><?php echo $product['special']; ?></span>
                 <?php } ?>
                 <?php if ($product['tax']) { ?>
@@ -296,6 +297,7 @@
                 <?php } ?>
             </p>
               <?php } ?>
+			</div>  
               <?php if ($product['rating']) { ?>
             <div class="rating">
                 <?php for ($i = 1; $i <= 5; $i++) { ?>
@@ -308,7 +310,7 @@
             </div>
               <?php } ?>
 			  </div>
-            <button type="button" class="btn-cart" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i><?php echo $button_cart; ?></button>
+            <button type="button" class="btn-cart-1" onclick="btadd.cart('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i><?php echo $button_cart; ?></button>
           </div>
         </li><?php } ?></ul>    
       </div>
@@ -397,6 +399,12 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 });
 //--></script> 
 <script type="text/javascript"><!--
+$('.bt-image-option').click(function(){
+	$('.bt-image-option').each(function(){
+		$(this).removeClass('active');
+	});
+	$(this).addClass('active');
+});
 function changeQty(increase) {
     var qty = parseInt($('.select_number').find("input").val());
     if ( !isNaN(qty) ) {

@@ -1394,7 +1394,7 @@ border-style:none;
 .tpclear		{	clear:both;}
 
 
-.tp-bullets									{	z-index:1000; position:absolute;
+.tp-bullets									{	z-index:50; position:absolute;
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 												-moz-opacity: 1;
 												-khtml-opacity: 1;
@@ -1743,7 +1743,7 @@ border-style:none;
 .tp-bullets.preview1 						{ 	height: 21px; }
 .tp-bullets.preview1 .bullet 				{	cursor: pointer;
 											    position: relative !important;
-											    background: rgba(0, 0, 0, 0.15) !important;
+											    background: rgba(255, 255, 255, 0.3) !important;
 											    -webkit-border-radius: 100%;
 											    border-radius: 100%;
 											    -webkit-box-shadow: none;
@@ -1752,7 +1752,7 @@ border-style:none;
 											    width: 15px !important;
 											    height: 15px !important;
 											    display: inline-block;
-											    margin-right: 5px !important;
+											    margin-right: 10px !important;
 											    margin-bottom: 0px !important;
 											    -webkit-transition: background-color 0.2s, border-color 0.2s;
 											    -moz-transition: background-color 0.2s, border-color 0.2s;

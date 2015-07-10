@@ -4,7 +4,9 @@
   <?php foreach ($products as $product) { ?>
   <div class="">
     <div class="product-thumb transition">
-      <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
+      <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a><?php if ($product['special']) { ?>
+			 <span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $product['btdiscount']; ?>%</span>
+			  <?php } ?></div>
       <div class="caption">
         <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
         <?php if ($product['rating']) { ?>
@@ -23,7 +25,7 @@
           <?php if (!$product['special']) { ?>
           <?php echo $product['price']; ?>
           <?php } else { ?>
-          <div><span class="price-old"><?php echo $product['price']; ?></span><span class="oc-discount"><i class="fa fa-caret-down"></i><?php echo $product['btdiscount']; ?>%</span></div>
+          <div class="btdiscount"><span class="price-old"><?php echo $product['price']; ?></span></div>
 			<span class="price-new"><?php echo $product['special']; ?></span>
           <?php } ?>
           <?php if ($product['tax']) { ?>

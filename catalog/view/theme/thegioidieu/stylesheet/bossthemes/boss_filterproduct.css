@@ -83,12 +83,26 @@
 }
 .boss_homefilter_tabs li .one-product:first-child{border-top:1px solid #e5e5e5}
 .boss_homefilter_tabs li .one-product:hover{}
-.boss_homefilter_tabs li .one-product .image{}
-.boss_homefilter_tabs li .one-product .name{  padding: 0 5px;}
-.boss_homefilter_tabs li .one-product .name a{font-size:13px; color:#231f20; text-transform:capitalize}
+.boss_homefilter_tabs li .one-product .price, .boss_homefilter_tabs li .one-product .price-new{font-size:14px}
+.boss_homefilter_tabs li .one-product .name{  padding: 0;}
+.boss_homefilter_tabs li .one-product .name a{
+  font-size: 13px;
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 400;
+}
 .boss_homefilter_tabs li .one-product .description{display:none}
-.boss_homefilter_tabs li .one-product .price{}
-.boss_homefilter_tabs li .one-product .price .price-old{display:block}
+.boss_homefilter_tabs li .one-product .oc-discount{
+  font-size: 12px;
+  padding: 3px;
+  line-height: 12px;
+  vertical-align: 2px;
+  position: absolute;
+  top: 0;
+  right: 18px;
+}
+.boss_homefilter_tabs li .one-product .oc-discount:before{  font-size: 15px;}
+.boss_homefilter_tabs li .one-product .price .price-old{  font-weight: 700;}
 .boss_homefilter_tabs li .one-product .cart{display:none}
 .boss_homefilter_tabs li .one-product .rating{display:none}
 .boss_homefilter_tabs .frame_hover .image{
@@ -177,12 +191,12 @@ h3.color_active a{
 	z-index:-1;
 }
 .boss_homefilter_tabs .tabs_container li{
-  padding: 9px 20px;
+  padding: 8px 20px;
   background: #e8ebf0;
   display:block;
   position:relative;
 }
-.boss_homefilter_tabs .tabs_container li.active{background-color:#7695b3}
+.boss_homefilter_tabs .tabs_container li.active{background-color:#D5D5D5}
 .boss_homefilter_tabs .tabs_container li a{
   font-family: Arial, sans-serif;
   font-size: 13px;
@@ -193,6 +207,7 @@ h3.color_active a{
   letter-spacing:normal;
   text-transform:none;
   position:static;
+  width:100%;
 }
 .boss_homefilter_tabs .tabs_container li a span{display:none}
 .boss_homefilter_tabs .tabs_container li.active a span{
@@ -212,7 +227,7 @@ h3.color_active a{
   display:block;
 }
 .boss_homefilter_tabs .tabs_container li.active a span i{font-size:22px}
-.boss_homefilter_tabs .tabs_container li:hover{background:#7695b3;}
+.boss_homefilter_tabs .tabs_container li:hover{background:#f0f0f0;}
 .boss_homefilter_tabs .tabs_container li.cate-parent{
 	font-size:13px;
 	color:#fff;

@@ -2,7 +2,7 @@
 class ControllerCheckoutSuccess extends Controller {
 	public function index() {
 		$this->load->language('checkout/success');
-
+		$email = 'Email';
 		if (isset($this->session->data['order_id'])) {
 			$this->cart->clear();
 
@@ -15,6 +15,8 @@ class ControllerCheckoutSuccess extends Controller {
 					'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName(),
 					'order_id'    => $this->session->data['order_id']
 				);
+				
+				$email = $this->customer->getEmail();
 
 				$this->model_account_activity->addActivity('order_account', $activity_data);
 			} else {
@@ -22,6 +24,8 @@ class ControllerCheckoutSuccess extends Controller {
 					'name'     => $this->session->data['guest']['firstname'] . ' ' . $this->session->data['guest']['lastname'],
 					'order_id' => $this->session->data['order_id']
 				);
+				
+				$email = $this->session->data['guest']['email'];
 
 				$this->model_account_activity->addActivity('order_guest', $activity_data);
 			}
@@ -65,12 +69,16 @@ class ControllerCheckoutSuccess extends Controller {
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['text_thanks'] = $this->language->get('text_thanks');
+		$data['text_confirm'] = $this->language->get('text_confirm');
 
 		if ($this->customer->isLogged()) {
-			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', 'SSL'), $this->url->link('account/order', '', 'SSL'), $this->url->link('account/download', '', 'SSL'), $this->url->link('information/contact'));
+			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', 'SSL'), $this->url->link('account/order', '', 'SSL'), $this->url->link('information/contact'));
 		} else {
 			$data['text_message'] = sprintf($this->language->get('text_guest'), $this->url->link('information/contact'));
 		}
+		
+		$data['text_email_note'] = sprintf($this->language->get('text_email_note'), $email);
 
 		$data['button_continue'] = $this->language->get('button_continue');
 
@@ -83,8 +91,8 @@ class ControllerCheckoutSuccess extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/success.tpl', $data));
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/success.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/success.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/common/success.tpl', $data));
 		}

@@ -13,7 +13,7 @@
 			<?php if ($currency['symbol_left']) { ?>
 			<a title="<?php echo $currency['title']; ?>" onclick="$('input[name=\'code\']').attr('value', '<?php echo $currency['code']; ?>'); $(this).parent().parent().submit();"><?php echo $currency['symbol_left']; ?></a>
 			<?php } else { ?>
-			<a title="<?php echo $currency['title']; ?>" onclick="$('input[name=\'code\']').attr('value', '<?php echo $currency['code']; ?>'); $('#form_currency').submit();"><?php echo $currency['symbol_right']; ?></a>
+			<a title="<?php echo $currency['title']; ?>" onclick="$('input[name=\'code\']').attr('value', '<?php echo $currency['code']; ?>'); $('#currency').submit();"><?php echo $currency['symbol_right']; ?></a>
 			<?php } ?>
 		<?php } ?>
     <?php } ?>

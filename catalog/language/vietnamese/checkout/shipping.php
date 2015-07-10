@@ -8,8 +8,8 @@ $_['text_shipping']        = 'Enter your destination to get a shipping estimate.
 $_['text_shipping_method'] = 'Please select the preferred shipping method to use on this order.';
 
 // Entry
-$_['entry_country']        = 'Country';
-$_['entry_zone']           = 'Region / State';
+$_['entry_country']        = 'Quốc gia';
+$_['entry_zone']           = 'Tỉnh / Thành phố';
 $_['entry_postcode']       = 'Post Code';
 
 // Error

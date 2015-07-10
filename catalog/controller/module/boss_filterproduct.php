@@ -106,9 +106,9 @@ class ControllerModuleBossFilterProduct extends Controller {
 					}
 					
 					if ($category['image']) {
-						$image_cate = $this->model_tool_image->resize($category['image'], 448, 608);
+						$image_cate = $this->model_tool_image->resize($category['image'], 295, 484);
 					} else {
-						$image_cate = $this->model_tool_image->resize('catalog/thegioidieu/default.jpg', 448, 608);;
+						$image_cate = $this->model_tool_image->resize('catalog/thegioidieu/default.jpg', 295, 484);;
 					}
 
 					$categories[] = array(

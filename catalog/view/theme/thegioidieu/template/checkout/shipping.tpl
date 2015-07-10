@@ -4,7 +4,6 @@
   </div>
   <div id="collapse-shipping" class="panel-collapse collapse">
     <div class="panel-body">
-      <p><?php echo $text_shipping; ?></p>
       <form class="form-horizontal">
         <div class="required">
           <label class="control-label" for="input-country"><?php echo $entry_country; ?></label>
