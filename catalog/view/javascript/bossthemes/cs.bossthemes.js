@@ -340,10 +340,12 @@ var btadd = {
 				}
 
 				if (json['success']) {
-					addProductNotice(json['title'], json['thumb'], json['success'], 'success');
+					//addProductNotice(json['title'], json['thumb'], json['success'], 'success');
 					$('#cart-total').html(json['total']);
 				
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					
+					
 				}
 			}
 		});

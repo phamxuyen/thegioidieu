@@ -62,6 +62,19 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['text_checkout_shipping_method'] = $this->language->get('text_checkout_shipping_method');
 		$data['text_checkout_payment_method'] = $this->language->get('text_checkout_payment_method');
 		$data['text_checkout_confirm'] = $this->language->get('text_checkout_confirm');
+		$data['text_loading'] = $this->language->get('text_loading');
+		
+		// Added by Munjal for Tabs
+		$data['tab_checkout_option'] = $this->language->get('tab_checkout_option');
+		$data['tab_checkout_account'] = $this->language->get('tab_checkout_account');
+		$data['tab_checkout_payment_address'] = $this->language->get('tab_checkout_payment_address');
+		$data['tab_checkout_shipping_address'] = $this->language->get('tab_checkout_shipping_address');
+		$data['tab_checkout_shipping_method'] = $this->language->get('tab_checkout_shipping_method');
+		$data['tab_checkout_payment_method'] = $this->language->get('tab_checkout_payment_method');		
+		$data['tab_checkout_confirm'] = $this->language->get('tab_checkout_confirm');
+		
+		$data['button_continue'] = $this->language->get('button_continue');
+		$data['button_back'] = $this->language->get('button_back');
 
 		if (isset($this->session->data['error'])) {
 			$data['error_warning'] = $this->session->data['error'];
@@ -78,7 +91,7 @@ class ControllerCheckoutCheckout extends Controller {
 			$data['account'] = '';
 		}
 
-		$data['shipping_required'] = $this->cart->hasShipping();
+		$data['shipping_required'] = false;//$this->cart->hasShipping();
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

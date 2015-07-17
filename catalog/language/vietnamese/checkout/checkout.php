@@ -4,13 +4,13 @@ $_['heading_title']                  = 'Thanh Toán';
 
 // Text
 $_['text_cart']                    = 'Giỏ Hàng';
-$_['text_checkout_option']           = 'Bước 1: Tùy Chọn Thanh Toán';
-$_['text_checkout_account']          = 'Bước 2: Tài Khoản &amp; Chi Tiết Thanh Toán';
-$_['text_checkout_payment_address']  = 'Bước 2: Thông tin đặt hàng';
-$_['text_checkout_shipping_address'] = 'Bước 3: Địa chỉ Giao Hàng';
-$_['text_checkout_shipping_method']  = 'Bước 4: Phương Thức Giao Hàng';
-$_['text_checkout_payment_method']   = 'Bước 5: Phương Thức Thanh Toán';
-$_['text_checkout_confirm']          = 'Bước 6: Xác Nhận Đơn Hàng';
+$_['text_checkout_option']           = 'Tùy Chọn Thanh Toán';
+$_['text_checkout_account']          = 'Thông tin đặt hàng';
+$_['text_checkout_payment_address']  = 'Thông tin đặt hàng';
+$_['text_checkout_shipping_address'] = 'Địa chỉ Giao Hàng';
+$_['text_checkout_shipping_method']  = 'Phương Thức Giao Hàng';
+$_['text_checkout_payment_method']   = 'Phương Thức Thanh Toán';
+$_['text_checkout_confirm']          = 'Xác Nhận Đơn Hàng';
 $_['text_modify']                    = 'Thay Đổi &raquo;';
 $_['text_new_customer']              = 'Khách Hàng Mới';
 $_['text_returning_customer']        = 'Khách Hàng Cũ';
@@ -55,14 +55,14 @@ $_['entry_email_address']            = 'Địa chỉ E-Mail:';
 $_['entry_email']                    = 'E-Mail:';
 $_['entry_password']                 = 'Mật khẩu:';
 $_['entry_confirm']                  = 'Nhập lại mật khẩu:';
-$_['entry_firstname']                = 'Tên:';
+$_['entry_firstname']                = 'Họ và tên:';
 $_['entry_lastname']                 = 'Họ và tên lót:';
 $_['entry_telephone']                = 'Điện thoại:';
 $_['entry_fax']                      = 'Fax:';
 $_['entry_address']                  = 'Chọn địa chỉ';
 $_['entry_company']                  = 'Công ty:';
 $_['entry_customer_group']           = 'Nhóm khách hàng';
-$_['entry_address_1']                = 'Địa chỉ dòng 1:';
+$_['entry_address_1']                = 'Địa chỉ:';
 $_['entry_address_2']                = 'Địa chỉ dòng 2:';
 $_['entry_postcode']                 = 'Mã Bưu Điện:';
 $_['entry_city']                     = 'Thành Phố:';
@@ -70,6 +70,15 @@ $_['entry_country']                  = 'Quốc Gia:';
 $_['entry_zone']                     = 'Vùng / Tiểu Bang:';
 $_['entry_newsletter']               = 'Tôi muốn đăng kí nhận bản tin %s .';
 $_['entry_shipping'] 	             = 'Địa chỉ nhận hàng và địa chỉ thanh toán của tôi giống nhau.';
+
+// Added By Munjal For Tabs
+$_['tab_checkout_option']           = 'Step 1';
+$_['tab_checkout_account']          = 'Step 2';
+$_['tab_checkout_payment_address']  = 'Step 2';
+$_['tab_checkout_shipping_address'] = 'Step 3';
+$_['tab_checkout_shipping_method']  = 'Step 4';
+$_['tab_checkout_payment_method']   = 'Step 5';
+$_['tab_checkout_confirm']          = 'Step 6';
 
 // Error
 $_['error_warning']                  = 'Có lỗi khi xử lý đơn hàng của bạn! Nếu lỗi vẫn tồn tại vui lòng chọn phương thức thanh toán khác hoặc bạn có thể liên hệ quản lý gian hàng bằng cách <a href="%s">bấm vào đây</a>.';

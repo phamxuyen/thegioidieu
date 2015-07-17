@@ -2210,6 +2210,49 @@ h2.text_next_cart{
 }
 
 .checkout{overflow:hidden;}
+.checkout > ul#bttabs{border:none}
+.checkout > ul#bttabs > li{
+  padding: 14px 30px 20px 13px;
+  color: #5d666b;
+  font-size: 14px;
+  float: left;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: 52px;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+}
+.checkout > ul#bttabs > li:first-child{border-left:1px solid #ccc;}
+.checkout > ul#bttabs > li + li{  padding-left: 25px;}
+.checkout > ul#bttabs > li.active{
+  color: #fff;
+  background-color: #4380ad;
+}
+.checkout > ul#bttabs > li:before{
+  content: '';
+  width: 15px;
+  height: 52px;
+  background: url(../../image/stay_tab_normal.png) no-repeat top right;
+  position: absolute;
+  right: -15px;
+  top: 0;
+  left:auto;
+  z-index: 1;
+}
+.checkout > ul#bttabs > li.active:before{
+  z-index: 1;
+  height: 50px;
+  background: url(../../image/stay_tab.png) no-repeat top right #4380ad;
+}
+.checkout > ul#bttabs > li > a{padding:0}
+.checkout > ul#bttabs > li.active > a{color:#fff}
+.checkout > ul#bttabs > li.last{  padding-right: 25px;}
+.checkout > ul#bttabs > li.last:before{  right: -15px;}
+.checkout .tab-content{  border: none; padding: 30px 0;}
+.checkout .table {border-top: 2px solid #003466;}
+.checkout h4{margin-bottom:20px}
 .checkout .panel > .panel-collapse{padding:0 20px}
 .checkout .panel-default{border:none; border-radius:0; box-shadow:none;}
 .checkout .panel-default > .panel-heading{
