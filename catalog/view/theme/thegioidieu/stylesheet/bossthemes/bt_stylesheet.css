@@ -2212,7 +2212,7 @@ h2.text_next_cart{
 .checkout{overflow:hidden;}
 .checkout > ul#bttabs{border:none}
 .checkout > ul#bttabs > li{
-  padding: 14px 30px 20px 13px;
+  padding: 14px 10px 20px 10px;
   color: #5d666b;
   font-size: 14px;
   float: left;

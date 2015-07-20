@@ -657,7 +657,7 @@ CREATE TABLE `oc_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_customer_ban_ip`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -979,7 +979,7 @@ CREATE TABLE `oc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1342 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1344 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_layout_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -990,7 +990,7 @@ CREATE TABLE `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=282 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=283 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_length_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1253,7 +1253,7 @@ CREATE TABLE `oc_order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_order_custom_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1341,7 +1341,7 @@ CREATE TABLE `oc_order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_order_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1373,7 +1373,7 @@ CREATE TABLE `oc_order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=157 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_order_recurring`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1437,7 +1437,7 @@ CREATE TABLE `oc_order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=188 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_order_voucher`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

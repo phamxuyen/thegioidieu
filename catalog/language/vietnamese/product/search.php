@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Tìm Kiếm';
+$_['heading_title']     = 'Tìm Kiếm Nâng Cao';
 $_['heading_tag']		= 'Tag - ';
  
 // Text

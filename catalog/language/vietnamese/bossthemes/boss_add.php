@@ -2,9 +2,9 @@
 // Cart
 
 // Text
-$_['text_title_cart']             = 'Product added to Cart';
+$_['text_title_cart']             = 'Bạn đã thêm vào giỏ hàng';
 $_['text_thumb']             = '<img src="%s" alt="" />';
-$_['text_success_cart']           = '<a href="%s">%s</a> added to <a href="%s">shopping cart</a>!';
+$_['text_success_cart']           = '<a href="%s">%s</a> đã được thêm vào <a href="%s">Giỏ hàng</a>!';
 $_['text_items']             = '%s';
 
 // Error
