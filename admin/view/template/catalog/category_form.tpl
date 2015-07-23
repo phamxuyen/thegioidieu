@@ -88,7 +88,7 @@
                   <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" />
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display:none;">
                 <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="<?php echo $help_filter; ?>"><?php echo $entry_filter; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="filter" value="" placeholder="<?php echo $entry_filter; ?>" id="input-filter" class="form-control" />

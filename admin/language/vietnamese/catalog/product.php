@@ -31,7 +31,7 @@ $_['column_action']          = 'Thao tác';$_['column_order']          = 'Số
 $_['entry_name']             = 'Tên sản phẩm:';
 $_['entry_meta_title'] 	     = 'Tiêu đề Meta Tag';
 $_['entry_meta_keyword']     = 'Từ khóa:';
-$_['entry_meta_description'] = 'Mô tả từ khóa:';
+$_['entry_meta_description'] = 'Mô tả từ khóa <br /> (Meta description):';
 $_['entry_description']      = 'Mô tả sản phẩm:';
 $_['entry_store']            = 'Cửa hàng:';
 $_['entry_keyword']          = 'Từ khóa - SEO';

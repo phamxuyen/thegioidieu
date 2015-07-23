@@ -14,8 +14,8 @@ $_['column_action']    = 'Thao tác';
 
 // Entry
 $_['entry_name']       = 'Tên nhóm người dùng:';
-$_['entry_access']     = 'Quyền hạn:';
-$_['entry_modify']     = 'Thiết lập quyền hạn:';
+$_['entry_access']     = 'Quyền truy cập:';
+$_['entry_modify']     = 'Quyền thay đổi:';
 
 // Error
 $_['error_permission'] = 'Cảnh báo: Bạn không được phép sửa đổi các nhóm người sử dụng!';
