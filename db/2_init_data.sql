@@ -260,7 +260,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `oc_currency` WRITE;
 /*!40000 ALTER TABLE `oc_currency` DISABLE KEYS */;
-INSERT INTO `oc_currency` VALUES (2,'VND','vnd','','vnd','0',1.00000000,1,'2015-07-22 10:16:42'),(4,'Dolar','USD','$','','2',21000.00000000,1,'2015-07-06 16:56:19');
+INSERT INTO `oc_currency` VALUES (2,'VND','vnd','','vnd','0',1.00000000,1,'2015-08-19 06:36:07'),(4,'Dolar','USD','$','','2',21000.00000000,1,'2015-07-06 16:56:19');
 /*!40000 ALTER TABLE `oc_currency` ENABLE KEYS */;
 UNLOCK TABLES;
 

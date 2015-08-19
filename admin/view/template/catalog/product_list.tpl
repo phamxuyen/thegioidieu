@@ -69,6 +69,19 @@
                   <?php } ?>
                 </select>
               </div>
+			  <div class="form-group">
+			  <label class="control-label" for="input-status"><?php echo $column_category; ?></label>
+			  <select name="filter_category" id="input-status" class="form-control">
+              <option value="*"></option>
+              <?php foreach ($categories as $category) { ?>
+                <?php if ($category['category_id']==$filter_category) { ?>
+                  <option value="<?php echo $category['category_id']; ?>" selected="selected"><?php echo $category['name']; ?></option>
+                <?php } else { ?>
+                  <option value="<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></option> 
+                <?php } ?>
+              <?php } ?>
+              </select>
+			  </div>
               <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> <?php echo $button_filter; ?></button>
             </div>
           </div>
@@ -95,6 +108,11 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_quantity; ?>"><?php echo $column_quantity; ?></a>
                     <?php } ?></td>
+					<td class="text-left"><?php if ($sort == 'p2c.category_id') { ?>
+				<a href="<?php echo $sort_category; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_category; ?></a>
+				<?php } else { ?>
+				<a href="<?php echo $sort_category; ?>"><?php echo $column_category; ?></a>
+			  <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'p.status') { ?>
                     <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
@@ -136,6 +154,12 @@
                     <?php } else { ?>
                     <span class="label label-success"><?php echo $product['quantity']; ?></span>
                     <?php } ?></td>
+					<td class="text-left">
+                <?php foreach ($categories as $category) { ?>
+                <?php if (in_array($category['category_id'], $product['category'])) { ?>
+                <?php echo $category['name'];?><br>
+                <?php } ?> <?php } ?>
+              </td>
                   <td class="text-left"><?php echo $product['status']; ?></td>
 				  
 				  <td class="text-left"><input style="width: 50%;float: left;margin-right: 5px;}" type="text" name="edit_sort_order_<?php echo $product['product_id']; ?>" size="3" value="<?php echo $product['sort_order']; ?>" placeholder="<?php echo $product['sort_order']; ?>" id="input-sort-order" class="form-control" /><button type="button" onclick="updateStt(<?php echo $product['product_id']; ?>)" data-toggle="tooltip" title="<?php echo 'Update số thứ tự'; ?>" class="button_update btn btn-success"><i class="fa fa-refresh"></i></button></td>
@@ -179,6 +203,12 @@ $('#button-filter').on('click', function() {
 
 	if (filter_price) {
 		url += '&filter_price=' + encodeURIComponent(filter_price);
+	}
+	
+	var filter_category = $('select[name=\'filter_category\']').val();
+    		
+	if (filter_category != '*') {
+		url += '&filter_category=' + encodeURIComponent(filter_category);
 	}
 
 	var filter_quantity = $('input[name=\'filter_quantity\']').val();
