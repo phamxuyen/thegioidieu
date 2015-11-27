@@ -63,6 +63,18 @@
                       <textarea name="product_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['description'] : ''; ?></textarea>
                     </div>
                   </div>
+				  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-video<?php echo $language['language_id']; ?>"><?php echo $entry_video; ?></label>
+                    <div class="col-sm-10">
+                      <textarea name="product_description[<?php echo $language['language_id']; ?>][video]" placeholder="<?php echo $entry_video; ?>" id="input-video<?php echo $language['language_id']; ?>"><?php echo isset($product_description[$language['language_id']]['video']) ? $product_description[$language['language_id']]['video'] : ''; ?></textarea>
+                    </div>
+                  </div>
+				  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-assembly<?php echo $language['language_id']; ?>"><?php echo $entry_assembly; ?></label>
+                    <div class="col-sm-10">
+                      <textarea name="product_description[<?php echo $language['language_id']; ?>][assembly]" placeholder="<?php echo $entry_description; ?>" id="input-assembly<?php echo $language['language_id']; ?>"><?php echo isset($product_description[$language['language_id']]['assembly']) ? $product_description[$language['language_id']]['assembly'] : ''; ?></textarea>
+                    </div>
+                  </div>
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
                     <div class="col-sm-10">
@@ -887,6 +899,8 @@
   <script type="text/javascript"><!--
 <?php foreach ($languages as $language) { ?>
 $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+$('#input-video<?php echo $language['language_id']; ?>').summernote({height: 100});
+$('#input-assembly<?php echo $language['language_id']; ?>').summernote({height: 300});
 <?php } ?>
 //--></script> 
   <script type="text/javascript"><!--

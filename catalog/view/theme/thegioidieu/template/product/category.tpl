@@ -41,7 +41,7 @@
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
+    <?php $class = 'col-sm-10'; ?>
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
@@ -52,11 +52,12 @@
 	  <div class="product-filter">	
 		<div class="filter-view">
 			<div class="btn-group" <?php if($view == 'grid' || $view =='list')echo 'style="display:none"'; ?>>
+				<label class="control-label">Xem dạng:</label>
 				<button type="button" id="grid-view" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
 				<button type="button" id="list-view" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
 			</div>
 			<div class="bt_pagination">
-				<?php if(!empty($pagination)){?><div class="links"><?php echo $pagination; ?></div> <?php } ?>
+				<?php if(!empty($pagination)){?><div class="links"><label class="control-label">Trang:</label><?php echo $pagination; ?></div> <?php } ?>
 				<div class="results"><?php echo $results; ?></div>
 			</div>
 		</div>
@@ -123,8 +124,8 @@
 			  <?php if (!$product['special']) { ?>
 			  <?php echo $product['price']; ?>
 			  <?php } else { ?>
-			  <div><span class="price-old"><?php echo $product['price']; ?></span></div>
 			  <span class="price-new"><?php echo $product['special']; ?></span> 
+			  <div><span class="price-old"><?php echo $product['price']; ?></span></div>
 			  <?php } ?>
 			  <?php if ($product['tax']) { ?>
 			  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
@@ -139,6 +140,10 @@
           </div>
         </div>
         <?php } ?>
+			<div class="bt_pagination">
+				<?php if(!empty($pagination)){?><div class="links"><label class="control-label">Trang:</label><?php echo $pagination; ?></div> <?php } ?>
+				<div class="results"><?php echo $results; ?></div>
+			</div>
       </div>
       </div>
       <?php } ?>

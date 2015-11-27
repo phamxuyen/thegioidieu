@@ -36,7 +36,7 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-5'; ?>
+        <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?> left">
 		  <div class="bt-product-zoom">
@@ -63,7 +63,7 @@
         <?php } elseif ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-7'; ?>
+        <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div class="right <?php echo $class; ?>">
           <div class="qty">			
@@ -90,7 +90,7 @@
 				<li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
 			  </ul>
 			  
-				<span class="oc-length">Kích thước(Dài x Rộng x Cao): <?php echo $length.' x '.$width.' x '.$height; ?> M</span>
+				<span class="oc-length">Kích thước(Dài x Rộng x Cao): <?php echo $length.' x '.$width.' x '.$height; ?> <?php echo $length_class; ?></span>
 			  <?php if ($price) { ?>
 			  <div class="price_info">
 				<?php if (!$special) { ?>
@@ -114,8 +114,8 @@
 				<?php } ?>
 				<label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
 				<div class="select_number">                
-					<input type="text" class="text form-control" name="quantity" size="2" id="input-quantity" value="<?php echo $minimum; ?>" />
 					<button onclick="changeQty(1); return false;" class="increase">+</button>
+					<input type="text" class="text form-control" name="quantity" size="2" id="input-quantity" value="<?php echo $minimum; ?>" />
                     <button onclick="changeQty(0); return false;" class="decrease">-</button>  
 				</div>
 				
@@ -137,6 +137,9 @@
                 <div class="radio">
                   <label>
                     <input <?php  echo ($item==0)?'checked':''; ?> type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
+					<?php if(!empty($option_value['image'])){ ?>
+					 <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" />
+					 <?php } ?>
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
@@ -195,8 +198,8 @@
 		 
 		  <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
-			<li><a href="#tab-video" data-toggle="tab"><?php echo 'Xem clip sản phẩm'; ?></a></li>
-			<li><a href="#tab-userguide" data-toggle="tab"><?php echo 'Hướng dẫn lắp ráp'; ?></a></li>
+			<li><a href="#tab-video" data-toggle="tab"><?php echo $tab_video; ?></a></li>
+			<li><a href="#tab-userguide" data-toggle="tab"><?php echo $tab_assembly; ?></a></li>
             <?php if ($review_status) { ?>
             <li><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
             <?php } ?>
@@ -204,9 +207,9 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
 			
-            <div class="tab-pane" id="tab-video"><?php echo 'Xem clip sản phẩm'; ?></div>
+            <div class="tab-pane" id="tab-video"><?php echo $video; ?></div>
 			
-            <div class="tab-pane" id="tab-userguide"><?php echo 'Hướng dẫn lắp ráp'; ?></div>
+            <div class="tab-pane" id="tab-userguide"><?php echo $assembly; ?></div>
             
             <?php if ($review_status) { ?>
             <div class="tab-pane" id="tab-review">
@@ -289,8 +292,8 @@
                 <?php if (!$product['special']) { ?>
                 <?php echo $product['price']; ?>
                 <?php } else { ?>
-                <div><span class="price-old"><?php echo $product['price']; ?></span></div>
 				<span class="price-new"><?php echo $product['special']; ?></span>
+                <div><span class="price-old"><?php echo $product['price']; ?></span></div>
                 <?php } ?>
                 <?php if ($product['tax']) { ?>
                 <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
@@ -586,7 +589,7 @@ $(window).load(function(){
         onTouch : true
         },
         items: {
-            width: 100,
+            width: 80,
             height: 'auto',
             visible: {
             min: 1,

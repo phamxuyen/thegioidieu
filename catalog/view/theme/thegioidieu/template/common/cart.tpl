@@ -57,9 +57,9 @@
         </table>
 		<div class="buttons">
 		<span class="checkout_bt"><a class="btn" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></span>
-        <span class="cart_bt"><a href="<?php echo $cart; ?>" class="btn btn-shopping"><?php echo $text_cart; ?></a></span>
       </div>
       </div>
+        <div class="cart_bt"><a href="<?php echo $cart; ?>" class="btn btn-shopping"><?php echo $text_cart; ?></a></div>
     </li>
     <?php } else { ?>
     <li>

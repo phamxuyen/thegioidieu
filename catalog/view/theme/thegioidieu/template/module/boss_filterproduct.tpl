@@ -93,9 +93,9 @@ $(window).load(function(){
 					</div>
 				  <?php if((($i%2)==0)||($i==count($category['products']))){ ?> </li> <?php } ?>
 				<?php } ?></ul>
+				<?php } ?>
 			</div>	
 			<div class="clearfix"></div>
-			<?php } ?>
 			<div class="btn-quick-link">
 				<div class="tab-btn">
 					<a id="prev_tab<?php echo $numTab.$module; ?>" class="prev" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>

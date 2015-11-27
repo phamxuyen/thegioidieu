@@ -42,6 +42,8 @@ $_['entry_captcha']            = 'Enter the code in the box below';
 
 // Tabs
 $_['tab_description']          = 'Description';
+$_['tab_video']   = 'Video';
+$_['tab_assembly']   = 'Assembly';
 $_['tab_attribute']            = 'Specification';
 $_['tab_review']               = 'Reviews (%s)';
 

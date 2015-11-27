@@ -242,8 +242,8 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 			"1" => $this->language->get('text_enabled')
 		);
 		$data['arronoff'] = array(
-			"on" => $this->language->get('text_disabled'),
-			"off" => $this->language->get('text_enabled')
+			"on" => $this->language->get('text_enabled'),
+			"off" => $this->language->get('text_disabled')
 		);
 		$data['positions'] = array(
 			"content_top" => $this->language->get('text_content_top'),
@@ -463,16 +463,19 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 			
 			$slidedata = $this->request->post;
 			
-			$slidedata_captions = $slidedata['caption'];
+			$slidedata_captions = isset($slidedata['caption'])?$slidedata['caption']:'';
 			
 			$languages = $this->model_localisation_language->getLanguages();
-			
-			foreach($slidedata_captions as $key => $slidedata_caption){
-				if(isset($slidedata_caption['text_caption'])) {
-					foreach ($languages as $language) {
-						$slidedata['caption'][$key]['text_caption'][$language['language_id']] = $this->db->escape($slidedata_caption['text_caption'][$language['language_id']]);				
+			if(!empty($slidedata_captions)){
+				foreach($slidedata_captions as $key => $slidedata_caption){
+					if(isset($slidedata_caption['text_caption'])) {
+						foreach ($languages as $language) {
+							$slidedata['caption'][$key]['text_caption'][$language['language_id']] = $slidedata_caption['text_caption'][$language['language_id']];				
+						}
 					}
 				}
+			}else{
+				$slidedata['caption'] = '';
 			}
 			
 			if($slide_id!=0){
@@ -565,7 +568,7 @@ class ControllerModuleBossRevolutionSlider extends Controller {
 		//load confif for slide
 		$data['transitions']= array("slideup","slidedown","slideright","slideleft","slidehorizontal","slidevertical","boxslide","slotslide-horizontal","slotslide-vertical","boxfade","slotfade-horizontal","slotfade-vertical","fadefromright","fadefromleft","fadefromtop","fadefrombottom","fadetoleftfadefromright","fadetorightfadefromleft","fadetotopfadefrombottom","fadetobottomfadefromtop","parallaxtoright","parallaxtoleft","parallaxtotop","parallaxtobottom","scaledownfromright","scaledownfromleft","scaledownfromtop","scaledownfrombottom","zoomout","zoomin","slotzoom-horizontal","slotzoom-vertical","fade","random-static","random","curtain-1","curtain-2","curtain-3","3dcurtain-horizontal","3dcurtain-vertical","cube","cube-horizontal","incube","incube-horizontal","turnoff","turnoff-vertical","papercut","flyin","random-premium","random");
 		
-		$data['class_css']= array("big_white","greenbox30","arrowicon","white_bold_bg_20","black_bold_bg_20","red_bold_bg_20","blue_bold_bg_20","grey_heavy_72","white_heavy_40","grey_regular_18","light_heavy_70","black_bold_40","light_heavy_40","black_heavy_60","black_heavy_70","black_thin_34","white_thin_34","middle_yellow","big_orange","big_black","medium_white","small_text","medium_text","large_text","large_white_text","very_large_text","very_large_white_text","bold_red_text","bold_brown_text","bold_green_text","very_big_white","very_big_black","randomrotate");
+		$data['class_css']= array("big_white","greenbox30","arrowicon","white_bold_bg_20","black_bold_bg_20","red_bold_bg_20","blue_bold_bg_20","grey_heavy_72","white_heavy_40","grey_regular_18","white_regular_18","light_heavy_70","black_bold_40","light_heavy_40","black_heavy_60","black_heavy_70","black_thin_34","white_thin_34","middle_yellow","big_orange","big_black","medium_white","medium_white_16","medium_black","small_text","medium_text","large_text","large_white_text","very_large_text","very_large_white_text","bold_red_text","bold_brown_text","bold_green_text","very_big_white","very_big_black","randomrotate","line_white");
 		
 		$data['incom_animation']= array("sft"=>"Short from Top","sfb"=>"Short from Bottom","sfr"=>"Short from Right","sfl"=>"Short from Left","lft"=>"Long from Top","lfb"=>"Long from Bottom","lfr"=>"Long from Right","lfl"=>"Long from Left","skewfromleft"=>"Skew from Left","skewfromright"=>"Skew from Right","skewfromleftshort"=>"Skew Short from Left","skewfromrightshort"=>"Skew Short from Right","fade"=>"fading","randomrotate"=>"Randomrotate","customin"=>"Custom Incoming Animation");
 		

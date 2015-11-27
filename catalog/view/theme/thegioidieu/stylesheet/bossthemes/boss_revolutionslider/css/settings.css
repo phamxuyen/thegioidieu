@@ -276,6 +276,7 @@ white-space:nowrap;
 	border-style: none;
 	letter-spacing: 0px;	
 	width:auto;
+	text-transform:uppercase;
 }
 .tp-caption.big_black {
 	position: absolute;
@@ -376,15 +377,12 @@ white-space:nowrap;
 }
 .tp-caption.medium_white{
 	font-family: 'Open Sans', sans-serif;
-	font-size:20px;
+	font-size:30px;
 	font-weight:400;
 	color:#ffffff;
 	text-transform:uppercase;
-	padding:18px 35px;
-	background-color:#fe4a4a;
 	display:inline;
 	width:auto;	
-	margin-top:20px;
 }
 .tp-caption.very_large_white_text{
 	position: absolute;
@@ -616,27 +614,39 @@ text-shadow:none;
 }
 
 .tp-caption a {
-color:#ff7302;
-text-shadow:none;
--webkit-transition:all 0.2s ease-out;
--moz-transition:all 0.2s ease-out;
--o-transition:all 0.2s ease-out;
--ms-transition:all 0.2s ease-out;
+	color:#ff7302;
+	text-shadow:none;
+	-webkit-transition:all 0.2s ease-out;
+	-moz-transition:all 0.2s ease-out;
+	-o-transition:all 0.2s ease-out;
+	-ms-transition:all 0.2s ease-out;
 }
-
+.tp-caption a.btn{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #043f77;
+    background: rgba(255,255,255,0.7);
+    padding: 13px 34px;
+    border: 2px solid #174671;
+    display: inline-bock;
+    border-radius: 0;
+}
 .tp-caption a:hover {
-color:#ffa902;
+	background:#174671;
+	color:#fff;
 }
 
 .tp-caption.thinheadline_dark {
-position:absolute;
-color:rgba(0,0,0,0.85);
-text-shadow:none;
-font-weight:300;
-font-size:30px;
-line-height:30px;
-font-family:"Open Sans";
-background-color:transparent;
+	position:absolute;
+	color:rgba(0,0,0,0.85);
+	text-shadow:none;
+	font-weight:300;
+	font-size:30px;
+	line-height:30px;
+	font-family:"Open Sans";
+	background-color:transparent;
 }
 
 .tp-caption.thintext_dark {

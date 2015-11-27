@@ -1552,6 +1552,8 @@ CREATE TABLE `oc_product_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `assembly` text,
+  `video` text,
   `tag` text NOT NULL,
   `meta_title` varchar(255) NOT NULL,
   `meta_description` varchar(255) NOT NULL,
@@ -1574,7 +1576,7 @@ CREATE TABLE `oc_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=506 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=510 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_filter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1595,7 +1597,7 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2971 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3063 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1657,7 +1659,7 @@ CREATE TABLE `oc_product_reward` (
   `customer_group_id` int(11) NOT NULL,
   `points` int(8) NOT NULL,
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=724 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=751 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_special`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1672,7 +1674,7 @@ CREATE TABLE `oc_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=516 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=523 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_to_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1948,7 +1950,7 @@ CREATE TABLE `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=1244 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1270 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

@@ -58,6 +58,7 @@
     transform: scale(1, 1);
     visibility: visible;
     z-index: 0;
+	background-color: #e8ebf0;
 }
 .submenu-inside .cate-list-item.submenu dd.sub-cate-list > div.sub-item{
 	clear: none;
@@ -107,4 +108,5 @@
     visibility: visible;
     width: 100%;
     z-index: 5;
+	background-color: #e8ebf0;
 }

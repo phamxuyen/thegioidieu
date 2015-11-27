@@ -8,14 +8,14 @@
 	padding: 0;
 }
 .mega-menu > ul.nav > li.oc-allproducts {background:#003466; width:100%; color:#fff; text-transform:uppercase}
-.mega-menu > ul.nav > li.oc-allproducts > a{color:#fff!important}
+.mega-menu > ul.nav > li.oc-allproducts > a{color:#fff}
 .mega-menu > ul.nav > li:hover{z-index:1600}
 .mega-menu > ul.nav > li > a{
     color: #555;
 	display: block;
 	font-family: Arial, sans-serif;
 	font-size: 11px;
-	font-weight:400;
+	font-weight:600;
 	text-transform:uppercase;
 	padding: 14px 17px 10px;
 	position: relative;
@@ -24,7 +24,10 @@
 	border-radius:0
 }
 .mega-menu > ul.nav > li  > a{border-left:1px solid #dadada}
-.mega-menu > ul.nav > li:hover > a{color:#fe4b4b}
+.mega-menu > ul.nav > li:hover > a{
+    background: #eff3f8;
+    color: #0a1d3b;
+}
 .mega-menu > ul.nav > li.parent:hover > a:before{
 	background-image: url(../../image/menu_arrow.png);
 	background-repeat: no-repeat;

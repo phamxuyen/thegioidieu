@@ -48,6 +48,8 @@ $_['entry_captcha']     = 'Nhập mã kiểm tra vào ô bên dưới:';
 
 // Tabs
 $_['tab_description']   = 'Mô tả';
+$_['tab_video']   = 'Xem clip sản phẩm';
+$_['tab_assembly']   = 'Hướng dẫn lắp ráp';
 $_['tab_attribute']     = 'Đặc tính';
 $_['tab_review']        = 'Bình Luận (%s)';
 $_['tab_related']       = 'Sản phẩm tham khảo'; 

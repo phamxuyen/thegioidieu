@@ -1,47 +1,52 @@
+<?php function showSubcate($category) {
+	if (count($category['children']) > 0) {	
+		echo '<span class="plus">+</span><span class="minus">-</span>';
+		echo '<ul class="item_child_child">';
+	
+		foreach ($category['children'] as $cat) {
+			echo(count($cat['children']) >0 ? '<li class="cate-list-item submenu">':'<li class="cate-list-item">');
+				echo '<a href="'.$cat['href'].'">'.$cat['name'].'</a>';				
+				showSubcate($cat);
+			echo '</li>';
+		}		
+	
+		echo '</ul>';
+	}
+} ?>
+
+
 <div class="bt-box bt-category">
-<div class="box-heading"><span><?php echo $heading_title; ?></span></div>
-<div class="box-content">
-    <div class="box-category" id="boss-category">
+	<div class="box-heading"><span><?php echo $heading_title; ?></span></div>
+	<div class="box-category" id="boss-category">
 	<ul class="box-category">
-	<?php foreach ($categories as $category) { ?>
-	<?php if ($category['category_id'] == $category_id) { ?>   
-	<li class="<?php if ($category['children']) { echo "child"; }?> active">
-		<a href="<?php echo $category['href']; ?>" class="list-group-item active"><?php echo $category['name']; ?></a>
-		<span class="plus"><i class="fa fa-caret-left"></i></span><span class="minus"><i class="fa fa-caret-left"></i></span>
-			<ul class="item_child">
-			  <?php foreach ($category['children'] as $child) { ?>
-			  <?php if ($child['category_id'] == $child_id) { ?>
-			  <li><a href="<?php echo $child['href']; ?>" class="list-group-item active"><?php echo $child['name']; ?></a></li>
-			  <?php } else { ?>
-			  <li><a href="<?php echo $child['href']; ?>" class="list-group-item"><?php echo $child['name']; ?></a></li>
-			  <?php } ?>
-			  <?php } ?>
-			</ul>		
-	</li>
-	<?php } else { ?>
-	<li <?php if ($category['children']) { echo "class='child'"; }?>>
-		<a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
-		<span class="plus"><i class="fa fa-caret-left"></i></span><span class="minus"><i class="fa fa-caret-left"></i></span>
-		<?php if ($category['children']) { ?>
-		<ul class="item_child">
-		  <?php foreach ($category['children'] as $child) { ?>
-		  <?php if ($child['category_id'] == $child_id) { ?>
-		  <li><a href="<?php echo $child['href']; ?>" class="list-group-item active"><?php echo $child['name']; ?></a></li>
-		  <?php } else { ?>
-		  <li><a href="<?php echo $child['href']; ?>" class="list-group-item"><?php echo $child['name']; ?></a></li>
-		  <?php } ?>
-		  <?php } ?>
+			<?php foreach ($categories as $category) { ?>
+				<li class="<?php if ($category['children']) { echo "child"; }?> <?php if ($category['category_id'] == $category_id) echo 'active opencate'; ?>">
+					<a href="<?php echo $category['href']; ?>">
+						<?php echo $category['name']; ?>
+					</a>
+					<?php if (count($category['children']) > 0) { ?>	
+					<span class="plus">+</span><span class="minus">-</span>
+					<ul class="item_child">
+					
+						<?php foreach($category['children'] as $cate_child) { ?>
+							<li class="<?php if ($cate_child['children']) { echo "child"; }?> <?php if ($cate_child['category_id'] == $child_id) echo 'active opencate'; ?>">
+								<a href="<?php echo $cate_child['href']; ?>">
+									<?php echo $cate_child['name']; ?>
+								</a>
+								
+								<?php showSubcate($cate_child);?>
+							</li>
+						<?php } ?>
+					</ul>
+					<?php } ?>
+				</li>
+			<?php } ?>
 		</ul>
-		<?php } ?>
-	</li>
-	<?php } ?>
-	<?php } ?>
-	</ul>
 	</div>
-</div>
 </div>
 <script type="text/javascript">
 	$(".child").click(function(){
 	  $(this).toggleClass('opencate');
 	});
 </script>
+<!--module boss-category-->

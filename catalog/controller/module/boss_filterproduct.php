@@ -50,6 +50,7 @@ class ControllerModuleBossFilterProduct extends Controller {
 				
 				foreach ($results_category as $category) {
 					$data_sort = array(
+						'filter_category_id' => $category['category_id'],
 						'sort'  => 'pd.name',
 						'order' => 'ASC',
 						'start' => 0,
@@ -101,7 +102,7 @@ class ControllerModuleBossFilterProduct extends Controller {
 							'special' 	 => $special,
 							'rating'     => $rating,
 							'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-							'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+							'href'    	 => $this->url->link('product/product', 'path=' . $tab['filter_type_category'].'_'.$category['category_id']. '&product_id=' . $result['product_id']),
 						);
 					}
 					

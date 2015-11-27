@@ -7,7 +7,16 @@
 		<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
 		<?php } ?>
 	  </ul>
-	</div><?php echo $column_left; ?><?php echo $column_right; ?>
+	</div>	
+      <div class="title_stay">
+		<ul>
+			<li class="active"><?php echo $heading_title; ?></li>
+			<li>Thông tin đơn hàng</li>
+			<li>Thanh toán</li>
+			<li class="last">Xác nhận đơn hàng</li>
+		</ul>
+	  </div>
+	<?php echo $column_left; ?><?php echo $column_right; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -16,15 +25,6 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <div class="title_stay">
-		<ul>
-			<li class="active"><?php echo $heading_title; ?></li>
-			<li>Thông tin đơn hàng</li>
-			<li>Chi tiết đơn hàng</li>
-			<li>Phương thức thanh toán</li>
-			<li class="last">Xác nhận đơn hàng</li>
-		</ul>
-	  </div>
 	  <?php if ($attention) { ?>
 	  <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
