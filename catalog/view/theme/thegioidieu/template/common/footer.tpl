@@ -63,7 +63,7 @@
 			<div class="footer-about">
 				<h3>Thời tiết hôm nay</h3>
 				
-				<script type="text/javascript"> showWeather('hochiminh,vietnam');</script>
+				<script type="text/javascript"> //showWeather('hochiminh,vietnam');</script>
 				
 			</div>
 			

@@ -132,7 +132,7 @@ class ControllerCatalogCategory extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'name';
+			$sort = 'sort_order';
 		}
 
 		if (isset($this->request->get['order'])) {

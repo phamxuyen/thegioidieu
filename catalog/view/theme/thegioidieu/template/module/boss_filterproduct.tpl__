@@ -36,12 +36,12 @@ $(window).load(function(){
 <div id="boss_homefilter_tabs<?php echo $module; ?>" class="boss_homefilter_tabs">
 <div class="boss_homefilter_tabs_inner">
 	<div class="box-heading" id="boss-category-heading-<?php echo $module; ?>">
-		<span class="cate-num"><?php echo $module+1; ?></span> <a href="<?php echo $tabs['href']; ?>"><?php echo $data['heading_title']; ?></a>
+		<span class="cate-num"><?php echo $module+1; ?></span> <?php echo $data['heading_title']; ?>
 	</div>
   
 	<div id="tabs_container<?php echo $module; ?>" class="tabs_container col-sm-2">
 		<ul id="tabs<?php echo $module;?>" class="tabs-headings tabs hide-on-mobile">
-			<li class="cate-parent"><a href="<?php echo $tabs['href']; ?>"><?php echo $tabs['name']; ?></a></li>	
+			<li class="cate-parent"><?php echo $tabs['name']; ?></li>	
 		<?php foreach ($tabs['categories'] as $numTab => $tab) { ?>
 			 <li <?php if($numTab == 0) echo 'class="active"'; ?>><a class="head_tab<?php echo $numTab.$module; ?> head_tabs<?php echo $module;?>" href="#content_tab<?php echo $numTab.$module; ?>" data-src=".head_tab<?php echo $numTab.$module; ?>" data-crs="#carousel_tab<?php echo $numTab.$module; ?>"><?php echo $tab['name']; ?><!--<span><i class="fa fa-caret-left"></i></span>--></a></li>
 		<?php } ?>
@@ -93,9 +93,9 @@ $(window).load(function(){
 					</div>
 				  <?php if((($i%2)==0)||($i==count($category['products']))){ ?> </li> <?php } ?>
 				<?php } ?></ul>
+				<?php } ?>
 			</div>	
 			<div class="clearfix"></div>
-			<?php } ?>
 			<div class="btn-quick-link">
 				<div class="tab-btn">
 					<a id="prev_tab<?php echo $numTab.$module; ?>" class="prev" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>
