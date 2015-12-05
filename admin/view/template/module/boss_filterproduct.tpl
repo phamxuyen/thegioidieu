@@ -67,7 +67,7 @@
 								<td class="left"><?php echo $tab_stt; ?></td>
 								<td class="left"><?php echo $tab_title; ?></td>
 								<td class="left"><?php echo $tab_get_product; ?></td>
-								<td></td></tr></thead>
+								</tr></thead>
 								<?php $tab_row = 0;?>
 								<?php if(isset($module['tabs'])) {?>
 								<?php foreach($module['tabs'] as $tab) {?>
@@ -108,16 +108,15 @@
 								  </div>
 								<?php } ?>
 									</td>
-									
-									 <td class="text-left"><button type="button" onclick="$('#moduletab-row<?php echo $tab_row;?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
 								</tr>
 								</tbody>
 								<?php $tab_row++;?>
 								<?php }?>
 								<?php } ?>
-								<tfoot><tr><td colspan="3"></td>
+								<?php if(empty($module['tabs'])){ ?>
+								<tfoot><tr><td colspan="2"></td>
 								 <td class="text-left"><button type="button" onclick="addTab(this,<?php echo $tab_row;?>);" data-toggle="tooltip" title="<?php echo $button_add_tab; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
-								</tr></tfoot></table>
+								</tr></tfoot><?php } ?></table>
 						</div>
 							<div id="modulesetting" class="tab-pane">
 							<table class="table table-striped table-bordered table-hover">		
@@ -196,6 +195,7 @@
 	//var tab_row = <?php echo $tab_row; ?>;;
 	// add menu
     function addTab(btnAddTab,tab_row) {
+	divclass = 'odd';
       html  = '<tbody id="moduletab-row'+tab_row+'">';
       html += '<tr>';
       html += '<td class="left"><b>#' + (tab_row+1) + '</b></td><td class="left">';
@@ -209,22 +209,28 @@
 	  html += '</td>';
 	  
 	  html += '<td class="left">';
-	  html += '<select name="boss_filterproduct_module[tabs][' + tab_row + '][type_product]" onchange="showCategories(this,' + tab_row + ')" class="form-control">';
+	  html += '<select name="boss_filterproduct_module[tabs][' + tab_row + '][type_product]" class="form-control">';
 	<?php foreach($filter_types as $key=>$text){ ?>
-		html += '<option value="<?php echo $key;?>"><?php echo $text;?></option>';
+		html += '<option selected value="<?php echo $key;?>"><?php echo $text;?></option>';
 	<?php } ?>
-	 html += '</select></td>';    
+	 html += '</select>';    
+	html  += '<div class="well well-sm" style="height: 150px; overflow: auto;" id="scrollbox' + tab_row + '">';
+	<?php foreach ($categories as $category) { ?>
+	  divclass = divclass == 'even' ? 'odd' : 'even';
+	  html += '<div class="' + divclass + '">';
+	  html += '<input type="radio" name="boss_filterproduct_module[tabs][' + tab_row + '][filter_type_category]" value="<?php echo $category['category_id']; ?>" />';
+	  html += '<?php echo $category['name']; ?>'
+	  html += '</div>';
+	<?php } ?>
+	html += '</div></td>';
 	 
-	 html += '<td class="text-left"><button type="button" onclick="$(\'#moduletab-row' + tab_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	 html += '</tr></tbody>';
 	 $('#tableMoldue tfoot').before(html);	 
-	 $(btnAddTab).replaceWith('<button type="button" onclick="addTab(this, '+ (tab_row + 1)+ ');" data-toggle="tooltip" title="<?php echo $button_add_tab; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>');
-	 
+	 $(btnAddTab).replaceWith('');
     }
 //--></script>
 <script type="text/javascript"><!--
     function showCategories(select, row) {
-	  if (select.options[select.selectedIndex].value == 'category') {
 		divclass = 'odd';
 		html  = '<div class="well well-sm" style="height: 150px; overflow: auto;" id="scrollbox' + row + '">';
 		<?php foreach ($categories as $category) { ?>
@@ -237,10 +243,6 @@
 		html += '</div>';
 		  
 		$(select).after(html);
-	  }
-	  else {
-		$('#scrollbox' + row).slideUp("normal", function() { $(this).remove(); } );
-	  }
     }
   //--></script>
 <script type="text/javascript"><!--

@@ -57,10 +57,10 @@ $_['entry_subtract']         = 'Phần Trừ đi:';
 $_['entry_weight_class']     = 'Đơn vị trọng lượng:';
 $_['entry_weight']           = 'Nặng:';
 $_['entry_store']            = 'Các gian hàng';$_['entry_length_class']     = 'Đơn vị kích thước:';
-$_['entry_length']           = 'Chiều dài:';
-$_['entry_width']            = 'Chiều Rộng';
-$_['entry_height']           = 'Chiều Cao';
-$_['entry_dimension']        = 'Kích thước(Dài x Rộng x Cao):';
+$_['entry_length']           = 'Chiều Rộng:';
+$_['entry_width']            = 'Chiều Cao';
+$_['entry_height']           = 'Chiều Đuôi';
+$_['entry_dimension']        = 'Kích thước ( Rộng x Cao + Đuôi ):';
 $_['entry_image']            = 'Hình ảnh:';
 $_['entry_customer_group']   = 'Nhóm khách hàng:';
 $_['entry_date_start']       = 'Từ ngày:';

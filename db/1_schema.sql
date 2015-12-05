@@ -979,7 +979,7 @@ CREATE TABLE `oc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1344 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1360 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_layout_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -990,7 +990,7 @@ CREATE TABLE `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=283 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=285 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_length_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1143,7 +1143,7 @@ CREATE TABLE `oc_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1513,15 +1513,15 @@ CREATE TABLE `oc_product` (
   `image` varchar(255) DEFAULT NULL,
   `manufacturer_id` int(11) NOT NULL,
   `shipping` tinyint(1) NOT NULL DEFAULT '1',
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `price` decimal(15,0) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL,
   `tax_class_id` int(11) NOT NULL,
   `date_available` date NOT NULL DEFAULT '0000-00-00',
-  `weight` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `weight` decimal(15,0) NOT NULL DEFAULT '0',
   `weight_class_id` int(11) NOT NULL,
-  `length` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `width` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `height` decimal(15,8) NOT NULL DEFAULT '0.00000000',
+  `length` decimal(15,0) NOT NULL DEFAULT '0',
+  `width` decimal(15,0) NOT NULL DEFAULT '0',
+  `height` decimal(15,0) NOT NULL DEFAULT '0',
   `length_class_id` int(11) NOT NULL,
   `subtract` tinyint(1) NOT NULL DEFAULT '1',
   `minimum` int(11) NOT NULL DEFAULT '1',
@@ -1597,7 +1597,7 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3066 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3070 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1659,7 +1659,7 @@ CREATE TABLE `oc_product_reward` (
   `customer_group_id` int(11) NOT NULL,
   `points` int(8) NOT NULL,
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=752 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=753 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_product_special`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1841,7 +1841,7 @@ CREATE TABLE `oc_setting` (
   `serialized` tinyint(1) NOT NULL,
   `group` varchar(32) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8837 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8947 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_stock_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -1950,7 +1950,7 @@ CREATE TABLE `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=1272 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1273 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `oc_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

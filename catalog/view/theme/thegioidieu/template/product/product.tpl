@@ -90,7 +90,7 @@
 				<li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
 			  </ul>
 			  
-				<span class="oc-length">Kích thước(Dài x Rộng x Cao): <?php echo $length.' x '.$width.' x '.$height; ?> <?php echo $length_class; ?></span>
+				<span class="oc-length">Kích thước (Rộng x Cao + Đuôi ): <?php echo $length.' x '.$width.' + '.$height; ?> <?php echo $length_class; ?></span>
 			  <?php if ($price) { ?>
 			  <div class="price_info">
 				<?php if (!$special) { ?>

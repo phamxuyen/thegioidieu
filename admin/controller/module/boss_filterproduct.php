@@ -147,10 +147,6 @@ class ControllerModuleBossFilterProduct extends Controller {
 		
 		//load text type filter
 		$data['filter_types'] = array(
-					"popular" =>$this->language->get('tab_popular_products'),
-					"special" =>$this->language->get('tab_special_products'),
-					"best_seller" =>$this->language->get('tab_best_seller_products'),
-					"latest" =>$this->language->get('tab_latest_products'),
 					"category" =>$this->language->get('tab_choose_a_category')
 					);
 		
